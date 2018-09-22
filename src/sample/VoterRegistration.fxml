@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.VoterRegistrationController">
+  <children>
+    <Text layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voter Registration Form">
+      <font>
+        <Font size="35.0" />
+      </font>
+    </Text>
+    <Button mnemonicParsing="false" text="Submit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+    <ScrollPane layoutY="55.0" prefHeight="417.0" prefWidth="570.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="1272.0" prefWidth="539.0">
+          <children>
+            <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="I am a US citizen" />
+            <CheckBox layoutX="14.0" layoutY="58.0" mnemonicParsing="false" text="I am 18 years of age or older" />
+            <Text layoutX="14.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+            <Text layoutX="14.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+            <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Initial" />
+            <Text layoutX="14.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suffix" />
+            <Text layoutX="14.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
+            <Text layoutX="14.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" />
+            <Text layoutX="12.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social Security Number" />
+            <TextField layoutX="312.0" layoutY="107.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="153.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="199.0" prefWidth="200.0" />
+            <Text layoutX="14.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+            <Text layoutX="84.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street" />
+            <Text layoutX="87.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
+            <Text layoutX="87.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
+            <Text layoutX="87.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
+            <Text layoutX="87.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apt Number" />
+            <Text layoutX="87.0" layoutY="707.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inside City Limits" />
+            <Text layoutX="9.0" layoutY="747.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mailing Address" />
+            <Text layoutX="87.0" layoutY="797.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street or PO box" />
+            <Text layoutX="85.0" layoutY="841.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
+            <Text layoutX="87.0" layoutY="885.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
+            <Text layoutX="87.0" layoutY="929.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
+            <TextField layoutX="312.0" layoutY="459.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="505.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="551.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="598.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="778.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="645.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="825.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="871.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="917.0" prefWidth="200.0" />
+            <Text layoutX="9.0" layoutY="979.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" />
+            <Text layoutX="87.0" layoutY="1019.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month" />
+            <Text layoutX="87.0" layoutY="1063.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
+            <Text layoutX="84.0" layoutY="1107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
+            <TextField layoutX="312.0" layoutY="1088.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="1044.0" prefWidth="200.0" />
+            <Text layoutX="8.0" layoutY="1150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+            <Text layoutX="87.0" layoutY="1190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" />
+            <Text layoutX="87.0" layoutY="1230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work" />
+            <TextField layoutX="312.0" layoutY="1211.0" prefWidth="200.0" />
+            <TextField layoutX="312.0" layoutY="1171.0" prefWidth="200.0" />
+            <ComboBox layoutX="312.0" layoutY="291.0" prefHeight="-1.0" prefWidth="-1.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Male" />
+                  <String fx:value="Female" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <TextField layoutX="312.0" layoutY="245.0" prefWidth="200.0" />
+            <ComboBox layoutX="312.0" layoutY="338.0" prefHeight="-1.0" prefWidth="-1.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="White" />
+                  <String fx:value="Black/African American" />
+                  <String fx:value="Asian" />
+                  <String fx:value="Hispanic" />
+                  <String fx:value="Native American" />
+                  <String fx:value="Other" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <TextField layoutX="312.0" layoutY="384.0" prefWidth="200.0" />
+            <ComboBox layoutX="312.0" layoutY="692.0" prefHeight="-1.0" prefWidth="-1.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Yes" />
+                  <String fx:value="No" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox layoutX="312.0" layoutY="997.0" prefHeight="-1.0" prefWidth="-1.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="January" />
+                  <String fx:value="February" />
+                  <String fx:value="March" />
+                  <String fx:value="April" />
+                  <String fx:value="May" />
+                  <String fx:value="June" />
+                  <String fx:value="July" />
+                  <String fx:value="August" />
+                  <String fx:value="September" />
+                  <String fx:value="October" />
+                  <String fx:value="November" />
+                  <String fx:value="December" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>
