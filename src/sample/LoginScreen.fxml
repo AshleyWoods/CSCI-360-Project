@@ -11,7 +11,7 @@
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.LoginController">
   <children>
     <Button mnemonicParsing="false" text="Continue" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-    <Button layoutX="117.0" layoutY="336.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="290.0" text="Register To Vote" />
+    <Button id="Register" layoutX="117.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRegisterClick" prefHeight="45.0" prefWidth="290.0" text="Register To Vote" />
     <ComboBox layoutX="117.0" layoutY="210.0" prefHeight="45.0" prefWidth="290.0" promptText="Drivers Licence">
       <items>
         <FXCollections fx:factory="observableArrayList">

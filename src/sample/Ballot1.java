@@ -1,6 +1,6 @@
 package sample;
 
-public class VoterRegistrationController {
+public class Ballot1 {
 
     private Main main;
 
