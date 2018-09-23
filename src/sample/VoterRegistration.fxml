@@ -15,7 +15,7 @@
         <Font size="35.0" />
       </font>
     </Text>
-    <Button mnemonicParsing="false" text="Submit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+    <Button mnemonicParsing="false" onAction="#handleSubmit" text="Submit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
     <ScrollPane layoutY="55.0" prefHeight="417.0" prefWidth="570.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
       <content>
         <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="1272.0" prefWidth="539.0">
