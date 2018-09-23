@@ -17,6 +17,8 @@ public class VoterRegistrationController {
         //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
         //SAVE DATA
        //CONFIRM VOTER THAT DATA WAS SAVED
+
+
         main.showLogin();
     }
 }
