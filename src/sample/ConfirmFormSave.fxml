@@ -9,8 +9,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.ConfirmFormSaveController">
   <children>
-    <Button layoutX="404.0" layoutY="334.0" mnemonicParsing="false" text="Ballot" />
-    <Button layoutX="76.0" layoutY="334.0" mnemonicParsing="false" text="Main Menu" />
+    <Button fx:id="BallotButton" layoutX="404.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBallot" text="Ballot" />
+    <Button fx:id="MenuButton" layoutX="76.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleMainMenu" onMouseClicked="#handleMainMenu" text="Main Menu" />
     <Text layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your voter registration form has been saved." />
     <Text layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Would you like to continue to the ballots or" />
     <Text layoutX="131.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="return to the main menu?" />

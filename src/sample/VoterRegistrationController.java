@@ -11,6 +11,7 @@ import java.io.IOException;
 public class VoterRegistrationController {
 
     private Main main;
+    public static boolean cancel = true;
 
     public void setMain(Main main) {
         this.main = main;
@@ -19,17 +20,18 @@ public class VoterRegistrationController {
     @FXML
     public void handleSubmit(){
         //ASK IF THEY MEAN TO SUBMIT
-        confirmSubmitPopUp();
+        if (confirmSubmitPopUp()) {
+            //cancel if they did not
+            return;
+        }
        //CHECK VALIDITY OF INPUT IN ALL FIELDS
         //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
         //SAVE DATA
        //CONFIRM VOTER THAT DATA WAS SAVED
         confirmSavePopUp();
-
-        main.showLogin();
     }
 
-    public void confirmSubmitPopUp() {
+    public boolean confirmSubmitPopUp() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("ConfirmFormSubmission.fxml"));
@@ -41,16 +43,20 @@ public class VoterRegistrationController {
             Scene confirmSubmitScene = new Scene(page);
             confirmSubmit.setScene(confirmSubmitScene);
 
+            ConfirmFormSubmissionController controller = loader.getController();
+            controller.setMain(this.main);
+
             confirmSubmit.showAndWait();
+
+            return cancel;
 
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
     public void confirmSavePopUp() {
-
-        //None of these files currently exist, don't uncomment the lines until they do
          try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("ConfirmFormSave.fxml"));
@@ -62,7 +68,10 @@ public class VoterRegistrationController {
             Scene confirmSaveScene = new Scene(page);
             confirmSave.setScene(confirmSaveScene);
 
-            confirmSave.showAndWait();
+             ConfirmFormSaveController controller = loader.getController();
+             controller.setMain(this.main);
+
+             confirmSave.showAndWait();
 
         } catch (IOException e) {
             e.printStackTrace();

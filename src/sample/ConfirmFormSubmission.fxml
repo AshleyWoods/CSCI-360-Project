@@ -9,8 +9,8 @@
 
 <AnchorPane minHeight="-1.0" minWidth="928.2138671875" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.ConfirmFormSubmissionController">
   <children>
-    <Button layoutX="474.0" layoutY="185.0" mnemonicParsing="false" text="Cancel" />
-    <Button layoutX="300.0" layoutY="185.0" mnemonicParsing="false" text="Confirm" />
+    <Button fx:id="CancelButton" layoutX="474.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleCancelButton" text="Cancel" />
+    <Button fx:id="SubmitButton" layoutX="300.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleSubmitButton" text="Confirm" />
     <Text layoutX="117.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are about to submit the voter registration form, " />
     <Text layoutX="264.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please confirm the submission" />
   </children>
