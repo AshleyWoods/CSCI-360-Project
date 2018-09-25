@@ -24,7 +24,7 @@ public class VoterRegistrationController {
         //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
         //SAVE DATA
        //CONFIRM VOTER THAT DATA WAS SAVED
-
+        confirmSavePopUp();
 
         main.showLogin();
     }
@@ -51,7 +51,7 @@ public class VoterRegistrationController {
     public void confirmSavePopUp() {
 
         //None of these files currently exist, don't uncomment the lines until they do
-        /* try {
+         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("ConfirmFormSave.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
@@ -66,6 +66,6 @@ public class VoterRegistrationController {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 }
