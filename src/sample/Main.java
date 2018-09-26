@@ -36,8 +36,80 @@ public class Main extends Application {
         showLogin();
     }
 
-    public void setCenter(Node scene) {
-        rootLayout.setCenter(scene);
+    public void showDriverLogin () {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("DriverLogin.fxml"));
+            AnchorPane DriverLogin = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(DriverLogin);
+
+            LoginController controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void showSSNLogin () {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("SSNLogin.fxml"));
+            AnchorPane SSNLogin = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(SSNLogin);
+
+            LoginController controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void showVRNLogin () {
+       try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("VRNLogin.fxml"));
+            AnchorPane VRNLogin = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(VRNLogin);
+
+            LoginController controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void showAdminLogin () {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("AdminLogin.fxml"));
+            AnchorPane AdminLogin = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(AdminLogin);
+
+            LoginController controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
    //Go to login screen

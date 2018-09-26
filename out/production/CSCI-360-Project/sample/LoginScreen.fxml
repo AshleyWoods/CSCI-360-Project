@@ -12,7 +12,7 @@
   <children>
     <Button mnemonicParsing="false" onAction="#handleContinueClick" text="Continue" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
     <Button id="Register" layoutX="117.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRegisterClick" prefHeight="45.0" prefWidth="290.0" text="Register To Vote" />
-    <ComboBox fx:id="loginChoice" layoutX="117.0" layoutY="210.0" prefHeight="45.0" prefWidth="290.0" promptText="Driver's Licence">
+    <ComboBox fx:id="loginChoice" layoutX="117.0" layoutY="210.0" prefHeight="45.0" prefWidth="290.0" promptText="Choose One">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Driver's Licence" />
