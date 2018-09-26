@@ -11,8 +11,6 @@ public class ConfirmFormSaveController {
     private Main main;
     @FXML
     private Button MenuButton;
-    @FXML
-    private Button BallotButton;
 
     public void setMain(Main main) {
         this.main = main;
@@ -25,15 +23,6 @@ public class ConfirmFormSaveController {
        popUp.close();
 
        main.showLogin();
-    }
-
-    @FXML
-    public void handleBallot(){
-        //send voter straight to first ballot
-        Stage popUp = (Stage) BallotButton.getScene().getWindow();
-        popUp.close();
-
-        //main.showFirstBallot() <-- Not currently implemented
     }
 
 }

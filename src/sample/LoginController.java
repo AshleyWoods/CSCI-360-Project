@@ -2,6 +2,8 @@ package sample;
 
 import javafx.fxml.FXML;
 
+import java.awt.*;
+
 public class LoginController {
 
     private Main main;

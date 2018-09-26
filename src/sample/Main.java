@@ -13,6 +13,8 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    //This variable will be changed when an operator starts or ends an election
+    private boolean ElectionRunning = false;
     private Stage primaryStage;
     private BorderPane rootLayout;
 
@@ -58,7 +60,25 @@ public class Main extends Application {
 
     //Go to the voter registration page when the 'Register to Vote' button is clicked
     public void showVoterRegistration(){
-        try {
+        try{
+        if (ElectionRunning) {
+            FXMLLoader load = new FXMLLoader();
+            load.setLocation(Main.class.getResource("NoRegistrationPopUp.fxml"));
+            AnchorPane NoVoterRegistration = (AnchorPane) load.load();
+
+            Stage errorAlert = new Stage();
+            errorAlert.setTitle("Invalid Action");
+            Scene errorAlertScene = new Scene(NoVoterRegistration);
+            errorAlert.setScene(errorAlertScene);
+
+            NoRegistrationPopUpController controller = load.getController();
+            controller.setMain(this);
+
+            errorAlert.showAndWait();
+
+            return;
+        }
+
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("VoterRegistration.fxml"));
