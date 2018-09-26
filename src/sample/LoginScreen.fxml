@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.LoginController">
   <children>
-    <Button mnemonicParsing="false" text="Continue" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+    <Button mnemonicParsing="false" onAction="#handleContinueClick" text="Continue" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
     <Button id="Register" layoutX="117.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRegisterClick" prefHeight="45.0" prefWidth="290.0" text="Register To Vote" />
-    <ComboBox layoutX="117.0" layoutY="210.0" prefHeight="45.0" prefWidth="290.0" promptText="Drivers Licence">
+    <ComboBox fx:id="loginChoice" layoutX="117.0" layoutY="210.0" prefHeight="45.0" prefWidth="290.0" promptText="Choose One">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Driver's Licence" />
