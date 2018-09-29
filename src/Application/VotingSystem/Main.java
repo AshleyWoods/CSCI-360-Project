@@ -1,6 +1,7 @@
 package Application.VotingSystem;
 
-import Domain.Login.LoginController;
+import Domain.Ballots.Ballot1Controller;
+import Domain.Login.*;
 import Domain.Registration.ConfirmFormSaveController;
 import Domain.Registration.ConfirmFormSubmissionController;
 import Domain.Registration.NoRegistrationPopUpController;
@@ -50,7 +51,7 @@ public class Main extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(DriverLogin);
 
-            LoginController controller = loader.getController();
+            DriverLoginController controller = loader.getController();
             controller.setMain(this);
 
         } catch (IOException e) {
@@ -69,7 +70,7 @@ public class Main extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(SSNLogin);
 
-            LoginController controller = loader.getController();
+            SSNLoginController controller = loader.getController();
             controller.setMain(this);
 
         } catch (IOException e) {
@@ -88,7 +89,7 @@ public class Main extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(VRNLogin);
 
-            LoginController controller = loader.getController();
+            VRNLoginController controller = loader.getController();
             controller.setMain(this);
 
         } catch (IOException e) {
@@ -107,7 +108,7 @@ public class Main extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(AdminLogin);
 
-            LoginController controller = loader.getController();
+            AdminLoginController controller = loader.getController();
             controller.setMain(this);
 
         } catch (IOException e) {
@@ -198,6 +199,24 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public void showBallot() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Ballots/Ballot1.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(page);
+
+            // Give the controller access to the main app.
+            Ballot1Controller controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
