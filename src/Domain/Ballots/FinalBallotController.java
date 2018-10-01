@@ -3,7 +3,7 @@ package Domain.Ballots;
 import Application.VotingSystem.Main;
 import javafx.fxml.FXML;
 
-public class Ballot1Controller {
+public class FinalBallotController {
 
     private Main main;
 
@@ -12,9 +12,12 @@ public class Ballot1Controller {
     }
 
     @FXML
-    public void handleContinueClick(){
-        //show next ballot
-         main.showFinalBallot();
+    public void handleSubmitClick(){
+        //save vote
+        //make pop up window confirm save
+        main.showSavePopUp();
+        //return to home screen
+        main.showLogin();
     }
 
     @FXML
@@ -26,8 +29,7 @@ public class Ballot1Controller {
 
     @FXML
     public void handleBackClick () {
-        //go back to login screen
-        main.showLogin();
-        //log out voter
+        //go back to previous ballot
+        main.showBallot();
     }
 }

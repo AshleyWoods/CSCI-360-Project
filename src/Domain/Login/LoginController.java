@@ -22,6 +22,10 @@ public class LoginController {
 
     @FXML
     public void handleContinueClick(){
+        if (main.ElectionRunning = false) {
+            main.showNoElectionPopUp();
+            return;
+        }
         if (loginChoice.getValue() == null) {return;}
         //THIS LINE CAN THROW A NULL POINTER EXCEPTION IF THE USER DOES NOT PICK AN OPTION, HOW TO FIX?
         if (loginChoice.getValue().equals("Driver's Licence")){
