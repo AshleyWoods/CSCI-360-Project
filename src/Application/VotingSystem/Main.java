@@ -1,8 +1,14 @@
 package Application.VotingSystem;
 
 import Domain.Administration.AdminMenuController;
+import Domain.Administration.ElectionRunningPopUpController;
+import Domain.Administration.NoElectionPopUpController;
 import Domain.Administration.Tally.NoOfficialTallyPopUpController;
 import Domain.Administration.Tally.TallyController;
+import Domain.Administration.Tally.officialTallyPopUpController;
+import Domain.Administration.endElectionPopUpController;
+import Domain.Administration.Tally.unofficialTallyPopUpController;
+import Domain.Administration.startElectionPopUpController;
 import Domain.Ballots.Ballot1Controller;
 import Domain.Ballots.FinalBallotController;
 import Domain.Ballots.SavePopUpController;
@@ -25,7 +31,7 @@ import static Domain.Registration.VoterRegistrationController.cancel;
 public class Main extends Application {
 
     //This variable will be changed when an operator starts or ends an election
-    public static boolean ElectionRunning = false;
+    public  boolean ElectionRunning = false;
     private Stage primaryStage;
     private BorderPane rootLayout;
 
@@ -34,6 +40,7 @@ public class Main extends Application {
 
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("SC Electronic Voting");
+        this.ElectionRunning = false;
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("UI/RootLayout/RootLayout.fxml"));
@@ -136,7 +143,7 @@ public class Main extends Application {
 
             // Give the controller access to the main app.
             LoginController controller = loader.getController();
-            controller.setMain(this);
+            controller.setMain(this, ElectionRunning);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -155,7 +162,7 @@ public class Main extends Application {
 
             // Give the controller access to the main app.
             AdminMenuController controller = loader.getController();
-            controller.setMain(this);
+            controller.setMain(this, ElectionRunning);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -223,20 +230,19 @@ public class Main extends Application {
     public void showOfficialConfirmationPopUp() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/ConfirmFormSubmission.fxml"));
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/officialTallyPopUp.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
 
-            Stage confirmSubmit = new Stage();
-            confirmSubmit.setTitle("Confirm Form Submission");
+            Stage stage = new Stage();
+            stage.setTitle("Confirm Official Tally");
             Scene confirmSubmitScene = new Scene(page);
-            confirmSubmit.setScene(confirmSubmitScene);
+            stage.setScene(confirmSubmitScene);
 
-            ConfirmFormSubmissionController controller = loader.getController();
+            officialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
 
-            confirmSubmit.showAndWait();
-
+            stage.showAndWait();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -246,19 +252,19 @@ public class Main extends Application {
     public void showUnofficialConfirmationPopUp() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/ConfirmFormSubmission.fxml"));
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/unofficialTallyPopUp.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
 
-            Stage confirmSubmit = new Stage();
-            confirmSubmit.setTitle("Confirm Form Submission");
+            Stage stage = new Stage();
+            stage.setTitle("Confirm Unofficial Tally");
             Scene confirmSubmitScene = new Scene(page);
-            confirmSubmit.setScene(confirmSubmitScene);
+            stage.setScene(confirmSubmitScene);
 
-            ConfirmFormSubmissionController controller = loader.getController();
+            unofficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
 
-            confirmSubmit.showAndWait();
+            stage.showAndWait();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -378,7 +384,7 @@ public class Main extends Application {
 
 
             Stage popUp = new Stage();
-            popUp.setTitle("Form Saved");
+            popUp.setTitle("Warning");
             Scene confirmSaveScene = new Scene(page);
             popUp.setScene(confirmSaveScene);
 
@@ -393,19 +399,91 @@ public class Main extends Application {
     }
 
     public void showNoElectionPopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/NoElectionPopUp.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Warning");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            NoElectionPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void showElectionRunningPopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/ElectionRunningPopUp.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Warning");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            ElectionRunningPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void endElectionPopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/endElectionPopUp.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Warning");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            endElectionPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void startElectionPopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/startElectionPopUp.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Warning");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            startElectionPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

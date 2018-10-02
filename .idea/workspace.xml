@@ -2,38 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/Tally/TallyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/Tally/officialTallyPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/Tally/unofficialTallyPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Ballots/FinalBallotController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Ballots/SavePopUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/AdminMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/NoElectionPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/Tally/Tally.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/Tally/noOfficialTallyPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/Tally/officialTallyPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/Tally/unofficialTallyPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Ballots/FinalBallot.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Ballots/SavePopUp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/Application/VotingSystem/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/Application/VotingSystem/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Ballots/Ballot1Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Ballots/Ballot1Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Login/AdminLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Login/AdminLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/UI/Ballots/Ballot1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/UI/Ballots/Ballot1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Administration/AdminMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Administration/AdminMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/Domain/Login/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/UI/Administration/AdminMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/UI/Administration/AdminMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/VotingSystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/VotingSystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Ballots/Ballot1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Ballots/Ballot1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Login/AdminLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Login/AdminLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Login/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Ballots/Ballot1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Ballots/Ballot1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Administration/AdminMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Administration/AdminMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Administration/NoElectionPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Administration/NoElectionPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Administration/Tally/noOfficialTallyPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Administration/Tally/noOfficialTallyPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,45 +76,46 @@
     <session id="414906797">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="fxml" value="622" />
-          <entry key="java" value="10518" />
+          <entry key="fxml" value="711" />
+          <entry key="java" value="11339" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10518" />
+          <entry key="JAVA" value="11339" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="XML" value="622" />
+          <entry key="XML" value="711" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="67" />
-          <entry key="java" value="63" />
+          <entry key="fxml" value="80" />
+          <entry key="java" value="82" />
           <entry key="xsl" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="63" />
-          <entry key="XML" value="68" />
+          <entry key="JAVA" value="82" />
+          <entry key="XML" value="81" />
         </counts>
       </usages-collector>
     </session>
@@ -137,11 +125,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/VotingSystem/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="381" column="53" lean-forward="true" selection-start-line="381" selection-start-column="53" selection-end-line="381" selection-end-column="53" />
+            <state relative-caret-position="4063">
+              <caret line="265" selection-start-line="265" selection-end-line="265" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="1275">
+              <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,47 +149,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Domain/Login/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            <state relative-caret-position="622">
+              <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -266,24 +221,24 @@
         <option value="$PROJECT_DIR$/src/Domain/Login/AdminLoginController.java" />
         <option value="$PROJECT_DIR$/src/UI/Administration/AdminMenu.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Administration/Tally/Tally.fxml" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/TallyController.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/unofficialTallyPopUpController.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/officialTallyPopUpController.java" />
         <option value="$PROJECT_DIR$/src/UI/Administration/Tally/officialTallyPopUp.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Administration/Tally/unofficialTallyPopUp.fxml" />
-        <option value="$PROJECT_DIR$/src/Domain/Login/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java" />
         <option value="$PROJECT_DIR$/src/UI/Administration/Tally/noOfficialTallyPopUp.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Administration/NoElectionPopUp.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml" />
-        <option value="$PROJECT_DIR$/src/Application/VotingSystem/Main.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java" />
         <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java" />
         <option value="$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Login/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/TallyController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/officialTallyPopUpController.java" />
+        <option value="$PROJECT_DIR$/src/Application/VotingSystem/Main.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Administration/Tally/unofficialTallyPopUpController.java" />
       </list>
     </option>
   </component>
@@ -302,6 +257,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,27 +275,6 @@
               <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="Administration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="Administration" type="462c0819:PsiDirectoryNode" />
-              <item name="Tally" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -347,21 +283,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Administration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Administration" type="462c0819:PsiDirectoryNode" />
-              <item name="Tally" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -374,7 +300,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538352142424" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538439103168" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -495,7 +421,7 @@
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17102616" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1750503" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -514,7 +440,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -574,22 +500,22 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/UI/Sample.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ConfirmSubmission.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/ConfirmSubmissionController.java" />
     <entry file="file://$PROJECT_DIR$/src/UI/Registration/VoterRegistration.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Registration/ConfirmFormSubmissionController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -599,70 +525,56 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/RootLayout/RootLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="128" selection-start-line="8" selection-start-column="128" selection-end-line="8" selection-end-column="128" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Registration/VoterRegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginScreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="124" selection-start-line="14" selection-start-column="124" selection-end-line="14" selection-end-column="124" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Registration/ConfirmFormSave.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Login/VRNLogin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="168" selection-start-line="9" selection-start-column="168" selection-end-line="9" selection-end-column="168" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Login/DriverLogin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="171" selection-start-line="9" selection-start-column="171" selection-end-line="9" selection-end-column="171" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Login/SSNLogin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Login/SSNLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -670,9 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -684,46 +593,40 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Registration/ConfirmFormSubmission.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Login/AdminLogin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Login/DriverLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Ballots/Ballot1.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Ballots/Ballot1Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,72 +634,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="25" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Ballots/FinalBallot.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Registration/NoRegistrationPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Ballots/SavePopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Login/AdminLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Administration/AdminMenu.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/Tally.xsl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/Tally.xsl" />
     <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/Tally.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/TallyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,9 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="21" selection-start-line="21" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,42 +696,143 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/officialTallyPopUpController.java">
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="112" selection-start-line="15" selection-start-column="112" selection-end-line="15" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Administration/NoElectionPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="131" selection-start-line="16" selection-start-column="131" selection-end-line="16" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/noOfficialTallyPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/officialTallyPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/unofficialTallyPopUp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginScreen.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="124" selection-start-line="14" selection-start-column="124" selection-end-line="14" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/TallyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/officialTallyPopUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/unofficialTallyPopUpController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="202">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/VotingSystem/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4063">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -858,103 +841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Login/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Administration/Tally/noOfficialTallyPopUp.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Administration/ElectionRunningPopUp.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Administration/endElectionPopUp.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Administration/NoElectionPopUp.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Administration/startElectionPopUp.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/AdminMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/endElectionPopUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/startElectionPopUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/Tally/NoOfficialTallyPopUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/ElectionRunningPopUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Administration/NoElectionPopUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/VotingSystem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="381" column="53" lean-forward="true" selection-start-line="381" selection-start-column="53" selection-end-line="381" selection-end-column="53" />
+        <state relative-caret-position="622">
+          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

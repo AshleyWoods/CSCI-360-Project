@@ -5,10 +5,12 @@ import javafx.fxml.FXML;
 
 public class AdminMenuController {
     private Main main;
+    private boolean ElectionRunning;
     public static boolean confirm ;
 
-    public void setMain(Main main) {
+    public void setMain(Main main, boolean val) {
         this.main = main;
+        this.ElectionRunning = val;
     }
 
     @FXML
@@ -17,7 +19,7 @@ public class AdminMenuController {
         main.showOfficialConfirmationPopUp();
         if (!confirm) {return;}
         //MAKE SURE CURRENT ELECTION IS ENDED
-        if (main.ElectionRunning = true) {
+        if (ElectionRunning) {
             main.showNoOfficialTallyPopUp();
             return;
         }
@@ -51,10 +53,12 @@ public class AdminMenuController {
         //Confirm the action with a pop up
         main.endElectionPopUp();
         if (!confirm) {return;}
-        if (main.ElectionRunning = false){
+        if (!ElectionRunning){
             main.showNoElectionPopUp();
+            return;
         }
-        main.ElectionRunning = false;
+        main.ElectionRunning= false;
+        this.ElectionRunning = false;
     }
 
     @FXML
@@ -62,10 +66,12 @@ public class AdminMenuController {
         //Confirm the action with a pop up
         main.startElectionPopUp();
         if (!confirm) {return;}
-        if (main.ElectionRunning = true){
+        if (ElectionRunning){
             main.showElectionRunningPopUp();
+            return;
         }
-        main.ElectionRunning = true;
+        main.ElectionRunning= true;
+        this.ElectionRunning = true;
     }
 
 }

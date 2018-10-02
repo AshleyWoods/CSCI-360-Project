@@ -7,12 +7,14 @@ import javafx.scene.control.ComboBox;
 public class LoginController {
 
     private Main main;
+    private boolean ElectionRunning;
     @FXML
     private ComboBox loginChoice;
 
 
-    public void setMain(Main main) {
+    public void setMain(Main main, boolean val) {
         this.main = main;
+        this.ElectionRunning = val;
     }
 
     @FXML
@@ -22,21 +24,30 @@ public class LoginController {
 
     @FXML
     public void handleContinueClick(){
-        if (main.ElectionRunning = false) {
-            main.showNoElectionPopUp();
-            return;
-        }
+
         if (loginChoice.getValue() == null) {return;}
         //THIS LINE CAN THROW A NULL POINTER EXCEPTION IF THE USER DOES NOT PICK AN OPTION, HOW TO FIX?
         if (loginChoice.getValue().equals("Driver's Licence")){
+            if (!this.ElectionRunning) {
+                main.showNoElectionPopUp();
+                return;
+            }
             //take them to the drivers licence login
             main.showDriverLogin();
         }
         else if (loginChoice.getValue().equals("Social Security Number")){
+            if (!this.ElectionRunning) {
+                main.showNoElectionPopUp();
+                return;
+            }
             //take them to the ssn login
             main.showSSNLogin();
         }
         else if (loginChoice.getValue().equals("Voter Registration Number")){
+            if (!this.ElectionRunning) {
+                main.showNoElectionPopUp();
+                return;
+            }
             //take them to the vrn login
             main.showVRNLogin();
         }
