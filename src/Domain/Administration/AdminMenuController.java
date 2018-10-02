@@ -25,6 +25,7 @@ public class AdminMenuController {
         }
         //get the official tally
         //save the official tally
+        //official tally true
         //go to official tally page
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
         main.showTally();

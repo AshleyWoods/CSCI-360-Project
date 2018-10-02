@@ -10,8 +10,8 @@
   <children>
     <Button layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleOfficialTally" text="Official Tally" />
     <Button layoutX="14.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleUnofficialTally" text="Unofficial Tally" />
-    <Button layoutX="14.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
-    <Button layoutX="14.0" layoutY="246.0" mnemonicParsing="false" onAction="#handleEndElection" text="End Current Election" />
-    <Button layoutX="14.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleStartElection" text="Start Election" />
+    <Button layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+    <Button layoutX="14.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleEndElection" text="End Current Election" />
+    <Button layoutX="14.0" layoutY="250.0" mnemonicParsing="false" onAction="#handleStartElection" text="Start Election" />
   </children>
 </AnchorPane>

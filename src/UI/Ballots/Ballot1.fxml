@@ -28,6 +28,6 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Text layoutX="166.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mayoral Election" />
+    <Text layoutX="100.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="House Representative Election" />
   </children>
 </AnchorPane>
