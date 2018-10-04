@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 public class AdminMenuController {
     private Main main;
     private boolean ElectionRunning;
-    public boolean officialTally;
+    public boolean officialTally = false;
     public static boolean confirm ;
 
     public void setMain(Main main, boolean val) {
@@ -20,13 +20,12 @@ public class AdminMenuController {
         main.showRecount();
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
-        if (officialTally) {
-            main.showRecount();
+        if (!officialTally) {
+            //pop up warning that there is no official tally to recount
             return;
         }
         //get the recount tally
-        //save the recount tally
-        //official tally true
+        //save the recount tally as the new official tally
         main.showTally();
     }
 
@@ -42,7 +41,7 @@ public class AdminMenuController {
         }
         //get the official tally
         //save the official tally
-        //official tally true
+        officialTally = true;
         //go to official tally page
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
         main.showTally();
