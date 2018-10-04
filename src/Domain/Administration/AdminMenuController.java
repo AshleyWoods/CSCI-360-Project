@@ -6,11 +6,28 @@ import javafx.fxml.FXML;
 public class AdminMenuController {
     private Main main;
     private boolean ElectionRunning;
+    public boolean officialTally;
     public static boolean confirm ;
 
     public void setMain(Main main, boolean val) {
         this.main = main;
         this.ElectionRunning = val;
+    ;
+    }
+    @FXML
+    public void handleRecount() {
+        //GET CONFIRMATION THE ADMIN WANTS THIS RECOUNT FIRST
+        main.showRecount();
+        if (!confirm) {return;}
+        //MAKE SURE OFFICIAL TALLY BEEN DONE
+        if (officialTally) {
+            main.showRecount();
+            return;
+        }
+        //get the recount tally
+        //save the recount tally
+        //official tally true
+        main.showTally();
     }
 
     @FXML

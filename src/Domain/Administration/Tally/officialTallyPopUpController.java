@@ -20,8 +20,10 @@ public class officialTallyPopUpController {
     public void handleConfirm() {
        //continue the operation
         Domain.Administration.AdminMenuController.confirm = true;
+        main.officialTally = true;
         //close the window
         Stage popUp = (Stage) confirm.getScene().getWindow();
+       
         popUp.close();
     }
 

@@ -6,6 +6,7 @@ import Domain.Administration.NoElectionPopUpController;
 import Domain.Administration.Tally.NoOfficialTallyPopUpController;
 import Domain.Administration.Tally.TallyController;
 import Domain.Administration.Tally.officialTallyPopUpController;
+import Domain.Administration.Tally.recountPopUpController;
 import Domain.Administration.endElectionPopUpController;
 import Domain.Administration.Tally.unofficialTallyPopUpController;
 import Domain.Administration.startElectionPopUpController;
@@ -34,6 +35,8 @@ public class Main extends Application {
     public  boolean ElectionRunning = false;
     private Stage primaryStage;
     private BorderPane rootLayout;
+    //this variable will be changed when an operator completes an official tally 
+    public boolean officialTally = false;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -52,7 +55,27 @@ public class Main extends Application {
 
         showLogin();
     }
+    public void showRecount() {
+    	try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/recountPopUp.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Recount");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            recountPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+    		
+    	}catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    }
     public void showDriverLogin () {
         try {
             // Load person overview.
@@ -243,6 +266,7 @@ public class Main extends Application {
             controller.setMain(this);
 
             stage.showAndWait();
+           
 
         } catch (IOException e) {
             e.printStackTrace();
