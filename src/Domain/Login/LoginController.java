@@ -21,6 +21,9 @@ public class LoginController {
     private void handleRegisterClick(){
         main.showVoterRegistration();
     }
+    public void handleRegistrationInvestigation() {
+    	main.showRegistrationInvestigation();
+    }
 
     @FXML
     public void handleContinueClick(){

@@ -11,34 +11,57 @@
 			prefWidth="600.0" 
 			xmlns:fx="http://javafx.com/fxml/1" 
 			xmlns="http://javafx.com/javafx/2.2" 
-			fx:controller="Domain.Login.AdminLoginController">
+			fx:controller="Domain.Registration.registrationInvestigationController">
   <children>
     <Button layoutX="200.0" 
     		layoutY="350.0" 
     		mnemonicParsing="false" 
-    		onAction="#handleLoginClick" 
-    		text="Login" />
+    		onAction="#handleRegistrationInvestigation"
+ 	  		text="submit" />
+     <!-- ssn -->
+    <TextField layoutX="250.0" 
+    			layoutY="80.0" 
+    			prefWidth="200.0" />
    
-    <!-- user name -->
+    <!-- firstname -->
     <TextField layoutX="250.0" 
     			layoutY="146.0" 
     			prefWidth="200.0" />
     			
-    <!-- password -->
+    <!-- middle initial -->
     <TextField layoutX="250.0" 
     		   layoutY="215.0" 
     		   prefWidth="200.0" />
+    
+    			
+    <!-- last name -->
+    <TextField layoutX="250.0" 
+    		   layoutY="290.0" 
+    		   prefWidth="200.0" />
+    
+     <Text layoutX="175.0" 
+    	  layoutY="100.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="SSN" />
     
     <Text layoutX="175.0" 
     	  layoutY="160.0" 
     	  strokeType="OUTSIDE" 
     	  strokeWidth="0.0" 
-    	  text="Username" />
+    	  text="Firstname" />
     
     <Text layoutX="175.0" 
     	  layoutY="230.0" 
     	  strokeType="OUTSIDE" 
     	  strokeWidth="0.0" 
-    	  text="Password" />
+    	  text="Middle Initial" />
+   
+   	 <Text layoutX="175.0" 
+    	  layoutY="310.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Last Name" />
+    	  
   </children>
 </AnchorPane>

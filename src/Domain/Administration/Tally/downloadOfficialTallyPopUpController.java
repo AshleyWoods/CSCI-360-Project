@@ -2,12 +2,10 @@ package Domain.Administration.Tally;
 
 import Application.VotingSystem.Main;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class officialTallyPopUpController {
+public class downloadOfficialTallyPopUpController {
     private Main main;
     @FXML
     private Button confirm;
@@ -18,15 +16,13 @@ public class officialTallyPopUpController {
         this.main = main;
     }
 
-    
-//END ADDED THIS
     @FXML
     public void handleConfirm() {
        //continue the operation
         Domain.Administration.AdminMenuController.confirm = true;
-        main.officialTally = true;
         //close the window
         Stage popUp = (Stage) confirm.getScene().getWindow();
+       
         popUp.close();
     }
 

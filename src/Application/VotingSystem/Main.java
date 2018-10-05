@@ -7,6 +7,7 @@ import Domain.Administration.Tally.NoOfficialTallyPopUpController;
 import Domain.Administration.Tally.TallyController;
 import Domain.Administration.Tally.officialTallyPopUpController;
 import Domain.Administration.Tally.recountPopUpController;
+import Domain.Administration.Tally.downloadOfficialTallyPopUpController;
 import Domain.Administration.endElectionPopUpController;
 import Domain.Administration.Tally.unofficialTallyPopUpController;
 import Domain.Administration.startElectionPopUpController;
@@ -18,6 +19,7 @@ import Domain.Registration.ConfirmFormSaveController;
 import Domain.Registration.ConfirmFormSubmissionController;
 import Domain.Registration.NoRegistrationPopUpController;
 import Domain.Registration.VoterRegistrationController;
+import Domain.Registration.registrationInvestigationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -51,7 +53,13 @@ public class Main extends Application {
 
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
+        //ADD CSS FILE
+        scene.getStylesheets().add
+        (Main.class.getResource("votingHomepage.css").toExternalForm());
+        //END ADD CSS FILE
         primaryStage.show();
+        
+    
 
         showLogin();
     }
@@ -63,11 +71,53 @@ public class Main extends Application {
 
 
             Stage popUp = new Stage();
-            popUp.setTitle("Recount");
+            popUp.setTitle("Download Offical Tally");
             Scene warningScene = new Scene(page);
             popUp.setScene(warningScene);
 
             recountPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+    		
+    	}catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    }
+    public void showRegistrationInvestigation() {
+    	try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/registrationInvestigation.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Registration Inquiry");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            registrationInvestigationController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+    		
+    	}catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    }
+    public void showDownloadOfficialTally() {
+    	try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/downloadOfficialTallyPopUp.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Download Official Tally");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            downloadOfficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
 
             popUp.showAndWait();
@@ -210,6 +260,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    
 
 
     //Go to the voter registration page when the 'Register to Vote' button is clicked
@@ -513,4 +564,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

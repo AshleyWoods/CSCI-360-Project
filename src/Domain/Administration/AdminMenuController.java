@@ -12,7 +12,7 @@ public class AdminMenuController {
     public void setMain(Main main, boolean val) {
         this.main = main;
         this.ElectionRunning = val;
-    ;
+    
     }
     @FXML
     public void handleRecount() {
@@ -27,6 +27,17 @@ public class AdminMenuController {
         //get the recount tally
         //save the recount tally as the new official tally
         main.showTally();
+    }
+    public void handleDownloadOfficialTally() {
+        //GET CONFIRMATION THE ADMIN WANTS THIS RECOUNT FIRST
+        main.showDownloadOfficialTally();
+        if (!confirm) {return;}
+        //MAKE SURE OFFICIAL TALLY BEEN DONE
+        if (!officialTally) {
+            //pop up warning that there is no official tally to recount
+            return;
+        }
+   
     }
 
     @FXML
