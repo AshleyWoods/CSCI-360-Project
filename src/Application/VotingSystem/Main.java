@@ -91,15 +91,11 @@ public class Main extends Application {
             AnchorPane page = (AnchorPane) loader.load();
 
 
-            Stage popUp = new Stage();
-            popUp.setTitle("Registration Inquiry");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+            rootLayout.setCenter(page);
 
             registrationInvestigationController controller = loader.getController();
             controller.setMain(this);
 
-            popUp.showAndWait();
     		
     	}catch(IOException e) {
     		e.printStackTrace();
