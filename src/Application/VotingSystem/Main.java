@@ -3,13 +3,8 @@ package Application.VotingSystem;
 import Domain.Administration.AdminMenuController;
 import Domain.Administration.ElectionRunningPopUpController;
 import Domain.Administration.NoElectionPopUpController;
-import Domain.Administration.Tally.NoOfficialTallyPopUpController;
-import Domain.Administration.Tally.TallyController;
-import Domain.Administration.Tally.officialTallyPopUpController;
-import Domain.Administration.Tally.recountPopUpController;
-import Domain.Administration.Tally.downloadOfficialTallyPopUpController;
+import Domain.Administration.Tally.*;
 import Domain.Administration.endElectionPopUpController;
-import Domain.Administration.Tally.unofficialTallyPopUpController;
 import Domain.Administration.startElectionPopUpController;
 import Domain.Ballots.Ballot1Controller;
 import Domain.Ballots.FinalBallotController;
@@ -526,6 +521,28 @@ public class Main extends Application {
             popUp.setScene(warningScene);
 
             endElectionPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showOfficialTallyNeededPopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/officialTallyNeededPopUp.fxml"));
+            AnchorPane page = loader.load();
+
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Warning");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            officialTallyNeededPopUpController controller = loader.getController();
             controller.setMain(this);
 
             popUp.showAndWait();

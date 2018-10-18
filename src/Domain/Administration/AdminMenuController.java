@@ -21,7 +21,7 @@ public class AdminMenuController {
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
         if (!officialTally) {
-            //pop up warning that there is no official tally to recount
+            main.showOfficialTallyNeededPopUp();
             return;
         }
         //get the recount tally
@@ -36,7 +36,7 @@ public class AdminMenuController {
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
         if (!officialTally) {
-            //pop up warning that there is no official tally to recount
+            main.showOfficialTallyNeededPopUp();
             return;
         }
    
