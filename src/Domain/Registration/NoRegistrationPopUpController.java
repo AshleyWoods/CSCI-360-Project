@@ -17,7 +17,7 @@ public class NoRegistrationPopUpController {
     }
 
     @FXML
-    public void handleMenuButton () {
+    private void handleMenuButton () {
 
             Stage popUp = (Stage) menuButton.getScene().getWindow();
             popUp.close();

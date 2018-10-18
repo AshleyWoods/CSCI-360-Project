@@ -21,7 +21,7 @@ public class officialTallyPopUpController {
     
 //END ADDED THIS
     @FXML
-    public void handleConfirm() {
+    private void handleConfirm() {
        //continue the operation
         Domain.Administration.AdminMenuController.confirm = true;
         main.officialTally = true;
@@ -31,7 +31,7 @@ public class officialTallyPopUpController {
     }
 
     @FXML
-    public void handleCancel() {
+    private void handleCancel() {
         //stop the operation
         Domain.Administration.AdminMenuController.confirm = false;
         //close the window

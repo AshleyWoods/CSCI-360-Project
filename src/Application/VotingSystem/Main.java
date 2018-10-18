@@ -49,7 +49,7 @@ public class Main extends Application {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("UI/RootLayout/RootLayout.fxml"));
-        rootLayout = (BorderPane) loader.load();
+        rootLayout = loader.load();
 
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
@@ -67,11 +67,11 @@ public class Main extends Application {
     	try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/recountPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage popUp = new Stage();
-            popUp.setTitle("Download Offical Tally");
+            popUp.setTitle("Download Official Tally");
             Scene warningScene = new Scene(page);
             popUp.setScene(warningScene);
 
@@ -88,7 +88,7 @@ public class Main extends Application {
     	try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/registrationInvestigation.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             rootLayout.setCenter(page);
@@ -105,7 +105,7 @@ public class Main extends Application {
     	try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/downloadOfficialTallyPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage popUp = new Stage();
@@ -127,7 +127,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Login/DriverLogin.fxml"));
-            AnchorPane DriverLogin = (AnchorPane) loader.load();
+            AnchorPane DriverLogin = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(DriverLogin);
@@ -146,7 +146,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Login/SSNLogin.fxml"));
-            AnchorPane SSNLogin = (AnchorPane) loader.load();
+            AnchorPane SSNLogin = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(SSNLogin);
@@ -165,7 +165,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Login/VRNLogin.fxml"));
-            AnchorPane VRNLogin = (AnchorPane) loader.load();
+            AnchorPane VRNLogin = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(VRNLogin);
@@ -184,7 +184,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Login/AdminLogin.fxml"));
-            AnchorPane AdminLogin = (AnchorPane) loader.load();
+            AnchorPane AdminLogin = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(AdminLogin);
@@ -205,7 +205,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Login/LoginScreen.fxml"));
-            AnchorPane LoginScreen = (AnchorPane) loader.load();
+            AnchorPane LoginScreen =  loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(LoginScreen);
@@ -224,7 +224,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/AdminMenu.fxml"));
-            AnchorPane AdminMenu = (AnchorPane) loader.load();
+            AnchorPane AdminMenu =  loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(AdminMenu);
@@ -243,7 +243,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/Tally.fxml"));
-            AnchorPane tally = (AnchorPane) loader.load();
+            AnchorPane tally =  loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(tally);
@@ -265,7 +265,7 @@ public class Main extends Application {
         if (ElectionRunning) {
             FXMLLoader load = new FXMLLoader();
             load.setLocation(Main.class.getClassLoader().getResource("UI/Registration/NoRegistrationPopUp.fxml"));
-            AnchorPane NoVoterRegistration = (AnchorPane) load.load();
+            AnchorPane NoVoterRegistration = load.load();
 
             Stage errorAlert = new Stage();
             errorAlert.setTitle("Invalid Action");
@@ -283,7 +283,7 @@ public class Main extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/VoterRegistration.fxml"));
-            AnchorPane VoterRegistration = (AnchorPane) loader.load();
+            AnchorPane VoterRegistration =  loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(VoterRegistration);
@@ -301,7 +301,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/officialTallyPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage stage = new Stage();
@@ -324,7 +324,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/unofficialTallyPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage stage = new Stage();
@@ -346,7 +346,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/ConfirmFormSubmission.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page =  loader.load();
 
 
             Stage confirmSubmit = new Stage();
@@ -371,7 +371,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Ballots/Ballot1.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(page);
@@ -389,7 +389,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Ballots/FinalBallot.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(page);
@@ -407,7 +407,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Ballots/SavePopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage confirmSave = new Stage();
@@ -429,7 +429,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/ConfirmFormSave.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage confirmSave = new Stage();
@@ -451,7 +451,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/Tally/noOfficialTallyPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage popUp = new Stage();
@@ -473,7 +473,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/NoElectionPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage popUp = new Stage();
@@ -495,7 +495,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/ElectionRunningPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage popUp = new Stage();
@@ -517,7 +517,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/endElectionPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
 
             Stage popUp = new Stage();
@@ -539,7 +539,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("UI/Administration/startElectionPopUp.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page =  loader.load();
 
 
             Stage popUp = new Stage();

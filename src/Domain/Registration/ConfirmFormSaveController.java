@@ -17,7 +17,7 @@ public class ConfirmFormSaveController {
     }
 
     @FXML
-    public void handleMainMenu(){
+    private void handleMainMenu(){
 
        Stage popUp = (Stage) MenuButton.getScene().getWindow();
        popUp.close();

@@ -15,7 +15,7 @@ public class NoElectionPopUpController {
     }
 
     @FXML
-    public void handleOK() {
+    private void handleOK() {
         //continue the operation
         Domain.Administration.AdminMenuController.confirm = true;
         //close the window

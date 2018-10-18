@@ -11,13 +11,13 @@ public class TallyController {
     }
 
     @FXML
-    public void handleLogout() {
+    private void handleLogout() {
         //logout admin
         main.showLogin();
     }
 
     @FXML
-    public void handleBack() {
+    private void handleBack() {
         //return to admin menu
         main.showAdminMenu();
     }

@@ -22,13 +22,13 @@ public class LoginController {
         main.showVoterRegistration();
     }
 
-
-    public void handleRegistrationInvestigation() {
+    @FXML
+    private void handleRegistrationInvestigation() {
     	main.showRegistrationInvestigation();
     }
 
     @FXML
-    public void handleContinueClick(){
+    private void handleContinueClick(){
 
         if (loginChoice.getValue() == null) {return;}
         //THIS LINE CAN THROW A NULL POINTER EXCEPTION IF THE USER DOES NOT PICK AN OPTION, HOW TO FIX?

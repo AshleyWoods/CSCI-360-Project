@@ -15,7 +15,7 @@ public class SavePopUpController {
     }
 
     @FXML
-    public void handleOKClick () {
+    private void handleOKClick () {
         Stage popUp = (Stage) menuButton.getScene().getWindow();
         popUp.close();
     }

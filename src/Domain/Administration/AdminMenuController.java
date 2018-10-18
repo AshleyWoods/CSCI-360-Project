@@ -15,7 +15,7 @@ public class AdminMenuController {
     
     }
     @FXML
-    public void handleRecount() {
+    private void handleRecount() {
         //GET CONFIRMATION THE ADMIN WANTS THIS RECOUNT FIRST
         main.showRecount();
         if (!confirm) {return;}
@@ -28,7 +28,9 @@ public class AdminMenuController {
         //save the recount tally as the new official tally
         main.showTally();
     }
-    public void handleDownloadOfficialTally() {
+
+    @FXML
+    private void handleDownloadOfficialTally() {
         //GET CONFIRMATION THE ADMIN WANTS THIS RECOUNT FIRST
         main.showDownloadOfficialTally();
         if (!confirm) {return;}
@@ -41,7 +43,7 @@ public class AdminMenuController {
     }
 
     @FXML
-    public void handleOfficialTally() {
+    private void handleOfficialTally() {
         //GET CONFIRMATION THE ADMIN WANTS THIS TALLY FIRST
         main.showOfficialConfirmationPopUp();
         if (!confirm) {return;}
@@ -59,7 +61,7 @@ public class AdminMenuController {
     }
 
     @FXML
-    public void handleUnofficialTally() {
+    private void handleUnofficialTally() {
         //GET CONFIRMATION THE ADMIN WANTS THIS TALLY FIRST
         main.showUnofficialConfirmationPopUp();
         if (!confirm) {return;}
@@ -71,13 +73,13 @@ public class AdminMenuController {
     }
 
     @FXML
-    public void handleLogout() {
+    private void handleLogout() {
         //logout admin
         main.showLogin();
     }
 
     @FXML
-    public void handleEndElection () {
+    private void handleEndElection () {
         //Confirm the action with a pop up
         main.endElectionPopUp();
         if (!confirm) {return;}
@@ -90,7 +92,7 @@ public class AdminMenuController {
     }
 
     @FXML
-    public void handleStartElection() {
+    private void handleStartElection() {
         //Confirm the action with a pop up
         main.startElectionPopUp();
         if (!confirm) {return;}

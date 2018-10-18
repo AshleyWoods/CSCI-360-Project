@@ -19,7 +19,7 @@ public class VoterRegistrationController {
     }
 
     @FXML
-    public void handleSubmit(){
+    private void handleSubmit(){
         //ASK IF THEY MEAN TO SUBMIT
         if (main.showSubmissionConfirmationPopup()) {
             //cancel if they did not

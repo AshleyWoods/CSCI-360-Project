@@ -17,7 +17,7 @@ public class downloadOfficialTallyPopUpController {
     }
 
     @FXML
-    public void handleConfirm() {
+    private void handleConfirm() {
        //continue the operation
         Domain.Administration.AdminMenuController.confirm = true;
         //close the window
@@ -27,7 +27,7 @@ public class downloadOfficialTallyPopUpController {
     }
 
     @FXML
-    public void handleCancel() {
+    private void handleCancel() {
         //stop the operation
         Domain.Administration.AdminMenuController.confirm = false;
         //close the window

@@ -12,20 +12,20 @@ public class Ballot1Controller {
     }
 
     @FXML
-    public void handleContinueClick(){
+    private void handleContinueClick(){
         //show next ballot
          main.showFinalBallot();
     }
 
     @FXML
-    public void handleCancelClick() {
+    private void handleCancelClick() {
         //go back to voter login
         main.showLogin();
         // log out voter
     }
 
     @FXML
-    public void handleBackClick () {
+    private void handleBackClick () {
         //go back to login screen
         main.showLogin();
         //log out voter

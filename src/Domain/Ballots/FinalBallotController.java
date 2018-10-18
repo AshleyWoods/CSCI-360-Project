@@ -12,7 +12,7 @@ public class FinalBallotController {
     }
 
     @FXML
-    public void handleSubmitClick(){
+    private void handleSubmitClick(){
         //save vote
         //make pop up window confirm save
         main.showSavePopUp();
@@ -21,14 +21,14 @@ public class FinalBallotController {
     }
 
     @FXML
-    public void handleCancelClick() {
+    private void handleCancelClick() {
         //go back to voter login
         main.showLogin();
         // log out voter
     }
 
     @FXML
-    public void handleBackClick () {
+    private void handleBackClick () {
         //go back to previous ballot
         main.showBallot();
     }
