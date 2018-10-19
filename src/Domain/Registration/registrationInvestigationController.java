@@ -13,8 +13,10 @@ public class registrationInvestigationController {
     @FXML
     private void handleRegistrationInvestigation() {
         //Check the database to see if the login info is there
-        //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
+        //if not, give the voter a pop up and don't continue this method
+        main.showRegistrationStatusNegativePopUp();
         //if it does work, give a pop up confirming
+        main.showRegistrationStatusPositivePopUp();
       main.showLogin();
     }
 }

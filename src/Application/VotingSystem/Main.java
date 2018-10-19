@@ -10,11 +10,7 @@ import Domain.Ballots.Ballot1Controller;
 import Domain.Ballots.FinalBallotController;
 import Domain.Ballots.SavePopUpController;
 import Domain.Login.*;
-import Domain.Registration.ConfirmFormSaveController;
-import Domain.Registration.ConfirmFormSubmissionController;
-import Domain.Registration.NoRegistrationPopUpController;
-import Domain.Registration.VoterRegistrationController;
-import Domain.Registration.registrationInvestigationController;
+import Domain.Registration.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -543,6 +539,50 @@ public class Main extends Application {
             popUp.setScene(warningScene);
 
             officialTallyNeededPopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showRegistrationStatusPositivePopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/registrationStatusPositivePopUp.fxml"));
+            AnchorPane page = loader.load();
+
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Registration Status");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            registrationStatusPositivePopUpController controller = loader.getController();
+            controller.setMain(this);
+
+            popUp.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showRegistrationStatusNegativePopUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("UI/Registration/registrationStatusNegativePopUp.fxml"));
+            AnchorPane page = loader.load();
+
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Registration Status");
+            Scene warningScene = new Scene(page);
+            popUp.setScene(warningScene);
+
+            registrationStatusNegativePopUpController controller = loader.getController();
             controller.setMain(this);
 
             popUp.showAndWait();
