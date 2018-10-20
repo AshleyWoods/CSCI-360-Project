@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import edu.cofc.DataBase.DatabaseInterface;
 
 import java.io.IOException;
 
@@ -26,6 +27,7 @@ public class Main extends Application {
 
     //This variable will be changed when an operator starts or ends an election
     public  boolean ElectionRunning = false;
+    public DatabaseInterface dataInterface;
     private Stage primaryStage;
     private BorderPane rootLayout;
     //this variable will be changed when an operator completes an official tally 
@@ -46,11 +48,11 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         //ADD CSS FILE
         scene.getStylesheets().add
-        (Main.class.getResource("votingHomepage.css").toExternalForm());
+        (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
         //END ADD CSS FILE
         primaryStage.show();
         
-    
+        dataInterface = new DatabaseInterface();
 
         showLogin();
     }

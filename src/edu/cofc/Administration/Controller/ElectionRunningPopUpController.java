@@ -1,6 +1,5 @@
 package edu.cofc.Administration.Controller;
 
-import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Application.VotingSystem.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

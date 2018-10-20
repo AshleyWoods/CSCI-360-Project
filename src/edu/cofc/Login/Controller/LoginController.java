@@ -31,7 +31,6 @@ public class LoginController {
     private void handleContinueClick(){
 
         if (loginChoice.getValue() == null) {return;}
-        //THIS LINE CAN THROW A NULL POINTER EXCEPTION IF THE USER DOES NOT PICK AN OPTION, HOW TO FIX?
         if (loginChoice.getValue().equals("Driver's Licence")){
             if (!this.ElectionRunning) {
                 main.showNoElectionPopUp();
