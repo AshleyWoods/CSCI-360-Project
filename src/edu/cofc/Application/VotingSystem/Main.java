@@ -27,7 +27,7 @@ public class Main extends Application {
 
     //This variable will be changed when an operator starts or ends an election
     public  boolean ElectionRunning = false;
-    public DatabaseInterface dataInterface;
+    public static DatabaseInterface dataInterface;
     private Stage primaryStage;
     private BorderPane rootLayout;
     //this variable will be changed when an operator completes an official tally 
@@ -77,6 +77,11 @@ public class Main extends Application {
     		e.printStackTrace();
     	}
     }
+
+    public static DatabaseInterface getInterface(){
+        return dataInterface;
+    }
+
     public void showRegistrationInvestigation() {
     	try {
             FXMLLoader loader = new FXMLLoader();

@@ -1,5 +1,7 @@
 package edu.cofc.DataBase;
 
+import edu.cofc.Vote.Voter;
+
 import javax.swing.*;
 import java.util.List;
 import java.io.IOException;
@@ -45,7 +47,7 @@ public class DatabaseInterface {
 
     //Ballot Methods
     //Save a Vote to the database -- from Ballot class, needs voter class
-    private void saveVote(List candidates, List votes) {
+    public void saveVote(Voter voter, List candidates, List votes) {
         //the database adds the tally to multiple places, first to the total votes made
         //then to each candidate individually
         //then marks the voter in the database as having voted along with saving the number of votes cast
