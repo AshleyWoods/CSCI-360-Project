@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Domain.Administration.Tally.TallyController">
+  <children>
+    <GridPane layoutX="14.0" layoutY="53.0" prefHeight="261.0" prefWidth="572.0">
+      <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Buggs Bunny" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Daffy Duck" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Road Runner" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Spider Man" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Batman" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bruce Wayne" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wile E. Cyotte" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Peter Parker" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Button layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+    <Button layoutX="474.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+    <Text layoutX="235.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vote Tally" />
+  </children>
+</AnchorPane>

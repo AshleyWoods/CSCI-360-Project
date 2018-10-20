@@ -1,0 +1,11 @@
+.root {
+     -fx-background-color: "#F0F8FF";
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Tahoma";
+    -fx-font-weight: bold;
+    -fx-pref-width: 200px;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
