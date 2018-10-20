@@ -14,10 +14,14 @@
     <Button layoutX="148.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackClick" text="Back" />
     <GridPane layoutX="14.0" layoutY="62.0" prefHeight="259.0" prefWidth="572.0">
       <children>
-        <RadioButton mnemonicParsing="false" text="Buggs Bunny" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <RadioButton mnemonicParsing="false" text="Road Runner" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <RadioButton mnemonicParsing="false" text="Daffy Duck" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <RadioButton mnemonicParsing="false" text="Wiley E. Cyote" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <RadioButton fx:id="buggsBunny" mnemonicParsing="false" text="Buggs Bunny" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <toggleGroup>
+            <ToggleGroup fx:id="buttonGroup" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="roadRunner" mnemonicParsing="false" text="Road Runner" toggleGroup="$buttonGroup" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <RadioButton fx:id="daffyDuck" mnemonicParsing="false" text="Daffy Duck" toggleGroup="$buttonGroup" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <RadioButton fx:id="wileyECyote" mnemonicParsing="false" text="Wiley E. Cyote" toggleGroup="$buttonGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

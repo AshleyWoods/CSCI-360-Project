@@ -11,6 +11,7 @@ import edu.cofc.Ballots.Controller.FinalBallotController;
 import edu.cofc.Ballots.Controller.SavePopUpController;
 import edu.cofc.Login.Controller.*;
 import edu.cofc.Registration.Controller.*;
+import edu.cofc.Vote.Voter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -32,6 +33,7 @@ public class Main extends Application {
     private BorderPane rootLayout;
     //this variable will be changed when an operator completes an official tally 
     public boolean officialTally = false;
+    public static Voter activeVoter;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

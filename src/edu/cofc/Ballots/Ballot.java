@@ -25,11 +25,11 @@ public class Ballot {
         candidates.add("Bruce Wayne");
     }
 
-    private void addVote(Vote vote) {
+    public void addVote(Vote vote) {
         votes.add(vote);
     }
 
-    private void submitBallot() {
+    public void submitBallot() {
         for (int i = 0; i<votes.size(); i++){
             int index = candidates.indexOf(votes.get(i).getCandidate());
             voteNumber.set(index, 1);

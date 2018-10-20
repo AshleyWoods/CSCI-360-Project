@@ -7,40 +7,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" 
-			prefWidth="600.0" 
-			xmlns:fx="http://javafx.com/fxml/1" 
-			xmlns="http://javafx.com/javafx/2.2" 
-			fx:controller="edu.cofc.Ballots.Controller.FinalBallotController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Ballots.Controller.FinalBallotController">
   <children>
-    <Button layoutX="415.0" 
-    		layoutY="334.0" 
-    		mnemonicParsing="false" 
-    		onAction="#handleSubmitClick" 
-    		text="Submit" />
-    <Button layoutX="269.0" 
-    		layoutY="334.0" 
-    		mnemonicParsing="false" 
-    		onAction="#handleCancelClick" 
-    		text="Cancel" />
-    <Button layoutX="148.0" 
-    		layoutY="334.0" 
-    		mnemonicParsing="false" 
-    		onAction="#handleBackClick" 
-    		text="Back" />
-    <GridPane layoutX="500.0" 
-    		 layoutY="62.0" 
-    		 prefHeight="259.0" 
-    		 prefWidth="272.0">
+    <Button layoutX="415.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleSubmitClick" text="Submit" />
+    <Button layoutX="269.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCancelClick" text="Cancel" />
+    <Button layoutX="148.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackClick" text="Back" />
+    <GridPane layoutX="57.0" layoutY="54.0" prefHeight="259.0" prefWidth="272.0">
       <children>
-        <RadioButton mnemonicParsing="false" 
-        			text="Peter Parker" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <RadioButton mnemonicParsing="false" 
-        			text="Batman" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <RadioButton mnemonicParsing="false" 
-        			text="Spider Man" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <RadioButton mnemonicParsing="false" 
-        			text="Bruce Wayne" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <RadioButton fx:id="peterParker" mnemonicParsing="false" selected="false" text="Peter Parker" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <toggleGroup>
+            <ToggleGroup fx:id="buttonGroup" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="batMan" mnemonicParsing="false" text="Batman" toggleGroup="$buttonGroup" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <RadioButton fx:id="spiderMan" mnemonicParsing="false" text="Spider Man" toggleGroup="$buttonGroup" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <RadioButton fx:id="bruceWayne" mnemonicParsing="false" text="Bruce Wayne" toggleGroup="$buttonGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
