@@ -12,12 +12,12 @@ public class DatabaseInterface {
     private boolean officialTally;
 
     public DatabaseInterface(){
-        officialTally = false;
+        this.officialTally = false;
     }
 
     //Registration Methods
     //See if a voter is registered
-    private boolean voterRegistered(String firstName, String lastName, String middleInitial, int ID, String loginType){
+    public boolean voterRegistered(String firstName, String lastName, String middleInitial, int ID, int loginType){
         //searches the database for the voter's information and returns true if the voter is there and false if otherwise
         //ID is the identification the voter gives and loginType is where the database should look for the information
         //loginTypes:
@@ -29,7 +29,7 @@ public class DatabaseInterface {
     }
 
     //register a voter
-    private void registerVoter(String firstName, String lastName, String middleInitial, String suffix, String sex,
+    public void registerVoter(String firstName, String lastName, String middleInitial, String suffix, String sex,
                                String race, int SSN, String street, String city, String state, int zipCode, int aptNumber,
                                Boolean inCityLimits, String POBox, String mailCity, String mailState, int mailZipCode,
                                String month, int day, int year, int homePhone, int workPhone, int DLN) {
@@ -40,7 +40,7 @@ public class DatabaseInterface {
     //see if a voter's login is valid--use voterRegistered from the registration methods section
 
     //see if an administrator's login is valid
-    private boolean adminLoginValid(String userName, String password) {
+    public boolean adminLoginValid(String userName, String password) {
         //checks the database for the login information from the admin database files and returns the result
         return false;
     }
@@ -55,18 +55,19 @@ public class DatabaseInterface {
 
     //Admin Methods
     //Get an official tally count
-    private int getOfficialTally() {
+    public int getOfficialTally() {
         //set officialTally to true and store the result in the database
         //if officialTally is true, grab results from the database
             //take number of votes from each candidate and total it
             //compare with number of votes from each voter
             //initiate recount if it's not the same
             //display total if it is
+        this.officialTally = true;
         return 0;
     }
 
     //download official tally as a file
-    private void downloadOfficialTally() throws IOException{
+    public void downloadOfficialTally() throws IOException{
         JFileChooser locationPrompt = new JFileChooser();
         locationPrompt.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         String fileLocation = locationPrompt.getSelectedFile().getAbsolutePath();
@@ -75,16 +76,26 @@ public class DatabaseInterface {
     }
 
     //get an unofficial tally count
-    private int getUnofficialTally() {
+    public int getUnofficialTally() {
         //takes the number of votes from each candidate in the database and displays it with not votes counted
         return 0;
     }
 
     //get a recount
-    private int getRecount() {
+    public int getRecount() {
         //take number of votes from each candidate and total it
         //compare with number of votes from each voter
         //if it's the same, return the total, if it is not, do it again and return the result
         return 0;
     }
+
+    public int getSSN(String firstName, String lastName, String middleInitial, int ID, int loginType){
+        //searches the database for the voter's information and returns the SSN
+        //loginTypes:
+        //1-DLN
+        //2-VRN
+        //3-SSN
+        return 0;
+    }
+
 }

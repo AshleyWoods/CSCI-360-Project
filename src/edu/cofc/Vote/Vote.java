@@ -6,14 +6,16 @@ public class Vote {
     private String candidate;
 
     public Vote(Voter v, String can) {
-        voter = v;
-        candidate = can;
+        this.voter = v;
+        this.candidate = can;
     }
 
     public Voter getVoter() {
-        return voter;
+        return this.voter;
     }
+
     public String getCandidate(){
-        return candidate;
+        return this.candidate;
     }
+
 }

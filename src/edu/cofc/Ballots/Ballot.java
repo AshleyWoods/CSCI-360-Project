@@ -13,27 +13,27 @@ public class Ballot {
 
     public Ballot() {
         for (int i = 0; i<8; i++) {
-            voteNumber.add(0);
+            this.voteNumber.add(0);
         }
-        candidates.add("Buggs Bunny");
-        candidates.add("Road Runner");
-        candidates.add("Daffy Duck");
-        candidates.add("Wiley E. Cyote");
-        candidates.add("Peter Parker");
-        candidates.add("Batman");
-        candidates.add("Spider Man");
-        candidates.add("Bruce Wayne");
+        this.candidates.add("Buggs Bunny");
+        this.candidates.add("Road Runner");
+        this.candidates.add("Daffy Duck");
+        this.candidates.add("Wiley E. Cyote");
+        this.candidates.add("Peter Parker");
+        this.candidates.add("Batman");
+        this.candidates.add("Spider Man");
+        this.candidates.add("Bruce Wayne");
     }
 
     public void addVote(Vote vote) {
-        votes.add(vote);
+        this.votes.add(vote);
     }
 
     public void submitBallot() {
-        for (int i = 0; i<votes.size(); i++){
-            int index = candidates.indexOf(votes.get(i).getCandidate());
-            voteNumber.set(index, 1);
+        for (int i = 0; i<this.votes.size(); i++){
+            int index = this.candidates.indexOf(this.votes.get(i).getCandidate());
+            this.voteNumber.set(index, 1);
         }
-        Main.getInterface().saveVote(votes.get(0).getVoter(),candidates,voteNumber);
+        Main.getInterface().saveVote(this.votes.get(0).getVoter(),this.candidates,this.voteNumber);
     }
 }
