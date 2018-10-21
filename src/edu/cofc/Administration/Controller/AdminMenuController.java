@@ -8,7 +8,7 @@ import java.io.IOException;
 public class AdminMenuController {
     private Main main;
     private boolean ElectionRunning;
-    public boolean officialTally = false;
+    public static boolean officialTally;
     public static boolean confirm ;
 
     public void setMain(Main main, boolean val) {
@@ -58,7 +58,7 @@ public class AdminMenuController {
         //get the official tally
         main.getInterface().getOfficialTally();
         //save the official tally
-        officialTally = true;
+        this.officialTally = true;
         //go to official tally page
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
         main.showTally();
