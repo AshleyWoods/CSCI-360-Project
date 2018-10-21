@@ -77,10 +77,11 @@ public class VoterRegistrationController {
        //CHECK VALIDITY OF INPUT IN ALL FIELDS
         //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
         //SAVE DATA
+        //CITY LIMITS NEEDS HELP!
         main.getInterface().registerVoter(firstName.getText(), lastName.getText(), middleInitial.getText(),suffix.getText(),
-                sex.getAccessibleText(), race.getAccessibleText(), Integer.parseInt(SSN.getText()), street.getText(), city.getText(),
+                sex.getSelectionModel().getSelectedItem().toString(), race.getSelectionModel().getSelectedItem().toString(), Integer.parseInt(SSN.getText()), street.getText(), city.getText(),
                 state.getText(), Integer.parseInt(zipCode.getText()), Integer.parseInt(aptNumber.getText()), true, mailStreet.getText(),
-                mailCity.getText(), mailState.getText(), Integer.parseInt(mailZipCode.getText()), birthdayMonth.getAccessibleText(),
+                mailCity.getText(), mailState.getText(), Integer.parseInt(mailZipCode.getText()), birthdayMonth.getSelectionModel().getSelectedItem().toString(),
                 Integer.parseInt(day.getText()), Integer.parseInt(year.getText()), Integer.parseInt(homePhone.getText()),
                 Integer.parseInt(workPhone.getText()), Integer.parseInt(DLN.getText()));
        //CONFIRM VOTER THAT DATA WAS SAVED
