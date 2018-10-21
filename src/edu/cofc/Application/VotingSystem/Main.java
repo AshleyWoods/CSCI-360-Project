@@ -41,6 +41,7 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("SC Electronic Voting");
         this.ElectionRunning = false;
+        edu.cofc.Administration.Controller.AdminMenuController.officialTally = false;
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("edu/cofc/View/RootLayout/RootLayout.fxml"));
