@@ -71,7 +71,14 @@ public class DatabaseInterface {
     	    			
     			else if(loginType == 2) {
     					String VRN = loginTypeIDNum;
-    					sql = "SELECT * FROM registrationdata WHERE voterID ="+ VRN; 
+    					PreparedStatement prepared3 = conn.prepareStatement("SELECT * FROM registrationdata WHERE voterID = ? ");
+    					prepared3.setString(1, VRN);
+    					ResultSet resultSet2 =prepared3.executeQuery();
+    					
+    	    			if(resultSet2.next()) {
+    	    				return true;
+    	    				
+    	    			}
     			}
     					
     			else {
@@ -224,38 +231,34 @@ public class DatabaseInterface {
     			//sql is what I will be using for executing sql statements
     			String sql;
 
-    			switch(loginType) {
-    	
-    				case 1:
-    					String DLN= loginTypeIDNum;
-    	    			sql = "SELECT ssn FROM registrationdata WHERE dlNumber ="+ DLN+ 
-    	    							"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial;
-    	    			statement.execute(sql);
-    	    			System.out.println(sql);
-    	    			if(sql != null)
-    	    				return ssn;
-    	    			
-    				case 2: 
-    					String VRN = loginTypeIDNum;
-    					sql = "SELECT ssn FROM registrationdata WHERE voterID ="+ VRN+ 
-    							"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial; 
-    					statement.execute(sql);
-    					System.out.println(sql);
-    					if(sql != null)
-    						return ssn;
-    					
-    				case 3: 
-    					String SSN = loginTypeIDNum;
-    					sql = "SELECT ssn FROM registrationdata WHERE ssn ="+ SSN+ 
-    							"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial;
-    					statement.execute(sql);
-    					System.out.println(sql);
-    					if(sql != null)
-    						return ssn;
     			
-    			}
-    	
-    	
+    		if(loginType ==1 ) {
+    			String DLN= loginTypeIDNum;
+				PreparedStatement prepared = conn.prepareStatement("SELECT ssn FROM registrationdata WHERE dlNumber =?");
+				prepared.setString(1, DLN);
+				ResultSet resultSet =prepared.executeQuery();
+    			ssn = resultSet.toString();
+    			
+    			return ssn;
+    		}//END IF 
+    			else if(loginType == 2) {
+						String VRN = loginTypeIDNum;
+						PreparedStatement prepared2 = conn.prepareStatement("SELECT ssn FROM registrationdata WHERE ssn = ? ");
+    					prepared2.setString(1, VRN);
+    					ResultSet resultSet3 =prepared2.executeQuery();
+    					
+    	    			ssn = resultSet3.toString();
+    	    			return ssn;
+				}//END ELSE IF 
+						
+				else {
+						String SSN = loginTypeIDNum;
+						PreparedStatement prepared2 = conn.prepareStatement("SELECT ssn FROM registrationdata WHERE ssn = ? ");
+						prepared2.setString(1, SSN);
+						ResultSet resultSet2 =prepared2.executeQuery();
+						
+						ssn = resultSet2.toString();
+				}//END ELSE
     		}//end try 
 	    	catch(SQLException | ClassNotFoundException e){
 				e.printStackTrace();
