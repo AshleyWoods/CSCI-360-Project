@@ -44,8 +44,7 @@
         			 GridPane.rowIndex="0">
           <toggleGroup>
           
-            <ToggleGroup fx:id="buttonGroup"
-            			 onAction ="#handleContinueClick" />
+            <ToggleGroup fx:id="buttonGroup" />
           
           </toggleGroup>
         </RadioButton>
