@@ -3,6 +3,7 @@ package edu.cofc.DataBase;
 import edu.cofc.Vote.Voter;
 
 import javax.swing.*;
+import java.io.PrintWriter;
 import java.util.List;
 import java.io.IOException;
 import java.io.File;
@@ -68,11 +69,17 @@ public class DatabaseInterface {
 
     //download official tally as a file
     public void downloadOfficialTally() throws IOException{
+        //No errors are thrown but it doesn't save a file? -- Currently saves to desktop instead
         JFileChooser locationPrompt = new JFileChooser();
+        locationPrompt.setCurrentDirectory(new java.io.File("."));
         locationPrompt.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        String fileLocation = locationPrompt.getSelectedFile().getAbsolutePath();
-        File doc = new File(fileLocation);
+        int fileLocation = locationPrompt.showOpenDialog(null);
+        File doc = new File("c://Users//it//Desktop//OfficialTally.txt");
+        //this line throws an error, says that the file does not exist
+        //File doc = new File((Integer.toString(fileLocation) +"OfficialTally.txt"));
+        PrintWriter writer = new PrintWriter(doc);
         //insert data into newly created file
+        writer.close();
     }
 
     //get an unofficial tally count
