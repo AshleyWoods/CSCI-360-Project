@@ -1,19 +1,31 @@
 package edu.cofc.Registration.Controller;
 
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.Vote.Voter;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import edu.cofc.DataBase.DatabaseInterface;
 
 public class registrationInvestigationController {
     private Main main;
     @FXML
-    private TextField firstName;
+    private TextField firstNameText;
     @FXML
-    private TextField lastName;
+    private TextField lastNameText;
     @FXML
-    private TextField middleInitial;
+    private TextField middleInitialText;
     @FXML
     private TextField SSN;
+    
+    private Voter voter;
+ 
+    private DatabaseInterface dbInterface;
+    
+    private boolean loginValid;
+   
+ 
+    
+    private int loginType = 4;
 
     public void setMain(Main main) {
         this.main = main;
@@ -21,12 +33,19 @@ public class registrationInvestigationController {
 
     @FXML
     private void handleRegistrationInvestigation() {
+    	 String ssn = SSN.getText().toString();
         //Check the database to see if the login info is there
-        boolean loginValid = main.getInterface().voterRegistered(firstName.getText(),lastName.getText(),middleInitial.getText(),Integer.parseInt(SSN.getText()),4);
-        //if not, give the voter a pop up and don't continue this method
+       
+    	loginValid = Main.getInterface().voterRegistered(ssn,loginType);
+    	 
+    	System.out.println(loginValid);
+        if (loginValid) {
+            main.showRegistrationStatusPositivePopUp(); 
+        	
+        }
         main.showRegistrationStatusNegativePopUp();
-        //if it does work, give a pop up confirming
-        main.showRegistrationStatusPositivePopUp();
-      main.showLogin();
+    
+       
+        main.showLogin();
     }
 }

@@ -34,6 +34,7 @@ public class Main extends Application {
     //this variable will be changed when an operator completes an official tally 
     public boolean officialTally = false;
     public static Voter activeVoter;
+   
 
     @Override
     public void start(Stage primaryStage) throws Exception{

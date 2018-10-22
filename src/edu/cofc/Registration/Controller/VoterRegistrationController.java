@@ -48,19 +48,20 @@ public class VoterRegistrationController {
 
     @FXML
     private void handleSubmit(){
-        //ASK IF THEY MEAN TO SUBMIT
+       //CHECK VALIDITY OF INPUT IN ALL FIELDS
+        //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
+    	
+    	//ASK IF THEY MEAN TO SUBMIT
         if (main.showSubmissionConfirmationPopup()) {
             //cancel if they did not
             return;
         }
-
-       //CHECK VALIDITY OF INPUT IN ALL FIELDS
-        //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
-        //SAVE DATA
-        //CITY LIMITS NEEDS HELP!
+        
         main.getInterface().registerVoter(voter);
        //CONFIRM VOTER THAT DATA WAS SAVED
+        
         main.showSaveConfirmationPopUp();
+       
     }
 
 }

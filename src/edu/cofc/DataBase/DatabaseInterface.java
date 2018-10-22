@@ -1,6 +1,7 @@
 package edu.cofc.DataBase;
 
 import edu.cofc.Administration.Controller.AdminMenuController;
+
 import edu.cofc.Vote.Voter;
 import java.sql.*;
 import javax.swing.*;
@@ -16,6 +17,7 @@ import java.io.File;
 public class DatabaseInterface {
 
     private boolean officialTally;
+    private Voter voter;
 
     public DatabaseInterface(){
         this.officialTally = false;
@@ -28,16 +30,74 @@ public class DatabaseInterface {
 
     //Registration Methods
     //See if a voter is registered
-    public boolean voterRegistered(String firstName, String lastName, String middleInitial, int ID, int loginType){
-        //searches the database for the voter's information and returns true if the voter is there and false if otherwise
-        //ID is the identification the voter gives and loginType is where the database should look for the information
-        //loginTypes:
-        //1-DLN
-        //2-VRN
-        //3-SSN
-        //4- check if the voter is registered (SSN)
-        return false;
-    }
+    //searches the database for the voter's information and returns true if the voter is there and false if otherwise
+    //ID is the identification the voter gives and loginType is where the database should look for the information
+    //loginTypes:
+    //1-DLN
+	//2-VRN
+    //3-SSN
+    //4- check if the voter is registered (SSN)? isnt that 3? 
+ 
+    public boolean voterRegistered( String loginTypeIDNum, int loginType) {
+    //DONT NEED FIRST NAME LAST NAME MIDDLE BECAUSE SSN DLN AND VRN ARE UNIQUE IN TABLE
+    	try {
+    			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
+    			Connection conn = null; 
+    		
+    			//test connection
+    			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
+    			if(conn!=null) {
+    				System.out.println("are you a wifi hotspot?... Because I feel a connection");
+    			}//end if
+    			
+    			//make a statement object
+    			//Statement statement = conn.createStatement();
+    			System.out.println(" I am making a connection for a statement");
+    			
+    			//sql is what I will be using for executing sql statements
+    			String sql;
+    			int isThere = -1;
+
+    			if(loginType == 1) {
+    					String DLN= loginTypeIDNum;
+    					PreparedStatement prepared = conn.prepareStatement("SELECT * FROM registrationdata WHERE dlNumber =? ");
+    					prepared.setString(1, DLN);
+    					ResultSet resultSet =prepared.executeQuery();
+    	    			if(resultSet.next()) {
+    	    				return true;
+    	    				
+    	    			}
+    			}
+    	    			
+    			else if(loginType == 2) {
+    					String VRN = loginTypeIDNum;
+    					sql = "SELECT * FROM registrationdata WHERE voterID ="+ VRN; 
+    			}
+    					
+    			else {
+    					String SSN = loginTypeIDNum;
+    					PreparedStatement prepared2 = conn.prepareStatement("SELECT * FROM registrationdata WHERE ssn = ? ");
+    					prepared2.setString(1, SSN);
+    					ResultSet resultSet2 =prepared2.executeQuery();
+    					
+    	    			if(resultSet2.next()) {
+    	    				return true;
+    	    				
+    	    			}
+    	    			
+    			
+    			}
+    	
+    	}//end try 
+    	catch(SQLException | ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("no connection."); 
+			}//end catch
+		return false;
+		
+    	
+    	
+    }//END VOTERREGISTERED
 
     //register a voter
     public void registerVoter(Voter voter) {
@@ -85,6 +145,8 @@ public class DatabaseInterface {
 
     //Ballot Methods
     //Save a Vote to the database -- from Ballot class, needs voter class
+    // CANT STORE LISTS INTO DATABASE- VIOLATES FIRST NORMAL FORM OF SQL. 
+    //MAYBE WE CAN TRY A LINKED LIST AND INSERT VOTES INDIVIDUALLY
     public void saveVote(Voter voter, List candidates, List votes) {
         //the database adds the tally to multiple places, first to the total votes made
         //then to each candidate individually
@@ -133,14 +195,108 @@ public class DatabaseInterface {
         //if it's the same, return the total, if it is not, do it again and return the result
         return 0;
     }
+    
+    //searches the database for the voter's information and returns the SSN
+    //loginTypes:
+    //1-DLN
+    //2-VRN
+    //3-SSN
+    public String getSSN(String firstName, String lastName, String middleInitial, String loginTypeIDNum, int loginType){
+   
+    	String fName = firstName;
+    	String lName = lastName;
+    	String mInitial = middleInitial;
+    	String ssn = "";
+       	
+    	try {
+    			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
+    			Connection conn = null; 
+    		
+    			//test connection
+    			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
+    			if(conn!=null) {
+    				System.out.println("are you a wifi hotspot?... Because I feel a connection");
+    			}//end if
+    			
+    			//make a statement object
+    			Statement statement = conn.createStatement();
+    			System.out.println(" I am making a connection for a statement");
+    			//sql is what I will be using for executing sql statements
+    			String sql;
 
-    public int getSSN(String firstName, String lastName, String middleInitial, int ID, int loginType){
-        //searches the database for the voter's information and returns the SSN
-        //loginTypes:
-        //1-DLN
-        //2-VRN
-        //3-SSN
-        return 0;
+    			switch(loginType) {
+    	
+    				case 1:
+    					String DLN= loginTypeIDNum;
+    	    			sql = "SELECT ssn FROM registrationdata WHERE dlNumber ="+ DLN+ 
+    	    							"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial;
+    	    			statement.execute(sql);
+    	    			System.out.println(sql);
+    	    			if(sql != null)
+    	    				return ssn;
+    	    			
+    				case 2: 
+    					String VRN = loginTypeIDNum;
+    					sql = "SELECT ssn FROM registrationdata WHERE voterID ="+ VRN+ 
+    							"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial; 
+    					statement.execute(sql);
+    					System.out.println(sql);
+    					if(sql != null)
+    						return ssn;
+    					
+    				case 3: 
+    					String SSN = loginTypeIDNum;
+    					sql = "SELECT ssn FROM registrationdata WHERE ssn ="+ SSN+ 
+    							"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial;
+    					statement.execute(sql);
+    					System.out.println(sql);
+    					if(sql != null)
+    						return ssn;
+    			
+    			}
+    	
+    	
+    		}//end try 
+	    	catch(SQLException | ClassNotFoundException e){
+				e.printStackTrace();
+				System.out.println("no connection."); 
+				}//end catch
+			return ssn;
+			
+
+    }
+    public int getVRN(String firstName, String lastName, String middleInitial,String ssn) {
+    	int VRN= -1;
+    	String fName = firstName;
+    	String lName = lastName;
+    	String mInitial = middleInitial;
+    	String SSN = ssn;
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
+			Connection conn = null; 
+		
+			//test connection
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
+			if(conn!=null) {
+				System.out.println("are you a wifi hotspot?... Because I feel a connection");
+			}//end if
+			
+			//make a statement object
+			Statement statement = conn.createStatement();
+			System.out.println(" I am making a connection for a statement");
+			//sql is what I will be using for executing sql statements
+			String sql;
+			sql = "SELECT voterID FROM registrationdata WHERE ssn ="+ SSN + 
+					"AND firstName = "+ fName+ "AND lastName = "+ lName+ "AND middleInitial =" + mInitial;
+			statement.execute(sql);
+			
+			
+		}//end try 
+    	catch(SQLException | ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("no connection."); 
+			}//end catch
+		return VRN;
     }
 
 }
