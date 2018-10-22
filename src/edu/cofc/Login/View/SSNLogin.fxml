@@ -7,16 +7,63 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Login.Controller.SSNLoginController">
+<AnchorPane prefHeight="400.0" 
+		    prefWidth="600.0" 
+		    xmlns:fx="http://javafx.com/fxml/1" 
+		    xmlns="http://javafx.com/javafx/2.2" 
+		    fx:controller="edu.cofc.Login.Controller.SSNLoginController">
   <children>
-    <Button layoutX="446.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleLoginClick" text="Login" />
-    <TextField fx:id="firstName" layoutX="388.0" layoutY="18.0" prefWidth="200.0" />
-    <TextField fx:id="lastName" layoutX="388.0" layoutY="87.0" prefWidth="200.0" />
-    <TextField fx:id="SSN" layoutX="388.0" layoutY="234.0" prefWidth="200.0" />
-    <Text layoutX="26.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
-    <Text layoutX="26.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
-    <Text layoutX="26.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social Security Number" />
-    <TextField fx:id="middleInitial" layoutX="388.0" layoutY="162.0" prefWidth="200.0" />
-    <Text layoutX="26.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Initial" />
+    <Button layoutX="446.0" 
+    		layoutY="334.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleLoginClick" 
+    		text="Login" />
+    <TextField fx:id="firstNameText" 
+    		   layoutX="388.0" 
+    		   layoutY="18.0" 
+    		   prefWidth="200.0"
+    		    promptText= "Enter First Name"  />
+    		   
+    <TextField fx:id="lastNameText" 
+    		   layoutX="388.0" 
+    		   layoutY="87.0" 
+    		   prefWidth="200.0" 
+    		    promptText= "Enter Last Name" />
+    		   
+     <TextField fx:id="middleInitialText" 
+     		    layoutX="388.0" 
+     		    layoutY="162.0" 
+     		    prefWidth="200.0"
+     		     promptText= "Enter Middle Initial"  />
+    		   
+    <TextField fx:id="SSN" 
+    		   layoutX="388.0" 
+    		   layoutY="234.0" 
+    		   prefWidth="200.0"
+    		    promptText= "Enter SSN"  />
+    		   
+    <Text layoutX="26.0" 
+    	  layoutY="53.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="First Name" />
+    	  
+    <Text layoutX="26.0" 
+    	  layoutY="122.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Last Name" />
+    	  
+    <Text layoutX="26.0" 
+    	  layoutY="269.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Social Security Number" />
+ 
+    <Text layoutX="26.0" 
+    	  layoutY="197.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Middle Initial" />
   </children>
 </AnchorPane>
