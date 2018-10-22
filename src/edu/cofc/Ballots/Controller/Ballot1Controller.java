@@ -27,7 +27,7 @@ public class Ballot1Controller {
 
     @FXML
     private void handleContinueClick(){
-        selected = buttonGroup.getSelectedToggle().getUserData().toString();
+        selected = buttonGroup.getSelectedToggle().toString();
         //show next ballot
          main.showFinalBallot();
     }

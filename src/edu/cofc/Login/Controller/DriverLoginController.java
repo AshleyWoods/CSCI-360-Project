@@ -15,12 +15,9 @@ public class DriverLoginController {
     private TextField middleInitialText;
     @FXML
     private TextField DLN;
-    private Voter voter;
+
     public int loginType = 1;
-    String dlNumber = DLN.getText().toString();
-    String firstName = firstNameText.getText().toString();
-    String lastName = lastNameText.getText().toString();
-    String middleInitial = middleInitialText.getText().toString();
+  
 
     public void setMain(Main main) {
         this.main = main;
@@ -28,12 +25,22 @@ public class DriverLoginController {
 
     @FXML
     public void handleLoginClick() {
-        //Check the database to see if teh login info is valid
-        boolean loginValid = main.getInterface().voterRegistered( dlNumber, loginType);
+        //Check the database to see if the login info is valid
+    	  String dlNumber = DLN.getText().toString();
+    	  String firstName = firstNameText.getText().toString();
+    	  String lastName = lastNameText.getText().toString();
+    	  String middleInitial = middleInitialText.getText().toString();
+        boolean loginValid = Main.getInterface().voterRegistered( dlNumber, loginType);
+        if(!loginValid) {
+        	 main.showRegistrationStatusNegativePopUp();
+        	
+        }
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to first ballot
-        String SSN = main.getInterface().getSSN(firstName, lastName, middleInitial, dlNumber, loginType);
-        //main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),SSN);
-        main.showBallot();
+        else { 
+        	String SSN = Main.getInterface().getSSN(firstName, lastName, middleInitial, dlNumber, loginType);
+        	System.out.println(SSN);
+        	//main.activeVoter = new Voter(firstName,lastName, middleInitial,SSN);
+        	main.showBallot();
     }
-}
+    }}
