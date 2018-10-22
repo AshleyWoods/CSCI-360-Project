@@ -1,5 +1,6 @@
 package edu.cofc.DataBase;
 
+import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
 
 import javax.swing.*;
@@ -14,6 +15,11 @@ public class DatabaseInterface {
 
     public DatabaseInterface(){
         this.officialTally = false;
+        //AdminMenuController.officialTally = false;
+    }
+
+    public boolean getOfficialTallyBoolean() {
+        return this.officialTally;
     }
 
     //Registration Methods
@@ -64,6 +70,7 @@ public class DatabaseInterface {
             //initiate recount if it's not the same
             //display total if it is
         this.officialTally = true;
+        //AdminMenuController.officialTally = true;
         return 0;
     }
 

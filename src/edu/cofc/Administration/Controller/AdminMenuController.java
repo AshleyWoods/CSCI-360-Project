@@ -8,7 +8,7 @@ import java.io.IOException;
 public class AdminMenuController {
     private Main main;
     private boolean ElectionRunning;
-    public static boolean officialTally;
+    //public static boolean officialTally;
     public static boolean confirm ;
 
     public void setMain(Main main, boolean val) {
@@ -22,7 +22,7 @@ public class AdminMenuController {
         main.showRecount();
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
-        if (!officialTally) {
+        if (!main.getInterface().getOfficialTallyBoolean()) {
             main.showOfficialTallyNeededPopUp();
             return;
         }
@@ -38,7 +38,7 @@ public class AdminMenuController {
         main.showDownloadOfficialTally();
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
-        if (!officialTally) {
+        if (!main.getInterface().getOfficialTallyBoolean()) {
             main.showOfficialTallyNeededPopUp();
             return;
         }
@@ -58,7 +58,6 @@ public class AdminMenuController {
         //get the official tally
         main.getInterface().getOfficialTally();
         //save the official tally
-        this.officialTally = true;
         //go to official tally page
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
         main.showTally();
