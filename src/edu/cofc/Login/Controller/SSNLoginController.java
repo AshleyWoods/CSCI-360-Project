@@ -26,7 +26,7 @@ public class SSNLoginController {
         boolean loginValid = main.getInterface().voterRegistered(firstName.getText(),lastName.getText(),middleInitial.getText(),Integer.parseInt(SSN.getText()),3);
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to first ballot
-        main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),Integer.parseInt(SSN.getText()));
+        //main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),Integer.parseInt(SSN.getText()));
         main.showBallot();
     }
 }

@@ -14,70 +14,136 @@
 			xmlns="http://javafx.com/javafx/2.2" 
 			fx:controller="edu.cofc.Registration.Controller.VoterRegistrationController">
   <children>
-    <Text layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voter Registration Form">
+    <Text layoutX="14.0" 
+    	  layoutY="46.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Voter Registration Form">
       <font>
         <Font size="35.0" />
       </font>
+      
     </Text>
-    <Button mnemonicParsing="false" onAction="#handleSubmit" text="Submit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-    <ScrollPane layoutY="55.0" prefHeight="416.0" prefWidth="570.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+    
+    <Button mnemonicParsing="false" 
+    		onAction="#handleSubmit" 
+    		text="Submit" 
+    		AnchorPane.bottomAnchor="10.0" 
+    		AnchorPane.rightAnchor="10.0" />
+    <ScrollPane layoutY="55.0" 
+    			prefHeight="415.0" 
+    			prefWidth="570.0" 
+    			AnchorPane.leftAnchor="15.0" 
+    			AnchorPane.rightAnchor="15.0">
       <content>
-        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="1346.0" prefWidth="539.0">
+        <AnchorPane id="Content" 
+        			minHeight="0.0" 
+        			minWidth="0.0" 
+        			prefHeight="1346.0" 
+        			prefWidth="539.0">
+        
           <children>
-            <CheckBox fx:id="above18" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="I am a US citizen" />
-            <CheckBox fx:id="citizen" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" text="I am 18 years of age or older" />
-            <Text layoutX="14.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
-            <Text layoutX="14.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
-            <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Initial" />
-            <Text layoutX="14.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suffix" />
-            <Text layoutX="14.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
-            <Text layoutX="14.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" />
-            <Text layoutX="12.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social Security Number" />
-            <TextField fx:id="firstName" layoutX="312.0" layoutY="107.0" prefWidth="200.0" />
-            <TextField fx:id="lastName" layoutX="312.0" layoutY="153.0" prefWidth="200.0" />
-            <TextField fx:id="middleInitial" layoutX="312.0" layoutY="199.0" prefWidth="200.0" />
-            <Text layoutX="14.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-            <Text layoutX="84.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street" />
-            <Text layoutX="87.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
-            <Text layoutX="87.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
-            <Text layoutX="87.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
-            <Text layoutX="87.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apt Number" />
-            <Text layoutX="87.0" layoutY="707.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inside City Limits" />
-            <Text layoutX="9.0" layoutY="747.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mailing Address" />
-            <Text layoutX="87.0" layoutY="797.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street or PO box" />
-            <Text layoutX="85.0" layoutY="841.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
-            <Text layoutX="87.0" layoutY="885.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
-            <Text layoutX="87.0" layoutY="929.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
-            <TextField fx:id="street" layoutX="312.0" layoutY="459.0" prefWidth="200.0" />
-            <TextField fx:id="city" layoutX="312.0" layoutY="505.0" prefWidth="200.0" />
-            <TextField fx:id="state" layoutX="312.0" layoutY="551.0" prefWidth="200.0" />
-            <TextField fx:id="zipCode" layoutX="312.0" layoutY="598.0" prefWidth="200.0" />
-            <TextField fx:id="mailStreet" layoutX="312.0" layoutY="778.0" prefWidth="200.0" />
-            <TextField fx:id="aptNumber" layoutX="312.0" layoutY="645.0" prefWidth="200.0" />
-            <TextField fx:id="mailCity" layoutX="312.0" layoutY="825.0" prefWidth="200.0" />
-            <TextField fx:id="mailState" layoutX="312.0" layoutY="871.0" prefWidth="200.0" />
-            <TextField fx:id="mailZipCode" layoutX="312.0" layoutY="917.0" prefWidth="200.0" />
-            <Text layoutX="9.0" layoutY="979.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" />
-            <Text layoutX="87.0" layoutY="1019.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month" />
-            <Text layoutX="87.0" layoutY="1063.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
-            <Text layoutX="84.0" layoutY="1107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
-            <TextField fx:id="year" layoutX="312.0" layoutY="1088.0" prefWidth="200.0" />
-            <TextField fx:id="day" layoutX="312.0" layoutY="1044.0" prefWidth="200.0" />
-            <Text layoutX="8.0" layoutY="1150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
-            <Text layoutX="87.0" layoutY="1190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" />
-            <Text layoutX="87.0" layoutY="1230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work" />
-            <TextField fx:id="workPhone" layoutX="312.0" layoutY="1211.0" prefWidth="200.0" />
-            <TextField fx:id="homePhone" layoutX="312.0" layoutY="1171.0" prefWidth="200.0" />
-            <ComboBox fx:id="sex" layoutX="312.0" layoutY="291.0" prefHeight="-1.0" prefWidth="-1.0">
+            <CheckBox layoutX="14.0" 
+            		  layoutY="14.0" 
+            		  mnemonicParsing="false" 
+            		  text="I am a US citizen" />
+            
+            <CheckBox layoutX="14.0" 
+            		  layoutY="58.0" 
+            		  mnemonicParsing="false" 
+            		  text="I am 18 years of age or older" />
+            		  
+            <Text layoutX="14.0" 
+            	  layoutY="126.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="First Name" />
+           <!-- firstName textfield -->
+           <TextField id = "firstNameText"
+           			  fx:id ="firstNameText"           			 
+           			  layoutX="312.0" 
+           			  layoutY="116.0" 
+           			  prefWidth="200.0"
+           			  onAction="#handleSubmit"
+           			  promptText= "Enter First Name"  />
+            	  
+            <Text layoutX="14.0" 
+            	  layoutY="171.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Last Name" />
+           	<!-- lastName textfield -->
+            <TextField id ="lastNameText"
+                       fx:id= "lastNameText"            			
+            		   layoutX="312.0" 
+            		   layoutY="161.0" 
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter Last Name"
+            		   prefWidth="200.0" />
+            	  
+            <Text layoutX="14.0" 
+            	  layoutY="216.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Middle Initial" />
+            <!--  middle initial textfield -->
+            <TextField id = "middleInitialText" 
+            		   fx:id = "middleInitialText"
+            		   layoutX="312.0" 
+            		   layoutY="199.0"
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter Middle Initial" 
+            		   prefWidth="200.0" />
+            	  
+            <Text layoutX="14.0" 
+            	  layoutY="260.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Suffix" />
+             <TextField id ="suffixText" 
+             			fx:id = "suffixText"
+             		   layoutX="312.0" 
+            		   layoutY="240.0" 
+            		   promptText ="Enter suffix if applicable"
+            		   prefWidth="200.0" />
+            	  
+            <Text layoutX="14.0" 
+            	  layoutY="306.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Sex" />
+            <ComboBox layoutX="312.0" 
+            		  layoutY="291.0" 
+            		  prefHeight="-1.0" 
+            		  prefWidth="-1.0"
+            		  id ="sexComboBox"
+            		  fx:id = "sexComboBox"
+            		  onAction = "#handleSubmit">
+            		  
               <items>
                 <FXCollections fx:factory="observableArrayList">
+                
                   <String fx:value="Male" />
                   <String fx:value="Female" />
+                  
                 </FXCollections>
+                
               </items>
+              
             </ComboBox>
-            <TextField fx:id="suffix" layoutX="312.0" layoutY="245.0" prefWidth="200.0" />
-            <ComboBox fx:id="race" layoutX="312.0" layoutY="338.0" prefHeight="-1.0" prefWidth="-1.0">
+            	  
+            <Text layoutX="14.0" 
+            	  layoutY="350.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Race" />
+             <ComboBox layoutX="312.0" 
+            		   layoutY="338.0" 
+            		   prefHeight="-1.0" 
+            		   prefWidth="-1.0"
+            		   id = "raceComboBox"
+            		   fx:id = "raceComboBox"
+            		   onAction = "#handleSubmit">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="White" />
@@ -89,8 +155,112 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <TextField fx:id="SSN" layoutX="312.0" layoutY="384.0" prefWidth="200.0" />
-            <ComboBox fx:id="cityLimits" layoutX="312.0" layoutY="692.0" prefHeight="-1.0" prefWidth="-1.0">
+            	  
+            <Text layoutX="12.0" 
+            	  layoutY="398.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Social Security Number" />
+           	<!-- ssn textfield -->
+            <TextField layoutX="312.0" 
+            		   layoutY="384.0" 
+            		   prefWidth="200.0"
+            		   id = "ssnText"
+            		   fx:id = "ssnText"
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter SSN. No spaces or extra characters" />
+            	  
+            
+            <Text layoutX="14.0" 
+            	  layoutY="442.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Address" />
+            	  
+            <Text layoutX="84.0" 
+            	  layoutY="482.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Street" />
+           <!-- street textfield -->
+           <TextField layoutX="312.0" 
+           	   		  layoutY="459.0" 
+           	   		  prefWidth="200.0"
+           	   		  id= "streetText"
+           	   		  fx:id = "streetText"
+           	   		  onAction = "#handleSubmit"
+           	   		  promptText ="Enter Address of Residence"  />
+            	  
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="526.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="City" />
+           <!-- city textfield -->
+           <TextField layoutX="312.0" 
+           			  layoutY="505.0" 
+           			  prefWidth="200.0"
+           			  id= "cityText"
+           			  fx:id = "cityText"
+           			  onAction = "#handleSubmit"
+           			  promptText = "Enter City of Residence"  />
+           	
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="571.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="State" />
+           <!-- state textfield -->
+           <TextField layoutX="312.0" 
+           			  layoutY="551.0" 
+           			  prefWidth="200.0"
+           			  id = "stateText"
+           			  fx:id = "stateText"
+           			  onAction = "#handleSubmit"
+           			  promptText = "Enter State of Residence" />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="619.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Zip Code" />
+            <!-- zipcode text field  -->    
+            <TextField layoutX="312.0" 
+            		layoutY="598.0" 
+            		prefWidth="200.0"
+            		id = "zipText"
+            		fx:id = "zipText"
+            		onAction= "#handleSubmit"
+            		promptText = "Enter zipcode of Residence"/>
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="663.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Apt Number" />
+            <!-- apt number textfield -->
+            <TextField layoutX="312.0" 
+            			layoutY="645.0" 
+            			prefWidth="200.0" 
+            			id ="aptText"
+            			fx:id = "aptText"
+            			onAction = "#handleSubmit"
+            			promptText = "Enter Apt Number if applicable"/>
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="707.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Inside City Limits" />
+            <ComboBox layoutX="312.0" 
+            		  layoutY="692.0" 
+            		  prefHeight="-1.0" 
+            		  prefWidth="-1.0"
+            		  id ="cityLimitComboBox"
+            		  fx:id = "cityLimitComboBox"
+            		  onAction = "#handleSubmit">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Yes" />
@@ -98,7 +268,88 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <ComboBox fx:id="birthdayMonth" layoutX="312.0" layoutY="997.0" prefHeight="-1.0" prefWidth="-1.0">
+            	  
+            <Text layoutX="9.0" 
+            	  layoutY="747.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Mailing Address" />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="797.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Street or PO box" />
+           <!-- street or po box text field -->
+           <TextField layoutX="312.0" 
+           			  layoutY="778.0" 
+           			  prefWidth="200.0"
+           			  id= "steetMailingText"
+           			  fx:id = "streetMailingText"
+           			  onAction = "#handleSubmit"
+           			  promptText ="enter Street/PO Box of Mailing Add."  />
+            	  
+            <Text layoutX="85.0" 
+            	  layoutY="841.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="City" />
+           <!-- city textfield -->
+           <TextField layoutX="312.0" 
+           			  layoutY="825.0" 
+           			  prefWidth="200.0"
+           			  id = "cityMailingText"
+           			  fx:id = "cityMailingText"
+           			  onAction = "#handleSubmit"
+           			  promptText ="Enter City of Mailing Add." />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="885.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="State" />
+           	<!-- state textfield -->
+            <TextField layoutX="312.0" 
+            		   layoutY="871.0" 
+            		   prefWidth="200.0"   
+           			   id ="stateMailingText"
+           			   fx:id = "stateMailingText"
+           			   onAction = "#handleSubmit"
+           			   promptText = "Enter State of Mailing Add."/>	
+           			   
+            <Text layoutX="87.0" 
+            	  layoutY="929.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Zip Code" />
+            <!-- zipcode textfield -->
+            <TextField layoutX="312.0" 
+            		   layoutY="917.0" 
+            		   prefWidth="200.0"
+            		   id = "zipMailingText"
+            		   fx:id = "zipMailingText"
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter Zip of Mailing Add." />
+            	  
+          
+            <Text layoutX="9.0" 
+            	  layoutY="979.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Birthday" />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="1019.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Month" />
+              <ComboBox layoutX="312.0" 
+              			layoutY="997.0" 
+              			prefHeight="-1.0" 
+              			prefWidth="-1.0"
+              			id = "birthMonthComboBox"
+              			fx:id = "birthMonthComboBox"
+              			onAction = "#handleSubmit">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="January" />
@@ -116,8 +367,82 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <Text layoutX="9.0" layoutY="1304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver's Licence Number" />
-            <TextField fx:id="DLN" layoutX="312.0" layoutY="1269.0" prefWidth="200.0" />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="1063.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Day" />
+           	<!-- day textfield -->
+         	 <TextField layoutX="312.0" 
+         	 		    layoutY="1044.0" 
+         	 		    prefWidth="200.0" 
+         	 		    id = "birthdayDateText"
+            		    fx:id = "birthdayDateText"
+            		    onAction = "#handleSubmit"
+            		    promptText = "Enter Date of Birth." />
+            	  
+            <Text layoutX="84.0" 
+            	  layoutY="1107.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Year" />
+              	<TextField layoutX="312.0" 
+           			   layoutY="1088.0" 
+           			   prefWidth="200.0"
+           			    id = "birthdayYearText"
+            		    fx:id = "birthdayYearText"
+            		    onAction = "#handleSubmit"
+            		    promptText = "Enter Year of Birth."  />
+           
+            <Text layoutX="8.0" 
+            	  layoutY="1150.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Phone Number" />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="1190.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Home" />
+            <!-- home phone textfield -->
+            <TextField layoutX="312.0" 
+            		   layoutY="1171.0" 
+            		   prefWidth="200.0"
+            		   id = "homePhoneText"
+            		   fx:id = "homePhoneText"
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter Home Phone Number"   />
+            	  
+            <Text layoutX="87.0" 
+            	  layoutY="1230.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Work" />
+            <!-- work textfield -->
+            <TextField layoutX="312.0" 
+            		   layoutY="1211.0" 
+            		   prefWidth="200.0"
+            		   id = "workPhoneText"
+            		   fx:id = "workPhoneText"
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter Work Phone Number"  />
+            
+           
+            <Text layoutX="9.0" 
+            	  layoutY="1304.0" 
+            	  strokeType="OUTSIDE" 
+            	  strokeWidth="0.0" 
+            	  text="Driver's Licence Number" />
+            <!-- DL texfield -->
+            <TextField layoutX="312.0" 
+            		   layoutY="1290.0" 
+            		   prefWidth="200.0"
+            		   id = "dlNumberText"
+            		   fx:id = "dlNumberText"
+            		   onAction = "#handleSubmit"
+            		   promptText = "Enter DL Number"  />
           </children>
         </AnchorPane>
       </content>

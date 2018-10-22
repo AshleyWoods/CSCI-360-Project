@@ -2,9 +2,13 @@ package edu.cofc.DataBase;
 
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
-
+import java.sql.*;
 import javax.swing.*;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.io.IOException;
 import java.io.File;
@@ -36,12 +40,39 @@ public class DatabaseInterface {
     }
 
     //register a voter
-    public void registerVoter(String firstName, String lastName, String middleInitial, String suffix, String sex,
-                               String race, int SSN, String street, String city, String state, int zipCode, int aptNumber,
-                               Boolean inCityLimits, String POBox, String mailCity, String mailState, int mailZipCode,
-                               String month, int day, int year, int homePhone, int workPhone, int DLN) {
-        //stores the information in the database in the correct places
-    }
+    public void registerVoter(Voter voter) {
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
+			Connection conn = null; 
+		
+			//test connection
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
+			if(conn!=null) {
+				System.out.println("are you a wifi hotspot?... Because I feel a connection");
+			}//end if
+			
+			//make a statement object
+			Statement statement = conn.createStatement();
+			System.out.println(" I am making a connection for a statement");
+			//sql is what I will be using for executing sql statements
+			String sql;
+			sql = "INSERT INTO registrationData (firstName, lastName, middleInitial, suffix,sex,race,ssn,"
+					+ "streetName, cityName, stateName, zipcode, aptNumber,insideCityLimits, streetNameMailing,"
+					+ "cityNameMailing, stateNameMailing,zipcodeMailing,birthdayDate, birthdayMonth, birthdayYear,"
+					+ "homePhone, cellPhone, dlNumber) "
+					+ "VALUES ('firstName','lastName','middleInitial','suffix', 'sex', 'race', 'ssn', 'streetName',"
+					+ "'cityName', 'stateName', ' zipcode', 'aptNumber', 'insideCityLimits', 'streetNameMailing',"
+					+ "'cityNameMailing','stateNameMailing', 'zipcodeMailing', 'birthdayDate', 'birthdayMonth', 'birthdayYear',"
+					+ "'homePhone', 'cellPhone', 'dlNumber' )";
+			statement.execute(sql);
+			
+			
+		}//end try 
+    	catch(SQLException | ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("no connection."); 
+			}//end catch
+		}
 
     //Login Methods
     //see if a voter's login is valid--use voterRegistered from the registration methods section
