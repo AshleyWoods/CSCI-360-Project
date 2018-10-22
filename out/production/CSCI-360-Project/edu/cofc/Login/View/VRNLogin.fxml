@@ -42,6 +42,12 @@
     		   layoutY="234.0" 
     		   prefWidth="200.0"
     		   promptText= "Enter Voter Registration Number"  />
+       
+     <TextField fx:id="DLN" 
+    		   layoutX="388.0" 
+    		   layoutY="290.0" 
+    		   prefWidth="200.0"
+    		   promptText= "Enter DL Number"  />
     
     <Text layoutX="26.0" 
     	  layoutY="53.0" 
@@ -60,6 +66,12 @@
     	  strokeType="OUTSIDE" 
     	  strokeWidth="0.0" 
     	  text="Voter Registration Number" />
+     
+	<Text layoutX="26.0" 
+    	  layoutY="310.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Drivers Liscence Number" />
     	  
     <TextField fx:id="middleInitial" 
     		   layoutX="388.0" 

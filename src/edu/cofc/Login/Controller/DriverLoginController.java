@@ -1,7 +1,8 @@
 package edu.cofc.Login.Controller;
 
 import edu.cofc.Application.VotingSystem.Main;
-import edu.cofc.Vote.Voter;
+
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 

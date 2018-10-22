@@ -40,7 +40,7 @@
     		   layoutX="388.0" 
     		   layoutY="234.0" 
     		   prefWidth="200.0"
-    		    promptText= "Enter SSN"  />
+    		   promptText= "Enter SSN"  />
     		   
     <Text layoutX="26.0" 
     	  layoutY="53.0" 

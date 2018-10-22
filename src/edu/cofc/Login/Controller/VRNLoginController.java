@@ -14,16 +14,19 @@ public class VRNLoginController {
     private TextField lastNameText;
     @FXML
     private TextField middleInitialText;
+  
     @FXML
     private TextField VRN;
+    @FXML
+    private TextField DLN;
+
+    
     private Voter voter;
     private DatabaseInterface dbInterface;
     private int loginType = 2;
-    private int voterID = dbInterface.getVRN(voter.getFirstName(), voter.getLastName(), voter.getMiddleInitial(), voter.getSSN());
-    private String voterIDString = String.valueOf(voterID);
-    String firstName = firstNameText.getText().toString();
-    String lastName = lastNameText.getText().toString();
-    String middleInitial = middleInitialText.getText().toString();
+   
+    
+    
     
     public void setMain(Main main) {
         this.main = main;
@@ -34,11 +37,23 @@ public class VRNLoginController {
 
 	@FXML
     private void handleLoginClick() {
-        //Check the database to see if teh login info is valid
-       boolean loginValid = main.getInterface().voterRegistered(voterIDString, loginType);
+		String firstName = firstNameText.getText().toString();
+	    String lastName = lastNameText.getText().toString();
+	    String middleInitial = middleInitialText.getText().toString();
+	    String dlNumber = DLN.getText().toString();
+	
+	    //String voterID = dbInterface.getSSN(firstName, lastName, middleInitial,dlNumber, 1);
+	   
+        //Check the database to see if the login info is valid
+       //boolean loginValid = Main.getInterface().voterRegistered(voterID, loginType);
+       //if(!loginValid) {
+    	 //  main.showRegistrationStatusNegativePopUp();
+       //}
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to first ballot
-       String SSN = main.getInterface().getSSN(firstName,lastName,middleInitial,voterIDString, loginType);
+       //else {
+    	 //  String SSN = Main.getInterface().getSSN(firstName,lastName,middleInitial,voterID, loginType);
+    	  // System.out.println(SSN);
         //main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),SSN);
         main.showBallot();
     }
