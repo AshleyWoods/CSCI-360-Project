@@ -355,6 +355,10 @@ public class Main extends Application {
             confirmSubmit.setTitle("Confirm Form Submission");
             Scene confirmSubmitScene = new Scene(page);
             confirmSubmit.setScene(confirmSubmitScene);
+            //ADD CSS FILE
+            confirmSubmitScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             ConfirmFormSubmissionController controller = loader.getController();
             controller.setMain(this);
@@ -419,6 +423,12 @@ public class Main extends Application {
 
             SavePopUpController controller = loader.getController();
             controller.setMain(this);
+           
+            //ADD CSS FILE
+            confirmSaveScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+
 
             confirmSave.showAndWait();
 
@@ -438,9 +448,17 @@ public class Main extends Application {
             confirmSave.setTitle("Form Saved");
             Scene confirmSaveScene = new Scene(page);
             confirmSave.setScene(confirmSaveScene);
+            
+            //ADD CSS FILE
+            confirmSaveScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             ConfirmFormSaveController controller = loader.getController();
             controller.setMain(this);
+            
+      
+
 
             confirmSave.showAndWait();
 
@@ -463,6 +481,11 @@ public class Main extends Application {
 
             NoOfficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            confirmSaveScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             popUp.showAndWait();
 
@@ -482,6 +505,12 @@ public class Main extends Application {
             popUp.setTitle("Warning");
             Scene warningScene = new Scene(page);
             popUp.setScene(warningScene);
+         
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+
 
             NoElectionPopUpController controller = loader.getController();
             controller.setMain(this);
@@ -507,6 +536,12 @@ public class Main extends Application {
 
             ElectionRunningPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+
 
             popUp.showAndWait();
 
@@ -529,6 +564,12 @@ public class Main extends Application {
 
             endElectionPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+
 
             popUp.showAndWait();
 
@@ -551,6 +592,11 @@ public class Main extends Application {
 
             officialTallyNeededPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             popUp.showAndWait();
 
@@ -573,6 +619,11 @@ public class Main extends Application {
 
             registrationStatusPositivePopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             popUp.showAndWait();
 
@@ -595,6 +646,11 @@ public class Main extends Application {
 
             registrationStatusNegativePopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             popUp.showAndWait();
 
@@ -617,6 +673,11 @@ public class Main extends Application {
 
             startElectionPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            warningScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             popUp.showAndWait();
 
