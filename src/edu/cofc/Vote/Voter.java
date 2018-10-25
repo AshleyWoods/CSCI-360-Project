@@ -1,8 +1,10 @@
 package edu.cofc.Vote;
+import java.util.Random;
+
 import edu.cofc.Registration.Controller.VoterRegistrationController;
 
 public class Voter {
-
+		private Random rand = new Random();
 
 
 		private VoterRegistrationController voterRegCtrller; 
@@ -30,12 +32,13 @@ public class Voter {
 		private String homePhone=				voterRegCtrller.homePhoneText.toString();
 		private String workPhone=				voterRegCtrller.workPhoneText.toString();
 		private String dlNumber=				voterRegCtrller.dlNumberText.toString();
+		private int voterID= 					rand.nextInt(100000);
 		
 		public Voter(String firstName, String lastName, String middleInitial, String suffix, String sex, 
-				  String race, 	String ssn,  String streetResidental,String cityResidential, String stateResidential, 
+				  String race, 	String ssn,  String streetResidential,String cityResidential, String stateResidential, 
 				  String zipResidential, String aptResidential,String inCityLimits, String streetMailing,
 				  String cityMailing, String stateMailing,String zipMailing, String birthdayDate, String birthdayMonth, String birthdayYear,
-				  String homePhone, String workPhone, String dlNumber) {
+				  String homePhone, String workPhone, String dlNumber, int voterID) {
 
 		
 				this.firstName = 		firstName;
@@ -61,9 +64,15 @@ public class Voter {
 				this.homePhone = 		homePhone;
 				this.workPhone=			workPhone;
 				this.dlNumber = 		dlNumber;
+				this.voterID = 			voterID;
 			
 	}//END CONSTRUCTOR }
-
+		//VOTERID SETTER AND GETTER
+			public int getvoterID() {
+				
+				return voterID;
+				
+			}
 		//FIRST NAME GETTER AND SETTER 
 			public String getFirstName() {
 				return firstName;

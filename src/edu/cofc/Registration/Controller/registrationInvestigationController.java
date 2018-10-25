@@ -1,10 +1,10 @@
 package edu.cofc.Registration.Controller;
 
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import edu.cofc.DataBase.DatabaseInterface;
 
 public class registrationInvestigationController {
     private Main main;
@@ -19,7 +19,7 @@ public class registrationInvestigationController {
     
     private Voter voter;
  
-    private DatabaseInterface dbInterface;
+    private TextInterface dbInterface;
     
     private boolean loginValid;
    

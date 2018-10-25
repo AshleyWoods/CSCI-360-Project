@@ -1,7 +1,7 @@
 package edu.cofc.Ballots;
 
 import edu.cofc.Application.VotingSystem.Main;
-import edu.cofc.DataBase.DatabaseInterface;
+import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Vote;
 
 import java.util.List;

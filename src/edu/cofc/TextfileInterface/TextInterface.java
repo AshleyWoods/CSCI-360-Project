@@ -1,7 +1,6 @@
-package edu.cofc.DataBase;
+package edu.cofc.TextfileInterface;
 
 import edu.cofc.Administration.Controller.AdminMenuController;
-
 import edu.cofc.Vote.Voter;
 import java.sql.*;
 import javax.swing.*;
@@ -13,13 +12,25 @@ import java.sql.Statement;
 import java.util.List;
 import java.io.IOException;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 
-public class DatabaseInterface {
+public class TextInterface {
 
     private boolean officialTally;
     private Voter voter;
+    
+    private static final String COMMA = ",";
+    private static final String NEWLINE = "/n";
+    
+    //FILE HEADER
+    private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
+    		+ "streetResidential, cityResidential, stateResidential, zipResidential, aptResidential, inCityLimits,"
+    		+ "streetMAiling, cityMailing, stateMailing, zipMailing, birthdayDate, birthdayMonth, birthdayYear, "
+    		+ "homePhone, workPhone, dlNumber, voterID";
 
-    public DatabaseInterface(){
+    public TextInterface(){
         this.officialTally = false;
         //AdminMenuController.officialTally = false;
     }
@@ -41,64 +52,37 @@ public class DatabaseInterface {
     public boolean voterRegistered( String loginTypeIDNum, int loginType) {
     //DONT NEED FIRST NAME LAST NAME MIDDLE BECAUSE SSN DLN AND VRN ARE UNIQUE IN TABLE
     	try {
-    			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
-    			Connection conn = null; 
-    		
-    			//test connection
-    			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
-    			if(conn!=null) {
-    				System.out.println("are you a wifi hotspot?... Because I feel a connection");
-    			}//end if
-    			
-    			//make a statement object
-    			//Statement statement = conn.createStatement();
-    			System.out.println(" I am making a connection for a statement");
-    			
-    			//sql is what I will be using for executing sql statements
-    			String sql;
-    			int isThere = -1;
-
-    			if(loginType == 1) {
-    					String DLN= loginTypeIDNum;
-    					PreparedStatement prepared = conn.prepareStatement("SELECT * FROM registrationdata WHERE dlNumber =? ");
-    					prepared.setString(1, DLN);
-    					ResultSet resultSet =prepared.executeQuery();
-    	    			if(resultSet.next()) {
-    	    				return true;
+    		if(loginType == 1) {
+    				
+    	    
+    	    		return true;
     	    				
-    	    			}
+    	    			
     			}
     	    			
     			else if(loginType == 2) {
-    					String VRN = loginTypeIDNum;
-    					PreparedStatement prepared3 = conn.prepareStatement("SELECT * FROM registrationdata WHERE voterID = ? ");
-    					prepared3.setString(1, VRN);
-    					ResultSet resultSet2 =prepared3.executeQuery();
+    	
     					
-    	    			if(resultSet2.next()) {
-    	    				return true;
+    	    		return true;
     	    				
-    	    			}
+    	    			
     			}
     					
     			else {
-    					String SSN = loginTypeIDNum;
-    					PreparedStatement prepared2 = conn.prepareStatement("SELECT * FROM registrationdata WHERE ssn = ? ");
-    					prepared2.setString(1, SSN);
-    					ResultSet resultSet2 =prepared2.executeQuery();
     					
-    	    			if(resultSet2.next()) {
-    	    				return true;
+    					
+    	    			
+    	    		return true;
     	    				
-    	    			}
+    	    			
     	    			
     			
     			}
     	
     	}//end try 
-    	catch(SQLException | ClassNotFoundException e){
-			e.printStackTrace();
-			System.out.println("no connection."); 
+    	catch(Exception e) {
+    		e.printStackTrace();
+			
 			}//end catch
 		return false;
 		
@@ -107,39 +91,96 @@ public class DatabaseInterface {
     }//END VOTERREGISTERED
 
     //register a voter
-    public void registerVoter(Voter voter) {
+    public void registerVoter(Voter voter) throws FileNotFoundException {
+
     	try {
-			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
-			Connection conn = null; 
-		
-			//test connection
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
-			if(conn!=null) {
-				System.out.println("are you a wifi hotspot?... Because I feel a connection");
-			}//end if
-			
-			//make a statement object
-			Statement statement = conn.createStatement();
-			System.out.println(" I am making a connection for a statement");
-			//sql is what I will be using for executing sql statements
-			String sql;
-			sql = "INSERT INTO registrationData (firstName, lastName, middleInitial, suffix,sex,race,ssn,"
-					+ "streetName, cityName, stateName, zipcode, aptNumber,insideCityLimits, streetNameMailing,"
-					+ "cityNameMailing, stateNameMailing,zipcodeMailing,birthdayDate, birthdayMonth, birthdayYear,"
-					+ "homePhone, cellPhone, dlNumber) "
-					+ "VALUES ('firstName','lastName','middleInitial','suffix', 'sex', 'race', 'ssn', 'streetName',"
-					+ "'cityName', 'stateName', ' zipcode', 'aptNumber', 'insideCityLimits', 'streetNameMailing',"
-					+ "'cityNameMailing','stateNameMailing', 'zipcodeMailing', 'birthdayDate', 'birthdayMonth', 'birthdayYear',"
-					+ "'homePhone', 'cellPhone', 'dlNumber' )";
-			statement.execute(sql);
-			
-			
-		}//end try 
-    	catch(SQLException | ClassNotFoundException e){
-			e.printStackTrace();
-			System.out.println("no connection."); 
-			}//end catch
-		}
+         	//give the csv file a name
+        	String fileName = "registration.csv";
+        	File registrationFile = new File(fileName);
+        	//TRUE if Exists, FALSE if it doesn't
+        	boolean exists = registrationFile.exists();
+        	System.out.println(exists);
+  
+    		if(!exists) {
+    			System.out.println("in the if");
+    			FileOutputStream output = new FileOutputStream(fileName, true);
+    			PrintWriter pw = new PrintWriter(output);
+    			pw.println(HEADER);
+    			pw.println(NEWLINE);
+    			pw.close();
+    			
+    			
+    		}
+    		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
+    		PrintWriter pw1 = new PrintWriter(fileOUT);
+    		//INSERT VALUES TO FILE
+    		pw1.print(NEWLINE);
+    		pw1.print(voter);
+    		pw1.close();
+    		//pw1.print(voter);
+    		//pw1.print(COMMA);
+    		/**existsWriter.append(voter.getLastName());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getMiddleInitial());
+    		existsWriter.append(COMMA);
+    		if(voter.getSuffix()!= null) {
+    			existsWriter.append(voter.getSuffix());
+        		existsWriter.append(COMMA);	
+    		}
+    		existsWriter.append(voter.getSex());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getRace());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getSSN());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getStreetResidential());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getCityResidential());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getStateResidental());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getZipResidential());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getAptResidential());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getCityLimits());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getStreetMailing());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getCityMailing());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getStateMailing());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getZipMailing());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getBirthdayDate());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getBirthdayMonth());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getBirthdayYear());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getHomePhone());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getWorkPhone());
+    		existsWriter.append(COMMA);
+    		existsWriter.append(voter.getDLNumber());
+    		existsWriter.append(COMMA);	
+    		existsWriter.append(String.valueOf(voter.getvoterID()));
+    		existsWriter.append(COMMA);
+		*/
+    		System.out.println("Written to file successfully, check in your file browser to find it");
+    		
+    	//	existsWriter.close();
+    	 
+    	}//end try 
+    	catch(Exception e){
+    		System.out.println("ERROR!! The CSV file did not write successfuly! ");
+    		e.printStackTrace();
+
+    	}//end catch
+
+    	}//end registerVoter
+    
 
     //Login Methods
     //see if a voter's login is valid--use voterRegistered from the registration methods section
@@ -216,55 +257,32 @@ public class DatabaseInterface {
     	String ssn = "";
        	
     	try {
-    			Class.forName("com.mysql.jdbc.Driver");//load JDBC driver
-    			Connection conn = null; 
-    		
-    			//test connection
-    			conn = DriverManager.getConnection("jdbc:mysql://localhost/voterregistrationdata", "root", "");
-    			if(conn!=null) {
-    				System.out.println("are you a wifi hotspot?... Because I feel a connection");
-    			}//end if
-    			
-    			//make a statement object
-    			Statement statement = conn.createStatement();
-    			System.out.println(" I am making a connection for a statement");
-    			//sql is what I will be using for executing sql statements
-    			String sql;
-
-    			
+    			    			
     		if(loginType ==1 ) {
     			String DLN= loginTypeIDNum;
-				PreparedStatement prepared = conn.prepareStatement("SELECT ssn FROM registrationdata WHERE dlNumber =?");
-				prepared.setString(1, DLN);
-				ResultSet resultSet =prepared.executeQuery();
-    			ssn = resultSet.toString();
+				
     			
-    			return ssn;
+    			//return ssn;
+    			return "";
     		}//END IF 
     			else if(loginType == 2) {
-						String VRN = loginTypeIDNum;
-						PreparedStatement prepared2 = conn.prepareStatement("SELECT ssn FROM registrationdata WHERE ssn = ? ");
-    					prepared2.setString(1, VRN);
-    					ResultSet resultSet3 =prepared2.executeQuery();
-    					
-    	    			ssn = resultSet3.toString();
-    	    			return ssn;
+						
+    	    			//return ssn;
+    				return "";
 				}//END ELSE IF 
 						
 				else {
 						String SSN = loginTypeIDNum;
-						PreparedStatement prepared2 = conn.prepareStatement("SELECT ssn FROM registrationdata WHERE ssn = ? ");
-						prepared2.setString(1, SSN);
-						ResultSet resultSet2 =prepared2.executeQuery();
 						
-						ssn = resultSet2.toString();
+						//ssn = resultSet2.toString();
+						return "";
 				}//END ELSE
     		}//end try 
-	    	catch(SQLException | ClassNotFoundException e){
+	    	catch(Exception e){
 				e.printStackTrace();
-				System.out.println("no connection."); 
+				System.out.println("error"); 
 				}//end catch
-			return ssn;
+			return "";
 			
 
     }

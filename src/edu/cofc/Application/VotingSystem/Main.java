@@ -11,6 +11,7 @@ import edu.cofc.Ballots.Controller.FinalBallotController;
 import edu.cofc.Ballots.Controller.SavePopUpController;
 import edu.cofc.Login.Controller.*;
 import edu.cofc.Registration.Controller.*;
+import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import edu.cofc.DataBase.DatabaseInterface;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class Main extends Application {
 
     //This variable will be changed when an operator starts or ends an election
     public  boolean ElectionRunning = false;
-    public static DatabaseInterface dataInterface;
+    public static TextInterface dataInterface;
     private Stage primaryStage;
     private BorderPane rootLayout;
     //this variable will be changed when an operator completes an official tally 
@@ -56,7 +56,7 @@ public class Main extends Application {
         //END ADD CSS FILE
         primaryStage.show();
         
-        dataInterface = new DatabaseInterface();
+        dataInterface = new TextInterface();
 
         showLogin();
     }
@@ -82,7 +82,7 @@ public class Main extends Application {
     	}
     }
 
-    public static DatabaseInterface getInterface(){
+    public static TextInterface getInterface(){
         return dataInterface;
     }
 

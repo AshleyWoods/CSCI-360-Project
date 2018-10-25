@@ -1,7 +1,7 @@
 package edu.cofc.Login.Controller;
 
-import edu.cofc.DataBase.DatabaseInterface;
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -22,7 +22,7 @@ public class VRNLoginController {
 
     
     private Voter voter;
-    private DatabaseInterface dbInterface;
+    private TextInterface dbInterface;
     private int loginType = 2;
    
     

@@ -9,7 +9,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Administration.Controller.NoElectionPopUpController">
   <children>
-    <Button fx:id="confirm" layoutX="244.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleOK" text="Back" />
-    <Text layoutX="109.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No election is currently open" />
+    <Button fx:id="confirm" 
+    		layoutX="244.0" 
+    		layoutY="334.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleOK" 
+    		text="Back" />
+    		
+    <Text layoutX="109.0" 
+    	  layoutY="85.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="No election is currently open" />
   </children>
 </AnchorPane>
