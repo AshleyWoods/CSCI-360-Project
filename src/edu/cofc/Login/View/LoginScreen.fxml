@@ -11,7 +11,8 @@
 <AnchorPane prefHeight="550.0" prefWidth="600.0" 
 			xmlns:fx="http://javafx.com/fxml/1" 
 			xmlns="http://javafx.com/javafx/2.2" 
-			fx:controller="edu.cofc.Login.Controller.LoginController">
+			fx:controller="edu.cofc.Login.Controller.LoginController"
+			styleClass = "header-section">
   <children>
     <Button mnemonicParsing="false" 
     		onAction="#handleContinueClick" 
@@ -53,37 +54,35 @@
       </items>
       
     </ComboBox>
-    
-    
-  		<Text layoutX="205.0" 
-    	  layoutY="85.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
-    	  text="SC E-Voter">
    
-      <font>
-        <Font size="40.0" />
-      </font>
-    </Text> 
     
+  		<Text text="SC E-Voter"
+  			   layoutX ="120"
+  			   layoutY = "100"></Text>
+   
+ 
+		<Label text="Provide Identification Using:"
+			   layoutX = "100"
+			   layoutY = "155"
+			   fx:id = "x1">
+		</Label>
+		<!--     
     <Text layoutY="175.0" 
     	  strokeType="OUTSIDE" 
     	  strokeWidth="0.0" 
     	  text="Provide Identification Using:" 
-    	  AnchorPane.leftAnchor="10.0">
+    	  AnchorPane.leftAnchor="10.0"> -->
      
-      <font>
-        <Font size="32.0" fx:id="x1" />
-      </font>
+   
     
-    </Text>
-    
+  
+<!--     
     <Text font="$x1" 
     	  layoutY="316.0" 
     	  strokeType="OUTSIDE" 
     	  strokeWidth="0.0" 
     	  text="Or" 
-    	  AnchorPane.leftAnchor="10.0" />
+    	  AnchorPane.leftAnchor="10.0" /> -->
 
   </children>
 </AnchorPane>

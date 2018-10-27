@@ -1,11 +1,44 @@
 .root {
-     -fx-background-color: "#F0F8FF";
+     -fx-background-color: "AliceBlue";
+	-fx-background-image: url("https://blueraven-main-b3gdm8dk.netdna-ssl.com/wp-content/uploads/2018/01/Blue-Raven-Solar-Logo-South-Carolina.png"); 
+	-fx-background-size: 710 ;
+	-fx-background-repeat: no-repeat no-repeat;
+	-fx-background-position: center;
+	-fx-font-family: "TeX Gyre Adventor";
+
+     
 }
+.header-section{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+	
+
+}
+.header-section Text{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 80px;
+	-fx-font-weight: 600;
+	-fx-text-align: center;
+	-fx-text-fill: white;
+}
+.header-section Label{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 30px;
+	-fx-text-align: center;
+	-fx-font-weight: 400;
+	-fx-text-fill: white;
+	
+}
+.header-section ComboBox{
+	fx-background-color: midnightblue;
+}
+
 .button {
     -fx-text-fill: white;
-    -fx-font-family: "Tahoma";
+    -fx-font-family: "TeX Gyre Adventor";
     -fx-font-weight: bold;
     -fx-pref-width: 200px;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-background-color: midnightblue;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }

@@ -41,6 +41,7 @@ public class Main extends Application {
 
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("SC Electronic Voting");
+        
         this.ElectionRunning = false;
         //edu.cofc.Administration.Controller.AdminMenuController.officialTally = false;
 
@@ -51,8 +52,10 @@ public class Main extends Application {
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
         //ADD CSS FILE
-        scene.getStylesheets().add
-        (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+        //scene.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+        scene.getStylesheets().add("edu/cofc/View/RootLayout/votingHomepage.css");
+      
+       
         //END ADD CSS FILE
         primaryStage.show();
         
@@ -211,6 +214,7 @@ public class Main extends Application {
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(LoginScreen);
+            rootLayout.getStyleClass().add("root");
 
             // Give the controller access to the main app.
             LoginController controller = loader.getController();
