@@ -59,8 +59,8 @@ public class VoterRegistrationController {
             //cancel if they did not
             return;
         }
-        
-        Main.getInterface().registerVoter(voter);
+        //create a this.voter here using the input data and then pass this.voter to the database
+        Main.getInterface().registerVoter(this.voter);
        //CONFIRM VOTER THAT DATA WAS SAVED
         
         main.showSaveConfirmationPopUp();
