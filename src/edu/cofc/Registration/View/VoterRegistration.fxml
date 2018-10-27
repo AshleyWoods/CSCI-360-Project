@@ -117,8 +117,7 @@
             		  prefHeight="-1.0" 
             		  prefWidth="-1.0"
             		  id ="sexComboBox"
-            		  fx:id = "sexComboBox"
-            		  onAction = "#handleSubmit">
+            		  fx:id = "sexComboBox">
             		  
               <items>
                 <FXCollections fx:factory="observableArrayList">
@@ -142,8 +141,7 @@
             		   prefHeight="-1.0" 
             		   prefWidth="-1.0"
             		   id = "raceComboBox"
-            		   fx:id = "raceComboBox"
-            		   onAction = "#handleSubmit">
+            		   fx:id = "raceComboBox">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="White" />
@@ -259,8 +257,7 @@
             		  prefHeight="-1.0" 
             		  prefWidth="-1.0"
             		  id ="cityLimitComboBox"
-            		  fx:id = "cityLimitComboBox"
-            		  onAction = "#handleSubmit">
+            		  fx:id = "cityLimitComboBox">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Yes" />
@@ -348,8 +345,7 @@
               			prefHeight="-1.0" 
               			prefWidth="-1.0"
               			id = "birthMonthComboBox"
-              			fx:id = "birthMonthComboBox"
-              			onAction = "#handleSubmit">
+              			fx:id = "birthMonthComboBox">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="January" />

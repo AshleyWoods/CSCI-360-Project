@@ -1,7 +1,6 @@
 package edu.cofc.Registration.Controller;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.Vote.Voter;
@@ -42,7 +41,6 @@ public class VoterRegistrationController {
     @FXML public ComboBox<String> raceComboBox;
     @FXML public ComboBox<String> cityLimitComboBox;
     @FXML public ComboBox<String> birthMonthComboBox;
-   
 
 
     public void setMain(Main main) {
@@ -51,16 +49,15 @@ public class VoterRegistrationController {
 
     @FXML
     private void handleSubmit() throws FileNotFoundException{
-       //CHECK VALIDITY OF INPUT IN ALL FIELDS
-        //CHECK THE PERSON TO SEE IF THEY'RE ALLOWED TO VOTE?--HOW?
+       //CHECK IF THE CHECKBOXES ARE CHECKED
     	
     	//ASK IF THEY MEAN TO SUBMIT
         if (main.showSubmissionConfirmationPopup()) {
             //cancel if they did not
             return;
         }
-        //create a this.voter here using the input data and then pass this.voter to the database
-        Main.getInterface().registerVoter(this.voter);
+
+        Main.getInterface().registerVoter(voter);
        //CONFIRM VOTER THAT DATA WAS SAVED
         
         main.showSaveConfirmationPopUp();
