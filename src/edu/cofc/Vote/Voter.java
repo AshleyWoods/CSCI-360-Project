@@ -70,96 +70,96 @@ public class Voter {
 		//VOTERID SETTER AND GETTER
 			public int getvoterID() {
 				
-				return voterID;
+				return this.voterID;
 				
 			}
 		//FIRST NAME GETTER AND SETTER 
 			public String getFirstName() {
-				return firstName;
+				return this.firstName;
 			}
 			public void setFirstName(String s) {
 				firstName = s;
 			}
 			//LAST NAME GETTER AND SETTER
 			public String getLastName() {
-				return lastName;
+				return this.lastName;
 			}
 			public void setLastName(String s) {
 				lastName = s;
 			}
 			//MIDDLE INTIAL GETTER AND SETTER
 			public String getMiddleInitial() {
-				return middleInitial;
+				return this.middleInitial;
 			}
 			public void setMiddleInitial(String s) {
 				middleInitial = s;
 			}
 			//SUFFIX GETTER AND SETTER 
 			public String getSuffix() {
-				return suffix;
+				return this.suffix;
 			}
 			public void setSuffix(String s) {
 				suffix = s;
 			}
 			//SEX GETTER AND SETTER
 			public String getSex() {
-				return sex;
+				return this.sex;
 			}
 			public void setSex(String sx) {
 				sex = sx;
 			}
 			//RACE GETTER AND SETTER 
 			public String getRace() {
-				return race;
+				return this.race;
 			}
 			public void setRace(String s) {
 				race = s;
 			}
 			//SSN GETTER AND SETTER 
 			public String getSSN() {
-				return ssn;
+				return this.ssn;
 			}
 			public void setSSN(String s) {
 				ssn = s;
 			}
 			//STREET RESIDENTAL ADDRESS GETTER AND SETTER 
 			public String getStreetResidential() {
-				return streetResidential;
+				return this.streetResidential;
 			}
 			public void setStreetResidential(String s) {
 				streetResidential = s;
 			}
 			//CITY RESDIENTAL ADDRESS GETTER AND SETTER
 			public String getCityResidential() {
-				return cityResidential;
+				return this.cityResidential;
 			}
 			public void setCityResidental(String s) {
 				cityResidential = s;
 			}
 			//STATE RESIDENTAL ADDRESS GETTER AND SETTER
 			public String getStateResidental() {
-				return stateResidential;
+				return this.stateResidential;
 			}
 			public void setStateResidential(String s) {
 				stateResidential = s;
 			}
 			//ZIP RESIDENTAL ADDRESS GETTER AND SETTER 
 			public String getZipResidential() {
-				return zipResidential;
+				return this.zipResidential;
 			}
 			public void setZipResidential(String s) {
 				zipResidential= s;
 			}
 			//APT RESIDENTIAL ADDRESS GETTER AND SETTER
 			public String getAptResidential() {
-				return aptResidential;
+				return this.aptResidential;
 			}
 			public void setAptResidential(String s) {
 				aptResidential= s;
 			}
 			//INCITYLIMITS GETTER AND SETTER
 			public String getCityLimits() {
-				return inCityLimits;
+				return this.inCityLimits;
 			}
 			public void setInCityLimits(String s) {
 				inCityLimits= s;
@@ -167,7 +167,7 @@ public class Voter {
 			//STREET MAILING ADDRESS GETTER AND SETTER
 			public String getStreetMailing() {
 
-				return streetMailing;
+				return this.streetMailing;
 			}
 			public void setStreetMailing(String s) {
 				streetMailing= s;
@@ -175,7 +175,7 @@ public class Voter {
 			//CITY MIALING ADDRESSS GETTER AND SETTER
 			public String getCityMailing() {
 
-				return cityMailing;
+				return this.cityMailing;
 			}
 			public void setCityMailing(String s) {
 				cityMailing= s;
@@ -183,7 +183,7 @@ public class Voter {
 			//STATE MAILING ADDRESS GETTER AND SETTER 
 			public String getStateMailing() {
 
-				return stateMailing;
+				return this.stateMailing;
 			}
 			public void setStateMailing(String s) {
 				stateMailing= s;
@@ -191,14 +191,14 @@ public class Voter {
 			//ZIP MAILING 
 			public String getZipMailing() {
 
-				return zipMailing;
+				return this.zipMailing;
 			}
 			public void setZipMailing(String s) {
 				zipMailing= s;
 			}
 			//BIRTHDAY DAY GETTER AND SETTER
 			public String getBirthdayDate() {
-				return birthdayDate;
+				return this.birthdayDate;
 			}
 			public void setBirthdayDate(String s) {
 				birthdayDate = s;
@@ -206,7 +206,7 @@ public class Voter {
 			//BIRTHDAY MONTH GETTER AND SETTER
 			public String getBirthdayMonth() {
 
-				return birthdayMonth;
+				return this.birthdayMonth;
 			}
 			public void setBirthdayMonth(String s) {
 				birthdayMonth= s;
@@ -214,7 +214,7 @@ public class Voter {
 			//BIRTHDAY YEAR GETTER AND SETTER
 			public String getBirthdayYear() {
 
-				return birthdayYear;
+				return this.birthdayYear;
 			}
 			public void setBirthdayYear(String s) {
 				birthdayYear= s;
@@ -222,7 +222,7 @@ public class Voter {
 			//HOMEPHONE GETTER AND SETTER
 			public String getHomePhone() {
 
-				return homePhone;
+				return this.homePhone;
 			}
 			public void setHomePhone(String s) {
 				homePhone= s;
@@ -230,7 +230,7 @@ public class Voter {
 			//WORK PHONE GETTER AND SETTER
 			public String getWorkPhone() {
 
-				return workPhone;
+				return this.workPhone;
 			}
 			public void setWorkPhone(String s) {
 				workPhone= s;
@@ -238,7 +238,7 @@ public class Voter {
 			//DL NUMBER GETTER AND SETTER 
 			public String getDLNumber() {
 
-				return dlNumber;
+				return this.dlNumber;
 			}
 			public void setDLNumber(String s) {
 				dlNumber= s;

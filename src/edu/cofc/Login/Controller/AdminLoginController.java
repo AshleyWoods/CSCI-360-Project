@@ -1,5 +1,6 @@
 package edu.cofc.Login.Controller;
 
+import edu.cofc.Administration.Admin;
 import edu.cofc.Application.VotingSystem.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -18,7 +19,8 @@ public class AdminLoginController {
     @FXML
     private void handleLoginClick() {
         //Check the database to see if teh login info is valid
-        boolean loginValid = main.getInterface().adminLoginValid(userName.getText(),passWord.getText());
+        Admin log = new Admin(passWord.getText(), userName.getText());
+        boolean loginValid = main.getInterface().adminLoginValid(log);
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to Admin Menu
         main.showAdminMenu();
