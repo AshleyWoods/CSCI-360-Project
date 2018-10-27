@@ -16,13 +16,14 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 
+
 public class TextInterface {
 
     private boolean officialTally;
     private Voter voter;
     
     private static final String COMMA = ",";
-    private static final String NEWLINE = "/n";
+    private static final String NEWLINE = "\n";
     
     //FILE HEADER
     private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
@@ -112,65 +113,59 @@ public class TextInterface {
     			
     		}
     		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
-    		PrintWriter pw1 = new PrintWriter(fileOUT);
-    		//INSERT VALUES TO FILE
-    		pw1.print(NEWLINE);
-    		pw1.print(voter);
-    		pw1.close();
-    		//pw1.print(voter);
-    		//pw1.print(COMMA);
-    		/**existsWriter.append(voter.getLastName());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getMiddleInitial());
-    		existsWriter.append(COMMA);
-    		if(voter.getSuffix()!= null) {
-    			existsWriter.append(voter.getSuffix());
-        		existsWriter.append(COMMA);	
-    		}
-    		existsWriter.append(voter.getSex());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getRace());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getSSN());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getStreetResidential());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getCityResidential());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getStateResidental());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getZipResidential());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getAptResidential());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getCityLimits());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getStreetMailing());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getCityMailing());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getStateMailing());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getZipMailing());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getBirthdayDate());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getBirthdayMonth());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getBirthdayYear());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getHomePhone());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getWorkPhone());
-    		existsWriter.append(COMMA);
-    		existsWriter.append(voter.getDLNumber());
-    		existsWriter.append(COMMA);	
-    		existsWriter.append(String.valueOf(voter.getvoterID()));
-    		existsWriter.append(COMMA);
-		*/
+			FileWriter writer = new FileWriter(fileName);
+			//insert values into file
+ 			writer.append(voter.getFirstName());
+			writer.append(COMMA);
+			writer.append(voter.getLastName());
+			writer.append(COMMA);
+			writer.append(voter.getMiddleInitial());
+			writer.append(COMMA);
+			if(voter.getSuffix()!= null) {
+				writer.append(voter.getSuffix());
+				writer.append(COMMA);
+			}
+			writer.append(voter.getSex());
+			writer.append(COMMA);
+			writer.append(voter.getRace());
+			writer.append(COMMA);
+			writer.append(voter.getSSN());
+			writer.append(COMMA);
+			writer.append(voter.getStreetResidential());
+			writer.append(COMMA);
+			writer.append(voter.getCityResidential());
+			writer.append(COMMA);
+			writer.append(voter.getZipResidential());
+			writer.append(COMMA);
+			writer.append(voter.getAptResidential());
+			writer.append(COMMA);
+			writer.append(voter.getCityLimits());
+			writer.append(COMMA);
+			writer.append(voter.getStreetMailing());
+			writer.append(COMMA);
+			writer.append(voter.getCityMailing());
+			writer.append(COMMA);
+			writer.append(voter.getStateMailing());
+			writer.append(COMMA);
+			writer.append(voter.getZipMailing());
+			writer.append(COMMA);
+			writer.append(voter.getBirthdayDate());
+			writer.append(COMMA);
+			writer.append(voter.getBirthdayMonth());
+			writer.append(COMMA);
+			writer.append(voter.getBirthdayYear());
+			writer.append(COMMA);
+			writer.append(voter.getHomePhone());
+			writer.append(COMMA);
+			writer.append(voter.getWorkPhone());
+			writer.append(COMMA);
+			writer.append(voter.getDLNumber());
+			writer.append(COMMA);
+			writer.append(String.valueOf(voter.getvoterID()));
+			writer.append(NEWLINE);
+			writer.flush();
+			writer.close();
     		System.out.println("Written to file successfully, check in your file browser to find it");
-    		
-    	//	existsWriter.close();
     	 
     	}//end try 
     	catch(Exception e){
