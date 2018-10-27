@@ -1,5 +1,6 @@
 package edu.cofc.TextfileInterface;
 
+import edu.cofc.Administration.Admin;
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
 import java.sql.*;
@@ -181,8 +182,9 @@ public class TextInterface {
     //see if a voter's login is valid--use voterRegistered from the registration methods section
 
     //see if an administrator's login is valid
-    public boolean adminLoginValid(String userName, String password) {
+    public boolean adminLoginValid(Admin opperator) {
         //checks the database for the login information from the admin database files and returns the result
+
         return false;
     }
 
