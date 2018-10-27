@@ -1,7 +1,7 @@
 package edu.cofc.Administration;
 
 public class Admin {
-    
+
     private String password;
     private String username;
 
