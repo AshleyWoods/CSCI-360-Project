@@ -64,25 +64,11 @@
 		<Label text="Provide Identification Using:"
 			   layoutX = "100"
 			   layoutY = "155"
-			   fx:id = "x1">
+			   >
 		</Label>
-		<!--     
-    <Text layoutY="175.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
-    	  text="Provide Identification Using:" 
-    	  AnchorPane.leftAnchor="10.0"> -->
-     
-   
-    
-  
-<!--     
-    <Text font="$x1" 
-    	  layoutY="316.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
-    	  text="Or" 
-    	  AnchorPane.leftAnchor="10.0" /> -->
+		
+	
+
 
   </children>
 </AnchorPane>

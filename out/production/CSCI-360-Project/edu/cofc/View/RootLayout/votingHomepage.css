@@ -5,9 +5,11 @@
 	-fx-background-repeat: no-repeat no-repeat;
 	-fx-background-position: center;
 	-fx-font-family: "TeX Gyre Adventor";
+	-fx-text-fill: white;
 
      
 }
+
 .header-section{
 	-fx-font-family: "TeX Gyre Adventor";
 	-fx-font-size: 18px;
@@ -20,7 +22,7 @@
 	-fx-font-size: 80px;
 	-fx-font-weight: 600;
 	-fx-text-align: center;
-	-fx-text-fill: white;
+	-fx-fill: midnightblue;
 }
 .header-section Label{
 	-fx-font-family: "TeX Gyre Adventor";
@@ -29,9 +31,6 @@
 	-fx-font-weight: 400;
 	-fx-text-fill: white;
 	
-}
-.header-section ComboBox{
-	fx-background-color: midnightblue;
 }
 
 .button {
