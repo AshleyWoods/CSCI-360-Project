@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Administration/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Administration/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Application/Election.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Application/Election.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Application/Election.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Application/Election.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Application/VotingSystem/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Application/VotingSystem/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Ballots/Ballot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Ballots/Ballot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Ballots/Controller/Ballot1Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Ballots/Controller/Ballot1Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Ballots/Controller/FinalBallotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCI-360-Project/edu/cofc/Ballots/Controller/FinalBallotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,7 +72,7 @@
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="3" />
-          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="6" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.2" value="1" />
@@ -80,19 +87,19 @@
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="33" />
+          <entry key="project.opened" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="39" />
           <entry key="fxml" value="813" />
-          <entry key="java" value="24157" />
+          <entry key="java" value="24332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="24157" />
+          <entry key="JAVA" value="24332" />
           <entry key="PLAIN_TEXT" value="39" />
           <entry key="XML" value="813" />
         </counts>
@@ -102,7 +109,7 @@
           <entry key="csv" value="6" />
           <entry key="fxml" value="105" />
           <entry key="iml" value="1" />
-          <entry key="java" value="242" />
+          <entry key="java" value="245" />
           <entry key="xsl" value="1" />
         </counts>
       </usages-collector>
@@ -110,7 +117,7 @@
         <counts>
           <entry key="CSV" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="242" />
+          <entry key="JAVA" value="245" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="XML" value="106" />
         </counts>
@@ -125,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="394" column="13" selection-start-line="394" selection-start-column="13" selection-end-line="394" selection-end-column="13" />
+            <state relative-caret-position="6290">
+              <caret line="406" column="13" selection-start-line="406" selection-start-column="13" selection-end-line="406" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,32 +144,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+            <state relative-caret-position="392">
+              <caret line="186" selection-start-line="186" selection-end-line="186" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/Election.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/Election.java">
+        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#262#263#0" expanded="true" />
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="e#341#342#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#525#526#0" expanded="true" />
-                <element signature="e#560#561#0" expanded="true" />
-                <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -170,11 +183,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" selection-start-line="17" selection-end-line="24" selection-end-column="43" />
+            <state relative-caret-position="358">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -243,9 +265,7 @@
         <option value="$PROJECT_DIR$/src/Application/VotingSystem/Main.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Controller/Main.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java" />
-        <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/SSNLoginController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/VRNLoginController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/DriverLoginController.java" />
@@ -253,7 +273,6 @@
         <option value="$PROJECT_DIR$/src/edu/cofc/DataBase/DatabaseInterface.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java" />
-        <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/View/Ballot1.fxml" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Registration/View/VoterRegistration.fxml" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Registration/Controller/VoterRegistrationController.java" />
@@ -262,11 +281,14 @@
         <option value="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/AdminLoginController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Application/Election.java" />
+        <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java" />
+        <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java" />
+        <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-15" />
     <option name="y" value="-15" />
     <option name="width" value="2405" />
@@ -282,7 +304,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,11 +323,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="cofc" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cofc" type="462c0819:PsiDirectoryNode" />
+              <item name="Ballots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cofc" type="462c0819:PsiDirectoryNode" />
+              <item name="Ballots" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cofc" type="462c0819:PsiDirectoryNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,8 +483,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.114017434" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.11535882" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -448,7 +493,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32531825" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32531825" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -519,63 +564,63 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Administration/view/ElectionRunningPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="112" selection-start-line="15" selection-start-column="112" selection-end-line="15" selection-end-column="112" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Administration/view/endElectionPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="131" selection-start-line="16" selection-start-column="131" selection-end-line="16" selection-end-column="131" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/CSCI-360-Project.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Administration/view/Tally/noOfficialTallyPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Administration/view/Tally/officialTallyNeededPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/View/NoRegistrationPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/View/registrationStatusPositivePopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/View/registrationStatusNegativePopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/xxx.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/View/Sample.fxml" />
@@ -657,16 +702,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/View/FinalBallot.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Login/View/AdminLogin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -753,12 +798,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/View/Ballot1.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-187">
           <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/Controller/registrationInvestigationController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -768,45 +813,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/DataBase/DatabaseInterface.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/View/VoterRegistration.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5899">
           <caret line="347" column="53" selection-start-line="347" selection-start-column="53" selection-end-line="347" selection-end-column="53" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="394" column="13" selection-start-line="394" selection-start-column="13" selection-end-line="394" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/registration.csv">
+      <provider editor-type-id="csv-text-editor" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-      <provider editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/Controller/VoterRegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -852,49 +873,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" selection-start-line="17" selection-end-line="24" selection-end-column="43" />
+        <state relative-caret-position="6290">
+          <caret line="406" column="13" selection-start-line="406" selection-start-column="13" selection-end-line="406" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="392">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/Election.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="256">
           <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
         </state>
       </provider>
     </entry>

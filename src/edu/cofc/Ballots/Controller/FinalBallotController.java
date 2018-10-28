@@ -28,7 +28,9 @@ public class FinalBallotController {
 
     @FXML
     private void handleSubmitClick(){
-        selected = buttonGroup.getSelectedToggle().getUserData().toString();
+        selected = buttonGroup.getSelectedToggle().toString();
+        int index = selected.indexOf('\'');
+        selected = selected.substring(index);
         Ballot ballot = new Ballot();
         ballot.addVote(new Vote(main.activeVoter,selected));
         ballot.addVote(new Vote(main.activeVoter,Ballot1Controller.selected));
