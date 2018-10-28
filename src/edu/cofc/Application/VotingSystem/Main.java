@@ -52,10 +52,7 @@ public class Main extends Application {
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
         //ADD CSS FILE
-        //scene.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-        scene.getStylesheets().add("edu/cofc/View/RootLayout/votingHomepage.css");
-      
-       
+        scene.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
         //END ADD CSS FILE
         primaryStage.show();
         
@@ -196,6 +193,10 @@ public class Main extends Application {
 
             AdminLoginController controller = loader.getController();
             controller.setMain(this);
+            //ADD CSS FILE
+            AdminLogin.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+            
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -238,6 +239,8 @@ public class Main extends Application {
             // Give the controller access to the main app.
             AdminMenuController controller = loader.getController();
             controller.setMain(this, ElectionRunning);
+            
+          
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -359,6 +362,7 @@ public class Main extends Application {
             confirmSubmit.setTitle("Confirm Form Submission");
             Scene confirmSubmitScene = new Scene(page);
             confirmSubmit.setScene(confirmSubmitScene);
+            
             //ADD CSS FILE
             confirmSubmitScene.getStylesheets().add
             (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
