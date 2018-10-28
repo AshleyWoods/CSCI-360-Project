@@ -240,6 +240,10 @@ public class Main extends Application {
             AdminMenuController controller = loader.getController();
             controller.setMain(this, ElectionRunning);
             
+            //ADD CSS FILE
+            AdminMenu.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+            
           
 
         } catch (IOException e) {

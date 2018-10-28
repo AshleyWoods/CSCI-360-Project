@@ -9,6 +9,21 @@
 
      
 }
+.admin-menu .button{
+	 -fx-text-fill: white;
+
+    -fx-font-family: "TeX Gyre Adventor";
+    -fx-font-weight: bold;
+    -fx-pref-width: 300px;
+    -fx-background-color: midnightblue;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	
+}
+.admin-menu{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+} 
 .login-section Label{
 	-fx-font-family: "TeX Gyre Adventor";
 	-fx-font-size: 30px;
