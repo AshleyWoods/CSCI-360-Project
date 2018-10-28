@@ -11,77 +11,64 @@
   			prefWidth="600.0" 
   			xmlns:fx="http://javafx.com/fxml/1" 
   			xmlns="http://javafx.com/javafx/2.2" 
-  			fx:controller="edu.cofc.Login.Controller.VRNLoginController">
+  			fx:controller="edu.cofc.Login.Controller.VRNLoginController"
+  			styleClass= "login-section">
   <children>
-    <Button layoutX="446.0" 
-    		layoutY="334.0" 
+    <Button layoutX="210.0" 
+    		layoutY="500.0" 
     		mnemonicParsing="false" 
     		onAction="#handleLoginClick" 
     		text="Login" />
 
     <TextField fx:id="firstNameText" 
-    		   layoutX="388.0" 
-    		   layoutY="18.0" 
+    		   layoutX="320.0" 
+    		   layoutY="85.0" 
     		   prefWidth="200.0"
     		   promptText= "Enter First Name"  />
     		   
     <TextField fx:id="lastNameText" 
-    		   layoutX="388.0" 
-    		   layoutY="87.0" 
+    		   layoutX="320.0" 
+    		   layoutY="165.0" 
     		   prefWidth="200.0"
     		   promptText= "Enter Last Name"  />
    
    <TextField fx:id="middleInitialText" 
-   			  layoutX="388.0" 
-   			  layoutY="162.0" 
+   			  layoutX="320.0" 
+   			  layoutY="230.0" 
    			  prefWidth="200.0"
    			  promptText= "Enter middle Initial"  />
     		   
     <TextField fx:id="VRN" 
-    		   layoutX="388.0" 
-    		   layoutY="234.0" 
+    		   layoutX="320.0" 
+    		   layoutY="310.0" 
     		   prefWidth="200.0"
     		   promptText= "Enter Voter Registration Number"  />
        
      <TextField fx:id="DLN" 
-    		   layoutX="388.0" 
-    		   layoutY="290.0" 
+    		   layoutX="320.0" 
+    		   layoutY="380.0" 
     		   prefWidth="200.0"
     		   promptText= "Enter DL Number"  />
     
-    <Text layoutX="26.0" 
-    	  layoutY="53.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
-    	  text="First Name" />
+    <Label layoutX="100.0" 
+    	  layoutY="90.0" 
+ 		  text="First Name" />
    
-    <Text layoutX="26.0" 
-    	  layoutY="122.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
+    <Label layoutX="100.0" 
+    	  layoutY="160.0" 
     	  text="Last Name" />
     	  
-    <Text layoutX="26.0" 
-    	  layoutY="269.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
-    	  text="Voter Registration Number" />
+    <Label layoutX="100.0" 
+    	  layoutY="310.0"
+    	  text="VR Number" />
      
-	<Text layoutX="26.0" 
-    	  layoutY="310.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
-    	  text="Drivers Liscence Number" />
-    	  
-    <TextField fx:id="middleInitial" 
-    		   layoutX="388.0" 
-    		   layoutY="162.0" 
-    		   prefWidth="200.0" />
+	<Label layoutX="100.0" 
+    	  layoutY="385.0" 
+    	  text="DL Number" />
+
     		   
-    <Text layoutX="26.0" 
-          layoutY="197.0" 
-          strokeType="OUTSIDE" 
-          strokeWidth="0.0" 
+    <Label layoutX="100.0" 
+          layoutY="230.0" 
           text="Middle Initial" />
   </children>
 </AnchorPane>
