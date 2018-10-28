@@ -15,18 +15,11 @@ public class Ballot {
     public Ballot() {
         this.votes = new ArrayList<Vote>();
         this.voteNumber = new ArrayList();
-        this.candidates = new ArrayList();
+        this.candidates = Main.getCurrentElection().getCandidates();
         for (int i = 0; i<8; i++) {
             this.voteNumber.add(0);
         }
-        this.candidates.add("Buggs Bunny");
-        this.candidates.add("Road Runner");
-        this.candidates.add("Daffy Duck");
-        this.candidates.add("Wiley E. Cyote");
-        this.candidates.add("Peter Parker");
-        this.candidates.add("Batman");
-        this.candidates.add("Spider Man");
-        this.candidates.add("Bruce Wayne");
+
     }
 
     public void addVote(Vote vote) {

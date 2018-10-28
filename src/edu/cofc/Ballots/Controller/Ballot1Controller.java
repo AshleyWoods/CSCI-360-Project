@@ -29,8 +29,7 @@ public class Ballot1Controller {
     private void handleContinueClick(){
         selected = buttonGroup.getSelectedToggle().toString();
         int index = selected.indexOf('\'');
-        selected = selected.substring(index);
-        System.out.println(selected);
+        selected = selected.substring(index+1, selected.length()-1);
         //show next ballot
          main.showFinalBallot();
     }

@@ -10,6 +10,7 @@ public class Election {
     private String title;
 
     public Election() {
+        this.results = new ArrayList<>();
         this.candidates = new ArrayList<String>();
         this.candidates.add("Buggs Bunny");
         this.candidates.add("Road Runner");
@@ -20,6 +21,13 @@ public class Election {
         this.candidates.add("Spider Man");
         this.candidates.add("Bruce Wayne");
         this.title = "House Representative Election, Senate Representative Election";
+
+    }
+
+    public Election(List<String> can, String Title) {
+        this.results = new ArrayList<>();
+        this.candidates = can;
+        this.title = Title;
     }
 
     public List<String> getResults() {

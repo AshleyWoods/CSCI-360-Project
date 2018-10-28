@@ -30,7 +30,7 @@ public class FinalBallotController {
     private void handleSubmitClick(){
         selected = buttonGroup.getSelectedToggle().toString();
         int index = selected.indexOf('\'');
-        selected = selected.substring(index);
+        selected = selected.substring(index +1,selected.length()-1);
         Ballot ballot = new Ballot();
         ballot.addVote(new Vote(main.activeVoter,selected));
         ballot.addVote(new Vote(main.activeVoter,Ballot1Controller.selected));

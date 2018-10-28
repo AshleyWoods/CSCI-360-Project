@@ -6,6 +6,7 @@ import edu.cofc.Administration.Controller.NoElectionPopUpController;
 import edu.cofc.Administration.Controller.Tally.*;
 import edu.cofc.Administration.Controller.endElectionPopUpController;
 import edu.cofc.Administration.Controller.startElectionPopUpController;
+import edu.cofc.Application.Election;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
 import edu.cofc.Ballots.Controller.FinalBallotController;
 import edu.cofc.Ballots.Controller.SavePopUpController;
@@ -29,6 +30,7 @@ public class Main extends Application {
     //This variable will be changed when an operator starts or ends an election
     public  boolean ElectionRunning = false;
     public static TextInterface dataInterface;
+    public static Election currentElection;
     private Stage primaryStage;
     private BorderPane rootLayout;
     //this variable will be changed when an operator completes an official tally 
@@ -57,9 +59,15 @@ public class Main extends Application {
         primaryStage.show();
         
         dataInterface = new TextInterface();
+        currentElection = new Election();
 
         showLogin();
     }
+
+    public static Election getCurrentElection() {
+        return currentElection;
+    }
+
     public void showRecount() {
     	try {
             FXMLLoader loader = new FXMLLoader();
