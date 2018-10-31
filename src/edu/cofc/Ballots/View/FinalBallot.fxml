@@ -50,7 +50,7 @@
         			 toggleGroup="$buttonGroup" 
         			 GridPane.columnIndex="0" GridPane.rowIndex="2" />
         			 
-        <RadioButton fx:id="voldemort" 
+        <RadioButton fx:id="spiderMan" 
         			 mnemonicParsing="false" 
         			 text="Spider Man" 
         			 toggleGroup="$buttonGroup" 
