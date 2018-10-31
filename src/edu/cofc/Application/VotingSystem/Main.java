@@ -405,6 +405,11 @@ public class Main extends Application {
             // Give the controller access to the main app.
             Ballot1Controller controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            rootLayout.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -423,6 +428,10 @@ public class Main extends Application {
             // Give the controller access to the main app.
             FinalBallotController controller = loader.getController();
             controller.setMain(this);
+            
+            rootLayout.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
         } catch (IOException e) {
             e.printStackTrace();

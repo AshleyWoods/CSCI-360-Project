@@ -11,22 +11,23 @@
 			prefWidth="600.0" 
 			xmlns:fx="http://javafx.com/fxml/1" 
 			xmlns="http://javafx.com/javafx/2.2" 
-			fx:controller="edu.cofc.Ballots.Controller.Ballot1Controller">
+			fx:controller="edu.cofc.Ballots.Controller.Ballot1Controller"
+			styleClass = "ballot-section">
   <children>
-    <Button layoutX="415.0" 
-    		layoutY="334.0" 
+    <Button layoutX="30.0" 
+    		layoutY="500.0" 
     		mnemonicParsing="false" 
     		onAction="#handleContinueClick" 
     		text="Continue" />
     
-    <Button layoutX="269.0" 
-    		layoutY="334.0" 
+    <Button layoutX="350.0" 
+    		layoutY="500.0" 
     		mnemonicParsing="false" 
     		onAction="#handleCancelClick" 
     		text="Cancel" />
     
-    <Button layoutX="148.0" 
-    		layoutY="334.0" 
+    <Button layoutX="10.0" 
+    		layoutY="7.0" 
     		mnemonicParsing="false" 
     		onAction="#handleBackClick" 
     		text="Back" />
@@ -41,7 +42,7 @@
         			 mnemonicParsing="false" 
         			 text="Buggs Bunny" 
         			 GridPane.columnIndex="0" 
-        			 GridPane.rowIndex="0">
+        			 GridPane.rowIndex="1">
           <toggleGroup>
           
             <ToggleGroup fx:id="buttonGroup" />
@@ -54,21 +55,21 @@
         			 text="Road Runner" 
         			 toggleGroup="$buttonGroup" 
         			 GridPane.columnIndex="0" 
-        			 GridPane.rowIndex="1" />
+        			 GridPane.rowIndex="2" />
         			 
         <RadioButton fx:id="daffyDuck" 
         			 mnemonicParsing="false" 
         			 text="Daffy Duck" 
         			 toggleGroup="$buttonGroup" 
-        			 GridPane.columnIndex="1" 
-        			 GridPane.rowIndex="0" />
+        			 GridPane.columnIndex="2" 
+        			 GridPane.rowIndex="1" />
         			 
         <RadioButton fx:id="wileyECyote" 
         			 mnemonicParsing="false" 
         			 text="Wiley E. Cyote" 
         			 toggleGroup="$buttonGroup" 
-        			 GridPane.columnIndex="1" 
-        			 GridPane.rowIndex="1" />
+        			 GridPane.columnIndex="2" 
+        			 GridPane.rowIndex="2" />
       </children>
       
       <columnConstraints>
@@ -82,8 +83,9 @@
       </rowConstraints>
     </GridPane>
    
-    <Text layoutX="100.0" 
-    	  layoutY="46.0" 
+    <Text layoutX= "70"
+    	  layoutY="100"
+    	  
     	  strokeType="OUTSIDE" 
     	  strokeWidth="0.0" text="House Representative Election" />
   
