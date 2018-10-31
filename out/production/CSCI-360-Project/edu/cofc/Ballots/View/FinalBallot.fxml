@@ -14,23 +14,53 @@
 			fx:controller="edu.cofc.Ballots.Controller.FinalBallotController"
 			styleClass = "ballot-section">
   <children>
-    <Button layoutX="415.0" 
-    	    layoutY="334.0" 
+    <Button layoutX="350.0" 
+    	    layoutY="500.0" 
     	    mnemonicParsing="false" 
     	    onAction="#handleSubmitClick" 
     	    text="Submit" />
-    <Button layoutX="269.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCancelClick" text="Cancel" />
-    <Button layoutX="148.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackClick" text="Back" />
-    <GridPane layoutX="57.0" layoutY="54.0" prefHeight="259.0" prefWidth="272.0">
+    	    
+    <Button layoutX="30.0" 
+    		layoutY="500.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleCancelClick" 
+    		text="Cancel" />
+    		
+    <Button layoutX="10.0" 
+    		layoutY="7.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleBackClick" 
+    		text="Back" />
+    <GridPane layoutX="14.0" 
+    		  layoutY="62.0" 
+    		  prefHeight="259.0" 
+    		  prefWidth="572.0">
       <children>
-        <RadioButton fx:id="peterParker" mnemonicParsing="false" selected="false" text="Peter Parker" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <RadioButton fx:id="peterParker" 
+        			 mnemonicParsing="false" 
+        			 selected="false" text="Peter Parker" 
+        			 GridPane.columnIndex="0" GridPane.rowIndex="1">
           <toggleGroup>
             <ToggleGroup fx:id="buttonGroup" />
           </toggleGroup>
         </RadioButton>
-        <RadioButton fx:id="batMan" mnemonicParsing="false" text="Batman" toggleGroup="$buttonGroup" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <RadioButton fx:id="spiderMan" mnemonicParsing="false" text="Spider Man" toggleGroup="$buttonGroup" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <RadioButton fx:id="bruceWayne" mnemonicParsing="false" text="Bruce Wayne" toggleGroup="$buttonGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <RadioButton fx:id="batMan" 
+        			 mnemonicParsing="false" 
+        			 text="Batman" 
+        			 toggleGroup="$buttonGroup" 
+        			 GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        			 
+        <RadioButton fx:id="voldemort" 
+        			 mnemonicParsing="false" 
+        			 text="Spider Man" 
+        			 toggleGroup="$buttonGroup" 
+        			 GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        			 
+        <RadioButton fx:id="bruceWayne" 
+        			 mnemonicParsing="false" 
+        			 text="Bruce Wayne" 
+        			 toggleGroup="$buttonGroup" 
+        			 GridPane.columnIndex="2" GridPane.rowIndex="2" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,6 +71,10 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Text layoutX="17.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senate Reprasentative Election" />
+    <Text layoutX="70.0" 
+    	  layoutY="100.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Senate Representative Election" />
   </children>
 </AnchorPane>
