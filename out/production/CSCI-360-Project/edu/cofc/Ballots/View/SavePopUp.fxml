@@ -7,9 +7,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Ballots.Controller.SavePopUpController">
+<AnchorPane prefHeight="400.0" 
+			prefWidth="600.0" 
+			xmlns:fx="http://javafx.com/fxml/1" 
+			xmlns="http://javafx.com/javafx/2.2" 
+			fx:controller="edu.cofc.Ballots.Controller.SavePopUpController">
   <children>
-    <Button fx:id="menuButton" layoutX="256.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleOKClick" text="Okay" />
-    <Text layoutX="36.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your vote has been successfully submitted" />
+    <Button fx:id="menuButton" 
+    		layoutX="256.0" 
+    		layoutY="315.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleOKClick" 
+    		text="Okay" />
+    <Text layoutX="36.0" 
+    	  layoutY="110.0" 
+    	  strokeType="OUTSIDE" 
+    	  strokeWidth="0.0" 
+    	  text="Your vote has been successfully submitted" />
   </children>
 </AnchorPane>
