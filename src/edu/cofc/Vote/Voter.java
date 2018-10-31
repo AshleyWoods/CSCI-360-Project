@@ -33,8 +33,33 @@ public class Voter {
 		private String workPhone=				voterRegCtrller.workPhoneText.toString();
 		private String dlNumber=				voterRegCtrller.dlNumberText.toString();
 		private int voterID= 					rand.nextInt(100000);
-		
-		public Voter(String firstName, String lastName, String middleInitial, String suffix, String sex, 
+
+		public Voter(String firstName, String lastName, String MI, String d1Number, int ID){
+			//1 - SSN
+			//2 - VRN
+			//3 - DLN
+			if (ID == 1){
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.middleInitial = MI;
+				this.ssn = d1Number;
+			}
+			else if(ID == 2){
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.middleInitial = MI;
+				this.voterID = Integer.parseInt(d1Number);
+			}
+			else{
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.middleInitial = MI;
+				this.dlNumber = d1Number;
+			}
+		}
+
+
+		public Voter(String firstName, String lastName, String middleInitial, String suffix, String sex,
 				  String race, 	String ssn,  String streetResidential,String cityResidential, String stateResidential, 
 				  String zipResidential, String aptResidential,String inCityLimits, String streetMailing,
 				  String cityMailing, String stateMailing,String zipMailing, String birthdayDate, String birthdayMonth, String birthdayYear,

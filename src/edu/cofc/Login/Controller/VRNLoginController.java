@@ -52,9 +52,7 @@ public class VRNLoginController {
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to first ballot
        //else {
-    	 //  String SSN = Main.getInterface().getSSN(firstName,lastName,middleInitial,voterID, loginType);
-    	  // System.out.println(SSN);
-        //main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),SSN);
+        //main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),D1Number,2);
         main.showBallot();
     }
 }

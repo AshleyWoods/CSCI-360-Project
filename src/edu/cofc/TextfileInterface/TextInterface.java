@@ -240,49 +240,10 @@ public class TextInterface {
         //if it's the same, return the total, if it is not, do it again and return the result
         return 0;
     }
-    
-    //searches the database for the voter's information and returns the SSN
-    //loginTypes:
-    //1-DLN
-    //2-VRN
-    //3-SSN
-    public String getSSN(String firstName, String lastName, String middleInitial, String loginTypeIDNum, int loginType){
-   
-    	String fName = firstName;
-    	String lName = lastName;
-    	String mInitial = middleInitial;
-    	String ssn = "";
-       	
-    	try {
-    			    			
-    		if(loginType ==1 ) {
-    			String DLN= loginTypeIDNum;
-				
-    			
-    			//return ssn;
-    			return "";
-    		}//END IF 
-    			else if(loginType == 2) {
-						
-    	    			//return ssn;
-    				return "";
-				}//END ELSE IF 
-						
-				else {
-						String SSN = loginTypeIDNum;
-						
-						//ssn = resultSet2.toString();
-						return "";
-				}//END ELSE
-    		}//end try 
-	    	catch(Exception e){
-				e.printStackTrace();
-				System.out.println("error"); 
-				}//end catch
-			return "";
-			
 
-    }
+
+    //DO NOT USE
+/*
     public int getVRN(String firstName, String lastName, String middleInitial,String ssn) {
     	int VRN= -1;
     	String fName = firstName;
@@ -316,5 +277,5 @@ public class TextInterface {
 			}//end catch
 		return VRN;
     }
-
+*/
 }
