@@ -114,7 +114,7 @@ public class TextInterface {
     			
     		}
     		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
-			FileWriter writer = new FileWriter(fileName);
+			FileWriter writer = new FileWriter(fileName, true);
 			//insert values into file
  			writer.append(voter.getFirstName());
 			writer.append(COMMA);
