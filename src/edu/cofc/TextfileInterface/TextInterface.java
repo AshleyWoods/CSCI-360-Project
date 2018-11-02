@@ -19,7 +19,7 @@ import java.io.FileWriter;
 
 
 public class TextInterface {
-
+//Assigned any and all accesses to the database (text files) -- Information Expert
     private boolean officialTally;
     private Voter voter;
     
