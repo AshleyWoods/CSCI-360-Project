@@ -16,21 +16,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.security.SecureRandom;
 
 
 public class TextInterface {
 //Assigned any and all accesses to the database (text files) -- Information Expert
     private boolean officialTally;
     private Voter voter;
-    
+    private SecureRandom rand = new SecureRandom();
+    private byte bytes[];
+    private String salt;
     private static final String COMMA = ",";
     private static final String NEWLINE = "\n";
     
-    //FILE HEADER
+    //FILE HEADER -- ADDED SALT FOR SECURITY PURPOSES
     private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
     		+ "streetResidential, cityResidential, stateResidential, zipResidential, aptResidential, inCityLimits,"
     		+ "streetMAiling, cityMailing, stateMailing, zipMailing, birthdayDate, birthdayMonth, birthdayYear, "
-    		+ "homePhone, workPhone, dlNumber, voterID";
+    		+ "homePhone, workPhone, dlNumber, voterID, salt";
 
     public TextInterface(){
         this.officialTally = false;
@@ -102,8 +105,17 @@ public class TextInterface {
         	//TRUE if Exists, FALSE if it doesn't
         	boolean exists = registrationFile.exists();
         	System.out.println(exists);
-  
-    		if(!exists) {
+
+        	//Making the salt to be stored with the voter and to encrypt storage/help voters log in later
+        	bytes = new byte[10];
+			rand.nextBytes(bytes);
+        	System.out.println(bytes);
+        	salt = "";
+    		for (int i = 0; i<bytes.length; i++){
+    			salt = salt + bytes[i];
+			}
+
+        	if(!exists) {
     			System.out.println("in the if");
     			FileOutputStream output = new FileOutputStream(fileName, true);
     			PrintWriter pw = new PrintWriter(output);
@@ -163,6 +175,8 @@ public class TextInterface {
 			writer.append(voter.getDLNumber());
 			writer.append(COMMA);
 			writer.append(String.valueOf(voter.getvoterID()));
+			writer.append(COMMA);
+			writer.append(salt);
 			writer.append(NEWLINE);
 			writer.flush();
 			writer.close();
