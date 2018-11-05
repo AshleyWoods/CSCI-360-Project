@@ -16,9 +16,12 @@ import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -332,6 +335,11 @@ public class Main extends Application {
 
             officialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            confirmSubmitScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             stage.showAndWait();
            
@@ -355,6 +363,11 @@ public class Main extends Application {
 
             unofficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            confirmSubmitScene.getStylesheets().add
+            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
 
             stage.showAndWait();
 
@@ -481,7 +494,6 @@ public class Main extends Application {
             //ADD CSS FILE
             confirmSaveScene.getStylesheets().add
             (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
 
             ConfirmFormSaveController controller = loader.getController();
             controller.setMain(this);
@@ -526,25 +538,30 @@ public class Main extends Application {
     public void showNoElectionPopUp() {
         try {
             FXMLLoader loader = new FXMLLoader();
+           
             loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/NoElectionPopUp.fxml"));
             AnchorPane page = loader.load();
 
-
             Stage popUp = new Stage();
+            
             popUp.setTitle("Warning");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
          
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-
-
+            
             NoElectionPopUpController controller = loader.getController();
             controller.setMain(this);
+            
 
+           
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -652,8 +669,6 @@ public class Main extends Application {
             //ADD CSS FILE
             warningScene.getStylesheets().add
             (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-
             popUp.showAndWait();
 
         } catch (IOException e) {
