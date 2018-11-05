@@ -1,7 +1,7 @@
 package edu.cofc.Administration;
 
 public class Admin {
-
+//Creates an Admin object to store this information while needed
     private String password;
     private String username;
 

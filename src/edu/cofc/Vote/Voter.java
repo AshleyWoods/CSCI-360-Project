@@ -4,37 +4,85 @@ import java.util.Random;
 import edu.cofc.Registration.Controller.VoterRegistrationController;
 
 public class Voter {
+	//Creates the voter object as the information expert and reaches to the textInterface as it is the expert on anything to do with stored information
 		private Random rand = new Random();
 
 
 		private VoterRegistrationController voterRegCtrller; 
 
-		private String firstName = 				voterRegCtrller.firstNameText.toString();
-		private String lastName = 				voterRegCtrller.lastNameText.toString();
-		private String middleInitial=			voterRegCtrller.middleInitialText.toString();
-		private String suffix=					voterRegCtrller.suffixText.toString();
-		private String sex= 					voterRegCtrller.sexComboBox.toString();
-		private String race=					voterRegCtrller.raceComboBox.toString();
-		private String ssn=						voterRegCtrller.ssnText.toString();
-		private String streetResidential=		voterRegCtrller.streetText.toString();
-		private String cityResidential = 		voterRegCtrller.cityText.toString();
-		private String stateResidential = 		voterRegCtrller.stateText.toString();
-		private String zipResidential = 		voterRegCtrller.zipText.toString();
-		private String aptResidential=			voterRegCtrller.aptText.toString();
-		private String inCityLimits=			voterRegCtrller.cityLimitComboBox.toString();
-		private String streetMailing = 			voterRegCtrller.streetMailingText.toString();
-		private String cityMailing=				voterRegCtrller.cityMailingText.toString();
-		private String stateMailing=			voterRegCtrller.stateMailingText.toString();
-		private String zipMailing=				voterRegCtrller.zipMailingText.toString();
-		private String birthdayDate=			voterRegCtrller.birthdayDateText.toString();
-		private String birthdayMonth = 			voterRegCtrller.birthMonthComboBox.toString();
-		private String birthdayYear = 			voterRegCtrller.birthdayYearText.toString();
-		private String homePhone=				voterRegCtrller.homePhoneText.toString();
-		private String workPhone=				voterRegCtrller.workPhoneText.toString();
-		private String dlNumber=				voterRegCtrller.dlNumberText.toString();
-		private int voterID= 					rand.nextInt(100000);
-		
-		public Voter(String firstName, String lastName, String middleInitial, String suffix, String sex, 
+		private String firstName; // = 				voterRegCtrller.firstNameText.toString();
+		private String lastName; // = 				voterRegCtrller.lastNameText.toString();
+		private String middleInitial; //=			voterRegCtrller.middleInitialText.toString();
+		private String suffix; //=					voterRegCtrller.suffixText.toString();
+		private String sex; //= 					voterRegCtrller.sexComboBox.toString();
+		private String race; //=					voterRegCtrller.raceComboBox.toString();
+		private String ssn; //=						voterRegCtrller.ssnText.toString();
+		private String streetResidential; //=		voterRegCtrller.streetText.toString();
+		private String cityResidential; // = 		voterRegCtrller.cityText.toString();
+		private String stateResidential; // = 		voterRegCtrller.stateText.toString();
+		private String zipResidential ;//= 		voterRegCtrller.zipText.toString();
+		private String aptResidential;//=			voterRegCtrller.aptText.toString();
+		private String inCityLimits;//=			voterRegCtrller.cityLimitComboBox.toString();
+		private String streetMailing ;//= 			voterRegCtrller.streetMailingText.toString();
+		private String cityMailing;//=				voterRegCtrller.cityMailingText.toString();
+		private String stateMailing;//=			voterRegCtrller.stateMailingText.toString();
+		private String zipMailing;//=				voterRegCtrller.zipMailingText.toString();
+		private String birthdayDate;//=			voterRegCtrller.birthdayDateText.toString();
+		private String birthdayMonth ;//= 			voterRegCtrller.birthMonthComboBox.toString();
+		private String birthdayYear ;//= 			voterRegCtrller.birthdayYearText.toString();
+		private String homePhone;//=				voterRegCtrller.homePhoneText.toString();
+		private String workPhone;//=				voterRegCtrller.workPhoneText.toString();
+		private String dlNumber;//=				voterRegCtrller.dlNumberText.toString();
+		private int voterID;//= 					rand.nextInt(100000);
+
+		public Voter(String firstName, String lastName, String MI, String d1Number, int ID){
+			//1 - SSN
+			//2 - VRN
+			//3 - DLN
+			if (ID == 1){
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.middleInitial = MI;
+				this.ssn = d1Number;
+			}
+			else if(ID == 2){
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.middleInitial = MI;
+				this.voterID = Integer.parseInt(d1Number);
+			}
+			else{
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.middleInitial = MI;
+				this.dlNumber = d1Number;
+			}
+
+			this.suffix = 			"";
+			this.sex = 				"";
+			this.race = 			"";
+			this.ssn = 				"";
+			this.streetResidential = "";
+			this.cityResidential=	"";
+			this.stateResidential = "";
+			this.zipResidential = 	"";
+			this.aptResidential= 	"";
+			this.inCityLimits = 	"";
+			this.streetMailing = 	"";
+			this.cityMailing=		"";
+			this.stateMailing = 	"";
+			this.zipMailing = 		"";
+			this.birthdayDate = 	"";
+			this.birthdayMonth = 	"";
+			this.birthdayYear = 	"";
+			this.homePhone = 		"";
+			this.workPhone=			"";
+			this.voterID = rand.nextInt(100000);
+
+		}
+
+
+		public Voter(String firstName, String lastName, String middleInitial, String suffix, String sex,
 				  String race, 	String ssn,  String streetResidential,String cityResidential, String stateResidential, 
 				  String zipResidential, String aptResidential,String inCityLimits, String streetMailing,
 				  String cityMailing, String stateMailing,String zipMailing, String birthdayDate, String birthdayMonth, String birthdayYear,

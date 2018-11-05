@@ -1,7 +1,7 @@
 package edu.cofc.Vote;
 
 public class Vote {
-
+//Stores the vote information for high cohesion and becomes the information expert for this data
     private Voter voter;
     private String candidate;
 

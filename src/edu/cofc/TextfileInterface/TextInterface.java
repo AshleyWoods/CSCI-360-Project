@@ -16,21 +16,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.security.SecureRandom;
 
 
 public class TextInterface {
-
+//Assigned any and all accesses to the database (text files) -- Information Expert
     private boolean officialTally;
     private Voter voter;
-    
+    private SecureRandom rand = new SecureRandom();
+    private byte bytes[];
+    private String salt;
     private static final String COMMA = ",";
     private static final String NEWLINE = "\n";
     
-    //FILE HEADER
+    //FILE HEADER -- ADDED SALT FOR SECURITY PURPOSES
     private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
     		+ "streetResidential, cityResidential, stateResidential, zipResidential, aptResidential, inCityLimits,"
     		+ "streetMAiling, cityMailing, stateMailing, zipMailing, birthdayDate, birthdayMonth, birthdayYear, "
-    		+ "homePhone, workPhone, dlNumber, voterID";
+    		+ "homePhone, workPhone, dlNumber, voterID, salt";
 
     public TextInterface(){
         this.officialTally = false;
@@ -102,8 +105,17 @@ public class TextInterface {
         	//TRUE if Exists, FALSE if it doesn't
         	boolean exists = registrationFile.exists();
         	System.out.println(exists);
-  
-    		if(!exists) {
+
+        	//Making the salt to be stored with the voter and to encrypt storage/help voters log in later
+        	bytes = new byte[10];
+			rand.nextBytes(bytes);
+        	System.out.println(bytes);
+        	salt = "";
+    		for (int i = 0; i<bytes.length; i++){
+    			salt = salt + bytes[i];
+			}
+
+        	if(!exists) {
     			System.out.println("in the if");
     			FileOutputStream output = new FileOutputStream(fileName, true);
     			PrintWriter pw = new PrintWriter(output);
@@ -114,7 +126,7 @@ public class TextInterface {
     			
     		}
     		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
-			FileWriter writer = new FileWriter(fileName);
+			FileWriter writer = new FileWriter(fileName, true);
 			//insert values into file
  			writer.append(voter.getFirstName());
 			writer.append(COMMA);
@@ -163,6 +175,8 @@ public class TextInterface {
 			writer.append(voter.getDLNumber());
 			writer.append(COMMA);
 			writer.append(String.valueOf(voter.getvoterID()));
+			writer.append(COMMA);
+			writer.append(salt);
 			writer.append(NEWLINE);
 			writer.flush();
 			writer.close();
@@ -240,49 +254,10 @@ public class TextInterface {
         //if it's the same, return the total, if it is not, do it again and return the result
         return 0;
     }
-    
-    //searches the database for the voter's information and returns the SSN
-    //loginTypes:
-    //1-DLN
-    //2-VRN
-    //3-SSN
-    public String getSSN(String firstName, String lastName, String middleInitial, String loginTypeIDNum, int loginType){
-   
-    	String fName = firstName;
-    	String lName = lastName;
-    	String mInitial = middleInitial;
-    	String ssn = "";
-       	
-    	try {
-    			    			
-    		if(loginType ==1 ) {
-    			String DLN= loginTypeIDNum;
-				
-    			
-    			//return ssn;
-    			return "";
-    		}//END IF 
-    			else if(loginType == 2) {
-						
-    	    			//return ssn;
-    				return "";
-				}//END ELSE IF 
-						
-				else {
-						String SSN = loginTypeIDNum;
-						
-						//ssn = resultSet2.toString();
-						return "";
-				}//END ELSE
-    		}//end try 
-	    	catch(Exception e){
-				e.printStackTrace();
-				System.out.println("error"); 
-				}//end catch
-			return "";
-			
 
-    }
+
+    //DO NOT USE
+/*
     public int getVRN(String firstName, String lastName, String middleInitial,String ssn) {
     	int VRN= -1;
     	String fName = firstName;
@@ -316,5 +291,5 @@ public class TextInterface {
 			}//end catch
 		return VRN;
     }
-
+*/
 }

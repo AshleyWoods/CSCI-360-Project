@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Election {
-
+//Stores election information for high cohesion
     private List<String> candidates;
     public List<String> results;
     private String title;

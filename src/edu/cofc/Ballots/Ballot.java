@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ballot {
+    //Accumulates the voting and voter information and passes it to the text database
     private List<Vote> votes;
     private List candidates;
     private List voteNumber;

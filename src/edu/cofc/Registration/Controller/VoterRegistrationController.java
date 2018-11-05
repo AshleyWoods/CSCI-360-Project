@@ -1,6 +1,7 @@
 package edu.cofc.Registration.Controller;
 
 import java.io.FileNotFoundException;
+import java.util.Random;
 
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.Vote.Voter;
@@ -42,6 +43,7 @@ public class VoterRegistrationController {
     @FXML public ComboBox<String> cityLimitComboBox;
     @FXML public ComboBox<String> birthMonthComboBox;
 
+    private Random rand = new Random();
 
     public void setMain(Main main) {
         this.main = main;
@@ -50,14 +52,24 @@ public class VoterRegistrationController {
     @FXML
     private void handleSubmit() throws FileNotFoundException{
        //CHECK IF THE CHECKBOXES ARE CHECKED
+        if (!(above18.isSelected() && citizen.isSelected())){
+            return;
+        }
     	
     	//ASK IF THEY MEAN TO SUBMIT
         if (main.showSubmissionConfirmationPopup()) {
             //cancel if they did not
             return;
         }
-
-        Main.getInterface().registerVoter(voter);
+        int voterID = rand.nextInt(100000);
+        Voter v = new Voter(firstNameText.getText(), lastNameText.getText(), middleInitialText.getText(), suffixText.getText(),
+                sexComboBox.getValue().toString(), raceComboBox.getValue().toString(), ssnText.getText(), streetText.getText(),
+                cityText.getText(), stateText.getText(), zipText.getText(), aptText.getText(), cityLimitComboBox.getValue().toString()
+                ,streetMailingText.getText(), cityMailingText.getText(), stateMailingText.getText(),
+                zipMailingText.getText(), birthdayDateText.getText(), birthMonthComboBox.getValue().toString() ,
+                birthdayYearText.getText(), homePhoneText.getText(),
+                workPhoneText.getText(), dlNumberText.getText(), voterID);
+        Main.getInterface().registerVoter(v);
        //CONFIRM VOTER THAT DATA WAS SAVED
         
         main.showSaveConfirmationPopUp();
