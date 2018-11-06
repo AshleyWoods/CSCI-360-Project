@@ -43,8 +43,9 @@ public class registrationInvestigationController {
             main.showRegistrationStatusPositivePopUp(); 
         	
         }
-        main.showRegistrationStatusNegativePopUp();
-    
+        else {
+            main.showRegistrationStatusNegativePopUp();
+        }
        
         main.showLogin();
     }

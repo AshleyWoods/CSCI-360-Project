@@ -33,11 +33,10 @@ public class TextInterface {
     private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
     		+ "streetResidential, cityResidential, stateResidential, zipResidential, aptResidential, inCityLimits,"
     		+ "streetMAiling, cityMailing, stateMailing, zipMailing, birthdayDate, birthdayMonth, birthdayYear, "
-    		+ "homePhone, workPhone, dlNumber, voterID, salt";
+    		+ "homePhone, workPhone, dlNumber, voterID, salt, hasVoted";
 
     public TextInterface(){
         this.officialTally = false;
-        //AdminMenuController.officialTally = false;
     }
 
     public boolean getOfficialTallyBoolean() {
@@ -58,32 +57,14 @@ public class TextInterface {
     //DONT NEED FIRST NAME LAST NAME MIDDLE BECAUSE SSN DLN AND VRN ARE UNIQUE IN TABLE
     	try {
     		if(loginType == 1) {
-    				
-    	    
     	    		return true;
-    	    				
-    	    			
     			}
-    	    			
     			else if(loginType == 2) {
-    	
-    					
     	    		return true;
-    	    				
-    	    			
     			}
-    					
     			else {
-    					
-    					
-    	    			
     	    		return true;
-    	    				
-    	    			
-    	    			
-    			
     			}
-    	
     	}//end try 
     	catch(Exception e) {
     		e.printStackTrace();
@@ -177,6 +158,8 @@ public class TextInterface {
 			writer.append(String.valueOf(voter.getvoterID()));
 			writer.append(COMMA);
 			writer.append(salt);
+			writer.append(COMMA);
+			writer.append("false");
 			writer.append(NEWLINE);
 			writer.flush();
 			writer.close();
@@ -256,7 +239,7 @@ public class TextInterface {
     }
 
 
-    //DO NOT USE
+    //DO NOT USE -- THESE ARE ENCRYPTED AND CANNOT BE RETRIEVED FROM THE 'DATABBASE'
 /*
     public int getVRN(String firstName, String lastName, String middleInitial,String ssn) {
     	int VRN= -1;
