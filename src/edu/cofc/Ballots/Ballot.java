@@ -4,6 +4,7 @@ import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Vote;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class Ballot {
         this.votes.add(vote);
     }
 
-    public void submitBallot() {
+    public void submitBallot() throws FileNotFoundException {
         for (int i = 0; i<this.votes.size(); i++){
             int index = this.candidates.indexOf(this.votes.get(i).getCandidate());
             this.voteNumber.set(index, 1);
