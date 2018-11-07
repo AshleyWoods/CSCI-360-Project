@@ -1,5 +1,7 @@
 package edu.cofc.Ballots.Controller;
 
+import java.io.FileNotFoundException;
+
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.Ballots.Ballot;
 import edu.cofc.Vote.Vote;
@@ -27,7 +29,7 @@ public class FinalBallotController {
     }
 
     @FXML
-    private void handleSubmitClick(){
+    private void handleSubmitClick() throws FileNotFoundException{
         selected = buttonGroup.getSelectedToggle().toString();
         int index = selected.indexOf('\'');
         selected = selected.substring(index +1,selected.length()-1);
