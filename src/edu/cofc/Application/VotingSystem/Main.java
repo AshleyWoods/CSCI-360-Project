@@ -80,11 +80,20 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Download Official Tally");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+     
 
             recountPopUpController controller = loader.getController();
             controller.setMain(this);
+            
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
+            
 
             popUp.showAndWait();
     		
@@ -123,12 +132,21 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Download Official Tally");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+       
 
             downloadOfficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
 
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
+  
+            
             popUp.showAndWait();
     		
     	}catch(IOException e) {
@@ -330,18 +348,21 @@ public class Main extends Application {
 
             Stage stage = new Stage();
             stage.setTitle("Confirm Official Tally");
-            Scene confirmSubmitScene = new Scene(page);
-            stage.setScene(confirmSubmitScene);
+     ;
 
             officialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            confirmSubmitScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
+            layout.getChildren().addAll(page);
+            stage.setScene(new Scene(layout));
+        
             stage.showAndWait();
+
            
 
         } catch (IOException e) {
@@ -358,18 +379,20 @@ public class Main extends Application {
 
             Stage stage = new Stage();
             stage.setTitle("Confirm Unofficial Tally");
-            Scene confirmSubmitScene = new Scene(page);
-            stage.setScene(confirmSubmitScene);
+       
 
             unofficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
-            
-            //ADD CSS FILE
-            confirmSubmitScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
+            layout.getChildren().addAll(page);
+            stage.setScene(new Scene(layout));
+        
             stage.showAndWait();
+            
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -385,16 +408,20 @@ public class Main extends Application {
 
             Stage confirmSubmit = new Stage();
             confirmSubmit.setTitle("Confirm Form Submission");
-            Scene confirmSubmitScene = new Scene(page);
-            confirmSubmit.setScene(confirmSubmitScene);
+         
             
-            //ADD CSS FILE
-            confirmSubmitScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            
 
             ConfirmFormSubmissionController controller = loader.getController();
             controller.setMain(this);
+
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            confirmSubmit.setScene(new Scene(layout));
 
             confirmSubmit.showAndWait();
 
@@ -466,10 +493,16 @@ public class Main extends Application {
             SavePopUpController controller = loader.getController();
             controller.setMain(this);
            
-            //ADD CSS FILE
-            confirmSaveScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            confirmSave.setScene(new Scene(layout));
+        
+
+            
 
 
             confirmSave.showAndWait();
@@ -491,12 +524,19 @@ public class Main extends Application {
             Scene confirmSaveScene = new Scene(page);
             confirmSave.setScene(confirmSaveScene);
             
-            //ADD CSS FILE
-            confirmSaveScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-
+           
             ConfirmFormSaveController controller = loader.getController();
             controller.setMain(this);
+           
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            confirmSave.setScene(new Scene(layout));
+        
+      
             
       
 
@@ -523,12 +563,17 @@ public class Main extends Application {
             NoOfficialTallyPopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            confirmSaveScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
+       
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -577,18 +622,21 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Warning");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+      
 
             ElectionRunningPopUpController controller = loader.getController();
             controller.setMain(this);
+  
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
+  
             
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-
-
             popUp.showAndWait();
 
         } catch (IOException e) {
@@ -605,19 +653,22 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Warning");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
-
+        
             endElectionPopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
-
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
+
+ 
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -633,18 +684,21 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Warning");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+          
 
             officialTallyNeededPopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -660,16 +714,21 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Registration Status");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+
 
             registrationStatusPositivePopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -685,18 +744,21 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Registration Status");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+
 
             registrationStatusNegativePopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -712,18 +774,21 @@ public class Main extends Application {
 
             Stage popUp = new Stage();
             popUp.setTitle("Warning");
-            Scene warningScene = new Scene(page);
-            popUp.setScene(warningScene);
+     
 
             startElectionPopUpController controller = loader.getController();
             controller.setMain(this);
             
-            //ADD CSS FILE
-            warningScene.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+            		+ "-fx-alignment: center;");
 
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+        
             popUp.showAndWait();
+            
 
         } catch (IOException e) {
             e.printStackTrace();
