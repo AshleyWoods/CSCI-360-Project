@@ -16,4 +16,10 @@ public class VoteTest {
         voter = new Voter("firstName", "lastName", "MiddleI", "18889372", 3);
         vote = new Vote(voter, "Candidate");
     }
+
+    @Test
+    public void testConstructor(){
+        assertEquals(voter, vote.getVoter());
+        assertEquals("Candidate", vote.getCandidate());
+    }
 }

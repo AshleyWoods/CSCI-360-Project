@@ -37,4 +37,6 @@ public class Ballot {
         }
         Main.getInterface().saveVote(this.votes.get(0).getVoter(),this.candidates,this.voteNumber);
     }
+
+    public List<Vote> getVotes() {return this.votes;}
 }
