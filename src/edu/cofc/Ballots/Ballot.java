@@ -1,5 +1,6 @@
 package edu.cofc.Ballots;
 
+import edu.cofc.Application.Election;
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Vote;
@@ -13,11 +14,12 @@ public class Ballot {
     private List<Vote> votes;
     private List candidates;
     private List voteNumber;
+    private Election currentElection;
 
-    public Ballot() {
+    public Ballot(Election elec) {
         this.votes = new ArrayList<Vote>();
         this.voteNumber = new ArrayList();
-        this.candidates = Main.getCurrentElection().getCandidates();
+        this.candidates = elec.getCandidates();
         for (int i = 0; i<8; i++) {
             this.voteNumber.add(0);
         }
