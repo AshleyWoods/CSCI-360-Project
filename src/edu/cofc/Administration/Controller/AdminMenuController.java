@@ -1,6 +1,7 @@
 package edu.cofc.Administration.Controller;
 
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.TextfileInterface.TextInterface;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -22,12 +23,12 @@ public class AdminMenuController {
         main.showRecount();
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
-        if (!main.getInterface().getOfficialTallyBoolean()) {
+        if (!TextInterface.getInstance().getOfficialTallyBoolean()) {
             main.showOfficialTallyNeededPopUp();
             return;
         }
         //get the recount tally
-        main.getInterface().getRecount();
+        TextInterface.getInstance().getRecount();
         //save the recount tally as the new official tally
         main.showTally();
     }
@@ -38,11 +39,11 @@ public class AdminMenuController {
         main.showDownloadOfficialTally();
         if (!confirm) {return;}
         //MAKE SURE OFFICIAL TALLY BEEN DONE
-        if (!main.getInterface().getOfficialTallyBoolean()) {
+        if (!TextInterface.getInstance().getOfficialTallyBoolean()) {
             main.showOfficialTallyNeededPopUp();
             return;
         }
-        main.getInterface().downloadOfficialTally();
+        TextInterface.getInstance().downloadOfficialTally();
     }
 
     @FXML
@@ -56,7 +57,7 @@ public class AdminMenuController {
             return;
         }
         //get the official tally
-        main.getInterface().getOfficialTally();
+        TextInterface.getInstance().getOfficialTally();
         //save the official tally
         //go to official tally page
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
@@ -69,7 +70,7 @@ public class AdminMenuController {
         main.showUnofficialConfirmationPopUp();
         if (!confirm) {return;}
         //get the unofficial tally
-        main.getInterface().getUnofficialTally();
+        TextInterface.getInstance().getUnofficialTally();
         //go to unofficial tally
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
         main.showTally();

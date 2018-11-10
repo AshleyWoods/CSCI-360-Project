@@ -32,7 +32,6 @@ public class Main extends Application {
 
     //This variable will be changed when an operator starts or ends an election
     public  boolean ElectionRunning = false;
-    public static TextInterface dataInterface;
     public static Election currentElection;
     private Stage primaryStage;
     private BorderPane rootLayout;
@@ -60,8 +59,6 @@ public class Main extends Application {
         scene.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
         //END ADD CSS FILE
         primaryStage.show();
-        
-        dataInterface = new TextInterface();
         currentElection = new Election();
 
         showLogin();
@@ -102,9 +99,6 @@ public class Main extends Application {
     	}
     }
 
-    public static TextInterface getInterface(){
-        return dataInterface;
-    }
 
     public void showRegistrationInvestigation() {
     	try {

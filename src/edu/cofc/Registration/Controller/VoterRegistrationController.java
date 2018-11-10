@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Random;
 
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -69,7 +70,7 @@ public class VoterRegistrationController {
                 zipMailingText.getText(), birthdayDateText.getText(), birthMonthComboBox.getValue().toString() ,
                 birthdayYearText.getText(), homePhoneText.getText(),
                 workPhoneText.getText(), dlNumberText.getText(), voterID);
-        Main.getInterface().registerVoter(v);
+        TextInterface.getInstance().registerVoter(v);
        //CONFIRM VOTER THAT DATA WAS SAVED
         
         main.showSaveConfirmationPopUp();

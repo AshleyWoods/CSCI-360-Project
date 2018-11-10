@@ -3,6 +3,7 @@ package edu.cofc.Login.Controller;
 import edu.cofc.Application.VotingSystem.Main;
 
 
+import edu.cofc.TextfileInterface.TextInterface;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -31,7 +32,7 @@ public class SSNLoginController {
     	    //String middleInitial = middleInitialText.getText().toString();
     	    String ssn = SSN.getText().toString();
         //Check the database to see if the login info is valid
-        boolean loginValid = Main.getInterface().voterRegistered(ssn, loginType);
+        boolean loginValid = TextInterface.getInstance().voterRegistered(ssn, loginType);
         if(!loginValid) {
         	main.showRegistrationStatusNegativePopUp();
         }

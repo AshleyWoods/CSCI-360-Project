@@ -3,6 +3,8 @@ package edu.cofc.TextfileInterface;
 import edu.cofc.Administration.Admin;
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
+import javafx.scene.text.Text;
+
 import java.sql.*;
 import javax.swing.*;
 import java.io.PrintWriter;
@@ -19,6 +21,7 @@ import java.io.FileWriter;
 import java.security.SecureRandom;
 
 
+//Singleton Class
 public class TextInterface {
 //Assigned any and all accesses to the database (text files) -- Information Expert
     private boolean officialTally;
@@ -28,20 +31,29 @@ public class TextInterface {
     private String salt;
     private static final String COMMA = ",";
     private static final String NEWLINE = "\n";
-    
+    public static TextInterface textInterfaceInstance;
+
     //FILE HEADER -- ADDED SALT FOR SECURITY PURPOSES
     private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
     		+ "streetResidential, cityResidential, stateResidential, zipResidential, aptResidential, inCityLimits,"
     		+ "streetMAiling, cityMailing, stateMailing, zipMailing, birthdayDate, birthdayMonth, birthdayYear, "
     		+ "homePhone, workPhone, dlNumber, voterID, salt, hasVoted";
  
-    public TextInterface(){
+    private TextInterface(){
         this.officialTally = false;
     }
 
     public boolean getOfficialTallyBoolean() {
         return this.officialTally;
     }
+
+    //THIS IS A SINGLETON CLASS, so this will give access to the only instance of it.
+    public static TextInterface getInstance(){
+		if (textInterfaceInstance == null) {
+			textInterfaceInstance = new TextInterface();
+		}
+		return textInterfaceInstance;
+	}
 
     //Registration Methods
     //See if a voter is registered

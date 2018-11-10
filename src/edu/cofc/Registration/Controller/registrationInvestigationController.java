@@ -36,7 +36,7 @@ public class registrationInvestigationController {
     	 String ssn = SSN.getText().toString();
         //Check the database to see if the login info is there
        
-    	loginValid = Main.getInterface().voterRegistered(ssn,loginType);
+    	loginValid = TextInterface.getInstance().voterRegistered(ssn,loginType);
     	 
     	System.out.println(loginValid);
         if (loginValid) {

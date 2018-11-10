@@ -3,6 +3,7 @@ package edu.cofc.Login.Controller;
 import edu.cofc.Application.VotingSystem.Main;
 
 
+import edu.cofc.TextfileInterface.TextInterface;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -31,7 +32,7 @@ public class DriverLoginController {
     	  String firstName = firstNameText.getText().toString();
     	  String lastName = lastNameText.getText().toString();
     	  String middleInitial = middleInitialText.getText().toString();
-        boolean loginValid = Main.getInterface().voterRegistered( dlNumber, loginType);
+        boolean loginValid = TextInterface.getInstance().voterRegistered( dlNumber, loginType);
         if(!loginValid) {
         	 main.showRegistrationStatusNegativePopUp();
         	

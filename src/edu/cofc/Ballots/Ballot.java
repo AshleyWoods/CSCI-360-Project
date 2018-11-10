@@ -35,7 +35,7 @@ public class Ballot {
             int index = this.candidates.indexOf(this.votes.get(i).getCandidate());
             this.voteNumber.set(index, 1);
         }
-        Main.getInterface().saveVote(this.votes.get(0).getVoter(),this.candidates,this.voteNumber);
+        TextInterface.getInstance().saveVote(this.votes.get(0).getVoter(),this.candidates,this.voteNumber);
     }
 
     public List<Vote> getVotes() {return this.votes;}
