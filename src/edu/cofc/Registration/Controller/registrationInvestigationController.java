@@ -6,7 +6,7 @@ import edu.cofc.Vote.Voter;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class registrationInvestigationController {
+public class registrationInvestigationController {// This is a CONTROLLER
     private Main main;
     @FXML
     private TextField firstNameText;

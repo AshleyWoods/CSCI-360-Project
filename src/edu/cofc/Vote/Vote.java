@@ -5,6 +5,7 @@ public class Vote {
     private Voter voter;
     private String candidate;
 
+    //Constructor, Creator
     public Vote(Voter v, String can) {
         this.voter = v;
         this.candidate = can;

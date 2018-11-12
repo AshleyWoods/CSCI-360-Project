@@ -5,6 +5,7 @@ public class Admin {
     private String password;
     private String username;
 
+    //Constructor, Creator
     public Admin(String pass, String user){
         this.password = pass;
         this.username = user;

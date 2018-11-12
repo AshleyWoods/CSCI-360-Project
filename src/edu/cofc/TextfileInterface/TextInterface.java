@@ -55,7 +55,7 @@ public class TextInterface {
 		return textInterfaceInstance;
 	}
 
-    //Registration Methods
+    //Registration Methods -- Information Expert
     //See if a voter is registered
     //searches the database for the voter's information and returns true if the voter is there and false if otherwise
     //ID is the identification the voter gives and loginType is where the database should look for the information
@@ -88,7 +88,7 @@ public class TextInterface {
     	
     }//END VOTERREGISTERED
 
-    //register a voter
+    //register a voter -- Information Expert
     public void registerVoter(Voter voter) throws FileNotFoundException {
 
     	try {
@@ -187,7 +187,7 @@ public class TextInterface {
     	}//end registerVoter
     
 
-    //Login Methods
+    //Login Methods -- Information Expert
     //see if a voter's login is valid--use voterRegistered from the registration methods section
 
     //see if an administrator's login is valid
@@ -238,7 +238,7 @@ public class TextInterface {
     }//END SAVE VOTE()
 
     //Admin Methods
-    //Get an official tally count
+    //Get an official tally count -- Information Expert
     public int getOfficialTally() {
         //set officialTally to true and store the result in the database
         //if officialTally is true, grab results from the database
@@ -251,7 +251,7 @@ public class TextInterface {
         return 0;
     }
 
-    //download official tally as a file
+    //download official tally as a file -- Information Expert
     public void downloadOfficialTally() throws IOException{
         //No errors are thrown but it doesn't save a file? -- Currently saves to desktop instead
         JFileChooser locationPrompt = new JFileChooser();
@@ -266,13 +266,13 @@ public class TextInterface {
         writer.close();
     }
 
-    //get an unofficial tally count
+    //get an unofficial tally count  -- Information Expert
     public int getUnofficialTally() {
         //takes the number of votes from each candidate in the database and displays it with not votes counted
         return 0;
     }
 
-    //get a recount
+    //get a recount -- Information Expert
     public int getRecount() {
         //take number of votes from each candidate and total it
         //compare with number of votes from each voter

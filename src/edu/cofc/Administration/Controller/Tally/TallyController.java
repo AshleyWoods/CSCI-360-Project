@@ -3,7 +3,7 @@ package edu.cofc.Administration.Controller.Tally;
 import edu.cofc.Application.VotingSystem.Main;
 import javafx.fxml.FXML;
 
-public class TallyController {
+public class TallyController {// This is a CONTROLLER
     private Main main;
 
     public void setMain(Main main) {

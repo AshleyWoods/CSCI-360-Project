@@ -11,7 +11,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-public class VoterRegistrationController {
+public class VoterRegistrationController {// This is a CONTROLLER
 
     private Main main;
     public static boolean cancel = true;

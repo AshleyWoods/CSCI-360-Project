@@ -35,6 +35,7 @@ public class Voter {
 		private String dlNumber;//=				voterRegCtrller.dlNumberText.toString();
 		private int voterID;//= 					rand.nextInt(100000);
 
+	//Constructor 1 - Creator
 		public Voter(String firstName, String lastName, String MI, String d1Number, int ID){
 			//1 - SSN
 			//2 - VRN
@@ -81,7 +82,7 @@ public class Voter {
 
 		}
 
-
+//Constructor 2, Creator
 		public Voter(String firstName, String lastName, String middleInitial, String suffix, String sex,
 				  String race, 	String ssn,  String streetResidential,String cityResidential, String stateResidential, 
 				  String zipResidential, String aptResidential,String inCityLimits, String streetMailing,

@@ -12,7 +12,7 @@ public class LoginController {
     private ComboBox loginChoice;
 
 
-    public void setMain(Main main, boolean val) {
+    public void setMain(Main main, boolean val) {// This is a CONTROLLER
         this.main = main;
         this.ElectionRunning = val;
     }

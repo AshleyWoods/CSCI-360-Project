@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
-public class Ballot1Controller {
+public class Ballot1Controller {// This is a CONTROLLER
 
     private Main main;
     @FXML

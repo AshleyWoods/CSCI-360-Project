@@ -16,6 +16,7 @@ public class Ballot {
     private List voteNumber;
     private Election currentElection;
 
+    //Constructor -- Creator
     public Ballot(Election elec) {
         this.votes = new ArrayList<Vote>();
         this.voteNumber = new ArrayList();
@@ -26,10 +27,12 @@ public class Ballot {
 
     }
 
+    //Information Expert
     public void addVote(Vote vote) {
         this.votes.add(vote);
     }
 
+    //Information Expert
     public void submitBallot() throws FileNotFoundException {
         for (int i = 0; i<this.votes.size(); i++){
             int index = this.candidates.indexOf(this.votes.get(i).getCandidate());

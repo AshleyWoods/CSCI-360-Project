@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class AdminMenuController {
+public class AdminMenuController { // This is a CONTROLLER
     private Main main;
     private boolean ElectionRunning;
     //public static boolean officialTally;

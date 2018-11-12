@@ -24,6 +24,7 @@ public class Election {
 
     }
 
+    //Constructor -- Creator
     public Election(List<String> can, String Title) {
         this.results = new ArrayList<>();
         this.candidates = can;
