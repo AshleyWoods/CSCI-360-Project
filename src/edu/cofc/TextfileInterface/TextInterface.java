@@ -77,9 +77,7 @@ public class TextInterface {
     		BufferedReader buffReader = new BufferedReader(fileReader);
     		String currLine;
     		String[] lineAsArray;
-    		
-    		//i found the condition in while from stack overflow
-   
+ 
     	
     	//DLN LOGIN
 	    		if(loginType == 1) {
@@ -111,11 +109,12 @@ public class TextInterface {
 		    					found = true;
 		    				}//END IF 
 	    			  }//END WHILE
-    
-	    			}//END ELSE IF
+	    		  }//END ELSE IF
 	    		  
 	    	
-	    //SSN LOGIN		
+	    //SSN LOGIN	
+	    //ASHLEY- I LEFT COMMENTS IN THIS ELSE IF SO YOU COULD SEE MY THOUGHT PROCESS THROUGH TESTING THAT I DID
+	    //FEEL FREE TO DELETE IF YOU DON'T NEED IT :)
 	    			else if (loginType ==3){
 	    				String searchNum = loginTypeIDNum;
 	    				//**NOTE**: I found the condition in the while loop from stack overflow.
@@ -141,7 +140,6 @@ public class TextInterface {
 		    					found = true;
 		    				}
 		    			
-
 	    				}//END WHILE
 	    			}//END ELSE IF
 	    	
