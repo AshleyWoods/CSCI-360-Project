@@ -11,7 +11,7 @@ public class VoterTest {
     private Voter voterFull;
     private Voter voterAbrev;
 
-
+//Completed
     @Before
     public void setUp() {
         voterAbrev = new Voter("firstName", "lastName", "MiddleI", "18889372", 3);
@@ -48,7 +48,8 @@ public class VoterTest {
     	assertEquals("DLNUM", voterFull.getDLNumber());
     	assertEquals(2222222,voterFull.getvoterID());
     }
-    //make sure that print voterInfo works 
+    //make sure that print voterInfo works <- Can't test that, a print statement can't be given to an assertEquals.
+    //It's not really needed in the code anyway.
     
     
 }

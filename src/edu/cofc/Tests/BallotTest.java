@@ -20,6 +20,7 @@ public class BallotTest {
     private Vote vote;
     private Voter voter;
 
+    //C
     @Before
     public void setUp() {
         election = new Election();
@@ -37,10 +38,8 @@ public class BallotTest {
         assertEquals(votes, ballot.getVotes());
     }
 
-    @Test
+    //@Test
     //Tests the SubmitBallot method to make sure that the method runs correctly
-    //How to run/test??
-    public void testSubmitBallot(){
-
-    }
+    //How to run/test?? <- Can't run test, a print cannot be tested by this but by a visual test of the file
+    //public void testSubmitBallot(){ }
 }

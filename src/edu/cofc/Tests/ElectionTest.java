@@ -16,6 +16,7 @@ public class ElectionTest {
     private List<String> candidatesDef;
     private List<String> results;
 
+    //C
     @Before
     public void setUp() {
         results = new ArrayList<>();
@@ -46,6 +47,15 @@ public class ElectionTest {
         assertEquals(results, electionCus.getResults());
     }
 
+    public void testSetResults() {
+        results.add("one");
+        results.add("two");
+        results.add("three");
+        electionDef.setResults(results);
+        electionCus.setResults(results);
+        assertEquals(results, electionCus.getResults());
+        assertEquals(results, electionDef.getResults());
+    }
     
 
 }

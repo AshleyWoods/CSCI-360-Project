@@ -12,6 +12,7 @@ public class VoteTest {
     private Voter voter;
     private Vote vote;
 
+    //C
     @Before
     public void setUp() {
         voter = new Voter("firstName", "lastName", "MiddleI", "18889372", 3);
