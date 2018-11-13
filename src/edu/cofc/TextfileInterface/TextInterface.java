@@ -347,14 +347,13 @@ public class TextInterface {
   						found = true;
   					}//END INNER IF TO CHECK USER NAME TO MATCH PASS
 
-  				
   				}//END OUTER IF TO CHECK FOR A PASSWORD MATCH 
 			  }//END WHILE
     	}//END TRY
     	catch(Exception e) {
     		e.printStackTrace();
     	}
-    	System.out.print("password and user name match status: "+ found);
+    	System.out.println("password and user name match status: "+ found);
         return found;
     }
 
