@@ -45,5 +45,6 @@ public class ElectionTest {
         assertEquals(results, electionCus.getResults());
         assertEquals(results, electionCus.getResults());
     }
+    
 
 }

@@ -1,6 +1,7 @@
 package edu.cofc.Tests;
 
 import edu.cofc.Vote.Vote;
+
 import edu.cofc.Vote.Voter;
 import org.junit.Before;
 import org.junit.Test;
