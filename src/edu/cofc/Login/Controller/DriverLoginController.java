@@ -1,5 +1,7 @@
 package edu.cofc.Login.Controller;
 
+import java.io.FileNotFoundException;
+
 import edu.cofc.Application.VotingSystem.Main;
 
 
@@ -26,7 +28,7 @@ public class DriverLoginController {
     }
 
     @FXML
-    public void handleLoginClick() {
+    public void handleLoginClick() throws FileNotFoundException {
         //Check the database to see if the login info is valid
     	  String dlNumber = DLN.getText().toString();
     	  String firstName = firstNameText.getText().toString();

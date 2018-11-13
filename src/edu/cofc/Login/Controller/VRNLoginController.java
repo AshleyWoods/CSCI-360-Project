@@ -1,5 +1,7 @@
 package edu.cofc.Login.Controller;
 
+import java.io.FileNotFoundException;
+
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
@@ -36,7 +38,7 @@ public class VRNLoginController {
 
 
 	@FXML
-    private void handleLoginClick() {
+    private void handleLoginClick() throws FileNotFoundException {
 		String firstName = firstNameText.getText().toString();
 	    String lastName = lastNameText.getText().toString();
 	    String middleInitial = middleInitialText.getText().toString();

@@ -1,5 +1,7 @@
 package edu.cofc.Login.Controller;
 
+import java.io.FileNotFoundException;
+
 import edu.cofc.Application.VotingSystem.Main;
 
 
@@ -26,7 +28,7 @@ public class SSNLoginController {
     }
 
     @FXML
-    private void handleLoginClick() {
+    private void handleLoginClick() throws FileNotFoundException {
     	 	//String firstName = firstNameText.getText().toString();
     	    //String lastName = lastNameText.getText().toString();
     	    //String middleInitial = middleInitialText.getText().toString();

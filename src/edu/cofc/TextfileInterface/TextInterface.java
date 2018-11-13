@@ -13,10 +13,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Scanner;
 import java.io.IOException;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.security.SecureRandom;
 
@@ -34,10 +37,10 @@ public class TextInterface {
     public static TextInterface textInterfaceInstance;
 
     //FILE HEADER -- ADDED SALT FOR SECURITY PURPOSES
-    private static final String HEADER = "firstName, lastName, middleInitial, suffix, sex, race, ssn, "
-    		+ "streetResidential, cityResidential, stateResidential, zipResidential, aptResidential, inCityLimits,"
-    		+ "streetMAiling, cityMailing, stateMailing, zipMailing, birthdayDate, birthdayMonth, birthdayYear, "
-    		+ "homePhone, workPhone, dlNumber, voterID, salt, hasVoted";
+    private static final String HEADER = "firstName,lastName,middleInitial,suffix,sex,race,ssn,"
+    		+ "streetResidential,cityResidential,stateResidential,zipResidential,aptResidential,inCityLimits,"
+    		+ "streetMAiling,cityMailing,stateMailing,zipMailing,birthdayDate,birthdayMonth,birthdayYear,"
+    		+ "homePhone,workPhone,dlNumber,voterID,salt,hasVoted";
  
     private TextInterface(){
         this.officialTally = false;
@@ -65,28 +68,102 @@ public class TextInterface {
     //3-SSN
     //4- check if the voter is registered (SSN)? isnt that 3? 
  
-    public boolean voterRegistered( String loginTypeIDNum, int loginType) {
-   
+    public boolean voterRegistered( String loginTypeIDNum, int loginType) throws FileNotFoundException {
+    	String file = "registration.csv";
+    	boolean found = false;
+    	
     	try {
-    		if(loginType == 1) {
-    	    		return true;
-    			}
-    			else if(loginType == 2) {
-    	    		return true;
-    			}
-    			else {
-    	    		return true;
-    			}
-    	}//end try 
+    		FileReader fileReader = new FileReader(file);
+    		BufferedReader buffReader = new BufferedReader(fileReader);
+    		String currLine;
+    		String[] lineAsArray;
+    		
+    		//i found the condition in while from stack overflow
+   
+    	
+    	//DLN LOGIN
+	    		if(loginType == 1) {
+	    			String searchNum = loginTypeIDNum;
+    				while((currLine = buffReader.readLine()) != null) {
+    	    			lineAsArray = splitTheLine(currLine);
+	    	
+    	    			String index22 = lineAsArray[22];
+	    				if(index22.equals(searchNum)) {
+	    					System.out.println("I am in the if statement- they match");
+
+	    					found = true;
+	    				}//END IF 
+	    			}//END WHILE
+	    		}//END IF
+	    		
+	      //VRN LOGIN
+	    		  else if(loginType == 2) { 
+	    			  String searchNum = loginTypeIDNum;
+	    			  while((currLine = buffReader.readLine()) != null) {
+	    	    			lineAsArray = splitTheLine(currLine);
+		    				
+
+	    	    			//check to see if vrn can be found
+	    	    			String index23 = lineAsArray[23];
+		    				if(index23.equals(searchNum)) {
+		    					System.out.println("I am in the if statement- they match");
+
+		    					found = true;
+		    				}//END IF 
+	    			  }//END WHILE
+    
+	    			}//END ELSE IF
+	    		  
+	    	
+	    //SSN LOGIN		
+	    			else if (loginType ==3){
+	    				String searchNum = loginTypeIDNum;
+	    				//**NOTE**: I found the condition in the while loop from stack overflow.
+	    				while((currLine = buffReader.readLine()) != null) {
+	    	    			lineAsArray = splitTheLine(currLine);
+		    				
+		    		/*		//go inside the array to search for a match at index 6(ssn)
+		    				for(int j =0; j < lineAsArray.length; j++ ) {
+		    					System.out.println("i = " + j + ":" +lineAsArray[j]);
+		    				}
+		    		
+		    				System.out.println("at [6]:"+lineAsArray[6]);
+		    				System.out.println("search num:" + searchNum);
+		    				
+		    				System.out.println(index6.equals(searchNum));
+		    				*/
+	    	    			
+	    	    			//check to see if social can be found
+	    	    			String index6 = lineAsArray[6];
+		    				if(index6.equals(searchNum)) {
+		    					System.out.println("I am in the if statement- they match");
+
+		    					found = true;
+		    				}
+		    			
+
+	    				}//END WHILE
+	    			}//END ELSE IF
+	    	
+	    	//1-3 ARE THE ONLY OPTIONS, SHOULD RETURN FALSE IF ANY OTHER NUMBER IS GIVEN		
+	    			else {
+	    				System.out.println("the parameters given are not valid");
+	    			}//END ELSE
+    	}//END try
+    	
     	catch(Exception e) {
     		e.printStackTrace();
 			
 			}//end catch
-		return false;
+		return found;
 		
     	
-    	
-    }//END VOTERREGISTERED
+  }//END VOTERREGISTERED
+    
+   //HELPER METHOD FOR VOTER REGISTERED CLASS TO SPLIT THE LINE IN A CSV FILE BY COMMA SEPERATOR
+   public String[] splitTheLine(String someLine) {
+	   return someLine.split(COMMA);
+   }
 
     //register a voter -- Information Expert
     public void registerVoter(Voter voter) throws FileNotFoundException {
@@ -113,7 +190,7 @@ public class TextInterface {
     			FileOutputStream output = new FileOutputStream(fileName, true);
     			PrintWriter pw = new PrintWriter(output);
     			pw.println(HEADER);
-    			pw.println(NEWLINE);
+    			//pw.println(NEWLINE);
     			pw.close();
     			
     			
@@ -140,6 +217,8 @@ public class TextInterface {
 			writer.append(voter.getStreetResidential());
 			writer.append(COMMA);
 			writer.append(voter.getCityResidential());
+			writer.append(COMMA);
+			writer.append(voter.getStateResidental());
 			writer.append(COMMA);
 			writer.append(voter.getZipResidential());
 			writer.append(COMMA);
@@ -172,7 +251,7 @@ public class TextInterface {
 			writer.append(salt);
 			writer.append(COMMA);
 			writer.append("false");
-			writer.append(NEWLINE);
+			//writer.append(NEWLINE);
 			writer.flush();
 			writer.close();
     		System.out.println("Written to file successfully, check in your file browser to find it");

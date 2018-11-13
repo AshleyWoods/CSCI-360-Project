@@ -1,5 +1,7 @@
 package edu.cofc.Registration.Controller;
 
+import java.io.FileNotFoundException;
+
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
@@ -25,14 +27,14 @@ public class registrationInvestigationController {// This is a CONTROLLER
    
  
     
-    private int loginType = 4;
+    private int loginType = 3;
 
     public void setMain(Main main) {
         this.main = main;
     }
 
     @FXML
-    private void handleRegistrationInvestigation() {
+    private void handleRegistrationInvestigation() throws FileNotFoundException {
     	 String ssn = SSN.getText().toString();
         //Check the database to see if the login info is there
        

@@ -10,5 +10,9 @@ public class TextInterfaceTest {
     private TextInterface textInterface;
 
     @Before
-    public void setUp() {textInterface = TextInterface.getInstance();}
+    public void setUp() {
+    	textInterface = TextInterface.getInstance();
+    	}
+    //@Test
+    
 }
