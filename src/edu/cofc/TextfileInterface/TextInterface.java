@@ -1,6 +1,7 @@
 package edu.cofc.TextfileInterface;
 
 import edu.cofc.Administration.Admin;
+
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
 import javafx.scene.text.Text;
@@ -41,8 +42,10 @@ public class TextInterface {
     		+ "streetResidential,cityResidential,stateResidential,zipResidential,aptResidential,inCityLimits,"
     		+ "streetMAiling,cityMailing,stateMailing,zipMailing,birthdayDate,birthdayMonth,birthdayYear,"
     		+ "homePhone,workPhone,dlNumber,voterID,salt,hasVoted";
+    //FILE HEADER FOR ADMIN LOGIN
+    private static final String ADMINHEADER = "password,username";
  
-    private TextInterface(){
+    public TextInterface(){
         this.officialTally = false;
     }
 
@@ -153,6 +156,7 @@ public class TextInterface {
     		e.printStackTrace();
 			
 			}//end catch
+    	
 		return found;
 		
     	
@@ -267,11 +271,91 @@ public class TextInterface {
     //Login Methods -- Information Expert
     //see if a voter's login is valid--use voterRegistered from the registration methods section
 
+    //TEXTFILE THAT HOLDS ADMIN LOGIN INFORMATION-- SEPERATED FROM VOTER TEXTFILE. 
+    public void registerAdmin() {
+    	try {
+         	//give the csv file a name
+        	String fileName = "adminLogin.csv";
+        	File adminFile = new File(fileName);
+        	//TRUE if Exists, FALSE if it doesn't
+        	boolean exists = adminFile.exists();
+        	System.out.println(exists);
+        	
+         	if(!exists) {
+    			System.out.println("in the if");
+    			FileOutputStream output = new FileOutputStream(fileName, true);
+    			PrintWriter pw = new PrintWriter(output);
+    			pw.println(ADMINHEADER);
+    			//pw.println(NEWLINE);
+    			pw.close();
+    		
+    		}//END IF
+         	FileOutputStream fileOUT = new FileOutputStream(fileName, true);
+			FileWriter writer = new FileWriter(fileName, true);
+			//insert values into file
+ 			//MISAE LOGIN INFORMATION
+			writer.append("bubbles");
+			writer.append(COMMA);
+			writer.append("misae");
+			//ASHLEY LOGIN INFORMATION
+			writer.append(NEWLINE);
+			writer.append("buttercup");
+			writer.append("ashley");
+			writer.append(NEWLINE);
+			//DR.X LOGIN INFORMATION
+			//password
+			//username
+			writer.append("xmen");
+			writer.append("drX");
+			writer.flush();
+			writer.close();
+    		System.out.println("Written to file successfully, check in your file browser to find it");
+		
+    	}//END TRY
+    	catch(Exception e) {
+    		System.out.println("ERROR!! ADMIN INFORMATION DID NOT STORE TO FILE!!");
+    		e.printStackTrace();
+    	}//END CATCH
+    }
+    
     //see if an administrator's login is valid
-    public boolean adminLoginValid(Admin opperator) {
+    public boolean adminLoginValid(Admin operator) {
         //checks the database for the login information from the admin database files and returns the result
+    	String file = "adminLogin.csv";
+    	boolean found = false;
+    	
+    	try {
+    		FileReader fileReader = new FileReader(file);
+    		BufferedReader buffReader = new BufferedReader(fileReader);
+    		String currLine;
+    		String[] lineAsArray;
+    		String password = operator.getPassword();
+    		String username = operator.getUsername();
+    		//System.out.println(password);
+    		//System.out.println(username);
+    		
+			 while((currLine = buffReader.readLine()) != null) {
+	    			lineAsArray = splitTheLine(currLine);
+	    			//check to see if password can be found
+	    			String index0 = lineAsArray[0];
+	    			String index1 = lineAsArray[1];
+	    			
+	
+  				if(index0.equals(password)) {
+  					System.out.println("I am in the if statement- the password matches");
+  					if(index1.equals(username)) {
+  						found = true;
+  					}//END INNER IF TO CHECK USER NAME TO MATCH PASS
 
-        return false;
+  				
+  				}//END OUTER IF TO CHECK FOR A PASSWORD MATCH 
+			  }//END WHILE
+    	}//END TRY
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	System.out.print("password and user name match status: "+ found);
+        return found;
     }
 
 
@@ -310,7 +394,7 @@ public class TextInterface {
     	catch(Exception e){
     		System.out.println("ERROR!! The CSV file did not write successfuly! ");
     		e.printStackTrace();
-    		}//END CATCH
+    	}//END CATCH
     	
     }//END SAVE VOTE()
 

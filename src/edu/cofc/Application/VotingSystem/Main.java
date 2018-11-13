@@ -38,10 +38,14 @@ public class Main extends Application {
     //this variable will be changed when an operator completes an official tally 
     public boolean officialTally = false;
     public static Voter activeVoter;
+    public TextInterface textInterface = new TextInterface();
+  
+    
    
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+    
 
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("SC Electronic Voting");
