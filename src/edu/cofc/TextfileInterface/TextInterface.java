@@ -44,7 +44,7 @@ public class TextInterface {
     		+ "homePhone,workPhone,dlNumber,voterID,salt,hasVoted";
     //FILE HEADER FOR ADMIN LOGIN
     private static final String ADMINHEADER = "password,username";
-    private static final String VOTEHEADER = "bugs bunny,road runner,daffy duck,wiley e cyote,peter parker,spider man,batman,bruce wayne,total submitted";
+    private static final String VOTEHEADER = "bugs bunny,road runner,daffy duck,wiley e cyote,peter parker,batman,spider man,bruce wayne,total submitted";
  
     public TextInterface(){
         this.officialTally = false;
@@ -300,7 +300,7 @@ public class TextInterface {
 			writer.append("misae");
 			//ASHLEY LOGIN INFORMATION
 			writer.append(NEWLINE);
-			writer.append("buttercup");
+			writer.append("blossom");
 			writer.append("ashley");
 			writer.append(NEWLINE);
 			//DR.X LOGIN INFORMATION

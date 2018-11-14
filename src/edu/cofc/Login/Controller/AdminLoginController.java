@@ -24,6 +24,8 @@ public class AdminLoginController {
         boolean loginValid = TextInterface.getInstance().adminLoginValid(log);
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to Admin Menu
-        main.showAdminMenu();
+        if (loginValid == true) {
+            main.showAdminMenu();
+        }
     }
 }

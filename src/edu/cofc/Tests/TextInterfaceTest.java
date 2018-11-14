@@ -44,6 +44,7 @@ public class TextInterfaceTest {
         assertEquals(true, results);
         admin = new Admin ("x", "y");
         results = textInterface.adminLoginValid(admin);
+        assertEquals(false, results);
     }
 
     @Test
