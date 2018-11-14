@@ -44,6 +44,7 @@ public class TextInterface {
     		+ "homePhone,workPhone,dlNumber,voterID,salt,hasVoted";
     //FILE HEADER FOR ADMIN LOGIN
     private static final String ADMINHEADER = "password,username";
+    private static final String VOTEHEADER = "bugs bunny,road runner,daffy duck,wiley e cyote,peter parker,spider man,batman,bruce wayne,total submitted";
  
     public TextInterface(){
         this.officialTally = false;
@@ -365,30 +366,46 @@ public class TextInterface {
       	//give the csv file a name
     	try {
     		String fileName = "votes.csv";
-    		File registrationFile = new File(fileName);
+    		File voteFile = new File(fileName);
     		//TRUE if Exists, FALSE if it doesn't
-    		boolean exists = registrationFile.exists();
+    		boolean exists = voteFile.exists();
     		System.out.println(exists);
+    		//mark the voter as voted, but don't put their information in voter csv file, votes shouldnt be connected to voter right?
+    		//hasVoted = true;
     		
     		if(!exists) {
     			System.out.println("in the if");
     			FileOutputStream output = new FileOutputStream(fileName, true);
     			PrintWriter pw = new PrintWriter(output);
-    			pw.println(HEADER);
-    			pw.println(NEWLINE);
+    			pw.println(VOTEHEADER);
     			pw.close();
     			
     			
     		}//END IF
     		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
 			FileWriter writer = new FileWriter(fileName, true);
-			//insert values into file
- 			writer.append(voter.getFirstName());
+			String votesList = votes.toString().replace("[", "").replace("]", "");
+			String[] votesArray = splitTheLine(votesList);
+
+			int numVotes = 0; 
+			
+			for (int j =0; j < votesArray.length; j++) {
+				votesArray[j] = votesArray[j].trim();
+				
+				if(votesArray[j].equals("1")|| votesArray[j].equals("[1") || votesArray[j].equals("1]")) {
+					numVotes++;		
+				}//END IF 
+			}//END FOR
+			
+			String voteCount = String.valueOf(numVotes);
+			System.out.println("vote count: "+ voteCount);
+			writer.append(votesList);
 			writer.append(COMMA);
-			writer.append(voter.getLastName());
-			writer.append(COMMA);
-			writer.append(voter.getMiddleInitial());
-			writer.append(COMMA);
+			writer.append(voteCount);
+			writer.append(NEWLINE);
+			writer.flush();
+			writer.close();
+    		System.out.println("Written to file successfully, check in your file browser to find it");
     	}//END TRY	
     	catch(Exception e){
     		System.out.println("ERROR!! The CSV file did not write successfuly! ");
