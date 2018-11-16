@@ -6,6 +6,8 @@ import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
 import javafx.scene.text.Text;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import javax.swing.*;
 import java.io.PrintWriter;
@@ -31,8 +33,6 @@ public class TextInterface {
     private boolean officialTally;
     private Voter voter;
     private SecureRandom rand = new SecureRandom();
-    private byte bytes[];
-    private String salt;
     private static final String COMMA = ",";
     private static final String NEWLINE = "\n";
     public static TextInterface textInterfaceInstance;
@@ -41,7 +41,7 @@ public class TextInterface {
     private static final String HEADER = "firstName,lastName,middleInitial,suffix,sex,race,ssn,"
     		+ "streetResidential,cityResidential,stateResidential,zipResidential,aptResidential,inCityLimits,"
     		+ "streetMAiling,cityMailing,stateMailing,zipMailing,birthdayDate,birthdayMonth,birthdayYear,"
-    		+ "homePhone,workPhone,dlNumber,voterID,salt,hasVoted";
+    		+ "homePhone,workPhone,dlNumber,voterID,hasVoted";
     //FILE HEADER FOR ADMIN LOGIN
     private static final String ADMINHEADER = "password,username";
     private static final String VOTEHEADER = "bugs bunny,road runner,daffy duck,wiley e cyote,peter parker,batman,spider man,bruce wayne,total submitted";
@@ -49,6 +49,43 @@ public class TextInterface {
     public TextInterface(){
         this.officialTally = false;
     }
+
+    public String hash(String data, byte[] salty){
+    	String hashed = "";
+    	try {
+			MessageDigest hasher = MessageDigest.getInstance("SHA-256");
+			hasher.update(salty);
+			byte[] dataBytes = hasher.digest(data.getBytes());
+			StringBuilder builder = new StringBuilder();
+			for (int i = 0;i < dataBytes.length ;i++){
+				builder.append(Integer.toString((dataBytes[i] & 0xff) + 0x100, 16).substring(1));
+			}
+			hashed = builder.toString();
+		}
+		catch(NoSuchAlgorithmException e) {
+    		e.printStackTrace();
+		}
+    	return hashed;
+	}
+
+	public String saltString(byte[] salty) {
+		//Making the salt string to be stored and to encrypt storage/help voters log in later
+		String salt = "";
+		for (int i = 0; i<salty.length; i++){
+			salt = salt + salty[i];
+		}
+		return salt;
+	}
+
+	public byte[] saltByte() {
+		byte[] bytes = new byte[10];
+		rand.nextBytes(bytes);
+		return bytes;
+	}
+
+	public void storeAdminSalt(String Username, String Salty){
+
+	};
 
     public boolean getOfficialTallyBoolean() {
         return this.officialTally;
@@ -179,14 +216,6 @@ public class TextInterface {
         	boolean exists = registrationFile.exists();
         	System.out.println(exists);
 
-        	//Making the salt to be stored with the voter and to encrypt storage/help voters log in later
-        	bytes = new byte[10];
-			rand.nextBytes(bytes);
-        	System.out.println(bytes);
-        	salt = "";
-    		for (int i = 0; i<bytes.length; i++){
-    			salt = salt + bytes[i];
-			}
 
         	if(!exists) {
     			System.out.println("in the if");
@@ -250,8 +279,6 @@ public class TextInterface {
 			writer.append(voter.getDLNumber());
 			writer.append(COMMA);
 			writer.append(String.valueOf(voter.getvoterID()));
-			writer.append(COMMA);
-			writer.append(salt);
 			writer.append(COMMA);
 			writer.append("false");
 			//writer.append(NEWLINE);
