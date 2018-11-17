@@ -46,7 +46,7 @@ public class TextInterface {
     //FILE HEADER FOR ADMIN LOGIN
     private static final String ADMINHEADER = "password,username";
     private static final String VOTEHEADER = "bugs bunny,road runner,daffy duck,wiley e cyote,peter parker,batman,spider man,bruce wayne,total submitted";
- 
+    private static final String TALLYHEADER = "bugs bunny, road runner, daffy duck, wiley e cyote, peter paker, batman, spiderman, bruce wayne";
     public TextInterface(){
         this.officialTally = false;
     }
@@ -525,14 +525,14 @@ public class TextInterface {
     	
 	   	if(compareVal != numVotes)
 	   		getRecount();
-	   	System.out.println(compareVal == numVotes);
+	   	
 	 
 		return officialTallyArray;
     }
 
     //download official tally as a file -- Information Expert
     public void downloadOfficialTally() throws IOException{
-        //No errors are thrown but it doesn't save a file? -- Currently saves to desktop instead
+    /*    //No errors are thrown but it doesn't save a file? -- Currently saves to desktop instead
         JFileChooser locationPrompt = new JFileChooser();
         locationPrompt.setCurrentDirectory(new java.io.File("."));
         locationPrompt.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -542,8 +542,39 @@ public class TextInterface {
         //File doc = new File((Integer.toString(fileLocation) +"OfficialTally.txt"));
         PrintWriter writer = new PrintWriter(doc);
         //insert data into newly created file
-        writer.close();
-    }
+        writer.close();*/
+    	try {
+         	//give the csv file a name
+        	String fileName = "voteTally.txt";
+        	File voteTally = new File(fileName);
+        	//TRUE if Exists, FALSE if it doesn't
+        	boolean exists = voteTally.exists();
+        	System.out.println(exists);
+    		int [] officialTallyArray  = getOfficialTally();
+
+        	//IF THE FILE ALREADY EXISTS-- DELETE IT 
+        	if(!exists) {
+        		voteTally.delete();
+        	}
+        	
+        	FileOutputStream output = new FileOutputStream(fileName, true);
+			PrintWriter pw = new PrintWriter(output);
+			pw.println(TALLYHEADER);
+			for(int i = 0; i < officialTallyArray.length; i ++) {
+				pw.print(officialTallyArray[i]);
+				System.out.print(officialTallyArray[i]);
+				pw.print(COMMA);
+				pw.print(" ");
+			}
+			pw.flush();
+			pw.close();
+ 		
+    }//END TRY 
+    	catch(Exception e) {
+    		System.out.println("ERROR!!FILE DID NOT DOWNLOAD CORRECTLY");
+    		e.printStackTrace();
+    	}//END CATCH
+    }//END DOWNLOAD OFFICIAL TALLY
 
     //get an unofficial tally count  -- Information Expert
     //I MADE THE METHOD VOID BECAUSE I NEED THE VALUE OF 8 INTS
