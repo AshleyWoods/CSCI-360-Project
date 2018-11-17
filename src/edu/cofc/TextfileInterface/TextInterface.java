@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
@@ -471,18 +472,147 @@ public class TextInterface {
     }
 
     //get an unofficial tally count  -- Information Expert
-    public int getUnofficialTally() {
+    //I MADE THE METHOD VOID BECAUSE I NEED THE VALUE OF 8 INTS
+    public int[] getUnofficialTally() {
         //takes the number of votes from each candidate in the database and displays it with not votes counted
-        return 0;
-    }
+      	String file = "votes.csv";
+      	int buggsBunny = 0; 
+      	int daffyDuck = 0; 
+      	int roadRunner = 0; 
+      	int wileyCoyote = 0; 
+      	int peterParker = 0; 
+      	int spiderMan = 0; 
+      	int batMan = 0; 
+      	int bruceWayne = 0; 
+    	
+    	
+    	try {
+    		FileReader fileReader = new FileReader(file);
+    		BufferedReader buffReader = new BufferedReader(fileReader);
+    		//READ IN THE FIRST LINE TO IN EFFECT SKIP IT IN THE WHILE LOOP 
+    		buffReader.readLine();
+    		String currLine;
+    		String[] lineAsArray;
+    		//ITERATE THROUGH THE TEXT FILE BY LINE
+    		while((currLine = buffReader.readLine()) != null) {
+    			//SPLIT THE LINE INTO AN ARRAY WITH SPLITHTELINE HELPER METHOD
+    			//A SINGLE LINE = 1 BALLOT
+    			System.out.println("I am in the while");
+    			lineAsArray = splitTheLine(currLine);
+    			
+    			//STRIP THE WHITE SPACE 
+    			for (int i = 0; i < lineAsArray.length; i++)
+    			    lineAsArray[i] = lineAsArray[i].trim();
+    			
+    			//GRAB THE VALUE AT EACH INDEX OF THE ARRAY 
+    			int buggsIndex = Integer.parseInt(lineAsArray[0]);
+    			int roadIndex = Integer.parseInt(lineAsArray[1]);
+    			int daffyIndex = Integer.parseInt(lineAsArray[2]);
+    			int wileyIndex = Integer.parseInt(lineAsArray[3]);
+    			int peterIndex = Integer.parseInt(lineAsArray[4]);
+    			int spiderIndex = Integer.parseInt(lineAsArray[5]);
+    			int bruceIndex = Integer.parseInt(lineAsArray[6]);
+    			//GO THROUGH THE BALLOT AND LOOK FOR "1" 
+    			//IF A 1 IS FOUND ADD IT TO THE TOTAL COUNT PER CANDIDATE
+    			if(buggsIndex == 1)
+    				buggsBunny+= 1;
+    			if(roadIndex == 1)
+    				roadRunner+=1;
+    			if(daffyIndex ==1)
+    				daffyDuck+=1;
+    			if(wileyIndex ==1)
+    				wileyCoyote+=1;
+    			if(peterIndex ==1)
+    				peterParker+=1;
+    			if(spiderIndex ==1)
+    				spiderMan+=1;
+    			if(bruceIndex ==1)
+    				bruceWayne+=1;
+    		}//END WHILE
+    	}//END TRY
+    	catch(Exception e) {
+    		System.out.println("ERROR!! THE VOTES COULD NOT BE RETRIEVED TO PERFORM THE REQUESTED TASK");
+    		e.printStackTrace();
+    	}
+    	System.out.println("Buggs Bunny = "+ buggsBunny);
+    	System.out.println("Road Runner = " + roadRunner);
+    	System.out.println("Daffy Duck = " + daffyDuck);
+    	System.out.println("Wiley E Coyote = "+ wileyCoyote);
+    	System.out.println("Peter Parker = " + peterParker);
+    	System.out.println("Spiderman = " + spiderMan);
+    	System.out.println("Bruce Wayne = "+ bruceWayne);
+    	int unofficalTally[] = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, spiderMan, bruceWayne};
+    	
+    	return unofficalTally;
+    }//END UNOFFICIAL TALLY 
 
     //get a recount -- Information Expert
-    public int getRecount() {
+    //RETURNS TRUE IF THE RECOUNT VALUES ARE THE SAME 
+    public boolean getRecount() {
         //take number of votes from each candidate and total it
         //compare with number of votes from each voter
         //if it's the same, return the total, if it is not, do it again and return the result
-        return 0;
-    }
+      	String file = "votes.csv";
+      	int buggsBunny = 0; 
+      	int daffyDuck = 0; 
+      	int roadRunner = 0; 
+      	int wileyCoyote = 0; 
+      	int peterParker = 0; 
+      	int spiderMan = 0; 
+      	int batMan = 0; 
+      	int bruceWayne = 0; 
+      	boolean match = false;
+    	
+    	
+    	try {
+    		FileReader fileReader = new FileReader(file);
+    		BufferedReader buffReader = new BufferedReader(fileReader);
+    		String currLine;
+    		String[] lineAsArray;
+    		//ITERATE THROUGH THE TEXT FILE BY LINE
+    		while((currLine = buffReader.readLine()) != null) {
+    			//SPLIT THE LINE INTO AN ARRAY WITH SPLITHTELINE HELPER METHOD
+    			//A SINGLE LINE = 1 BALLOT
+    			lineAsArray = splitTheLine(currLine);
+    			//GRAB THE VALUE AT EACH INDEX OF THE ARRAY 
+    			int buggsIndex = Integer.parseInt(lineAsArray[0]);
+    			int roadIndex = Integer.parseInt(lineAsArray[1]);
+    			int daffyIndex = Integer.parseInt(lineAsArray[2]);
+    			int wileyIndex = Integer.parseInt(lineAsArray[3]);
+    			int peterIndex = Integer.parseInt(lineAsArray[4]);
+    			int spiderIndex = Integer.parseInt(lineAsArray[5]);
+    			int bruceIndex = Integer.parseInt(lineAsArray[6]);
+    			//GO THROUGH THE BALLOT AND LOOK FOR "1" 
+    			//IF A 1 IS FOUND ADD IT TO THE TOTAL COUNT PER CANDIDATE
+    			if(buggsIndex == 1)
+    				buggsBunny+= 1;
+    			if(roadIndex == 1)
+    				roadRunner+=1;
+    			if(daffyIndex ==1)
+    				daffyDuck+=1;
+    			if(wileyIndex ==1)
+    				wileyCoyote+=1;
+    			if(peterIndex ==1)
+    				peterParker+=1;
+    			if(spiderIndex ==1)
+    				spiderMan+=1;
+    			if(bruceIndex ==1)
+    				bruceWayne+=1;
+    		}//END WHILE
+    	int[] recount = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, spiderMan, bruceWayne};
+    	int [] unofficialTally = getUnofficialTally();
+    	match = Arrays.equals(recount,unofficialTally);
+    	
+ 
+    	}//END TRY
+    	catch(Exception e) {
+    		System.out.println("ERROR!! THE VOTES COULD NOT BE RETRIEVED TO PERFORM THE REQUESTED TASK");
+    		e.printStackTrace();
+    	}//END CATCH 
+
+        return match;
+        
+    }//END GET RECOUNT 
 
 
 

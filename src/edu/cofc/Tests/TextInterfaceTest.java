@@ -58,13 +58,13 @@ public class TextInterfaceTest {
     //tests the unofficial tally method
     //NOT FINISHED
     public void testGetUnofficialTally() {
-        int results = textInterface.getUnofficialTally();
+        int[] results = textInterface.getUnofficialTally();
     }
 
     @Test
     //tests the recount method
     //NOT FINISHED
     public void testGetRecount() {
-        int results = textInterface.getRecount();
+        boolean results = textInterface.getRecount();
     }
 }
