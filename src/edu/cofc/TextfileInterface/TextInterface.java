@@ -553,19 +553,17 @@ public class TextInterface {
     		int [] officialTallyArray  = getOfficialTally();
 
         	//IF THE FILE ALREADY EXISTS-- DELETE IT 
-        	if(!exists) {
+        	if(exists) {
         		voteTally.delete();
         	}
         	
         	FileOutputStream output = new FileOutputStream(fileName, true);
 			PrintWriter pw = new PrintWriter(output);
-			pw.println(TALLYHEADER);
-			for(int i = 0; i < officialTallyArray.length; i ++) {
-				pw.print(officialTallyArray[i]);
-				System.out.print(officialTallyArray[i]);
-				pw.print(COMMA);
-				pw.print(" ");
-			}
+			String [] helperString = {"Buggs Bunny", "Road Runner", "Daffy Duck", "Wiley E Coyote", "Peter Parker", "Batman", "Spiderman", "Bruce Wayne"};
+			for (int j =0; j <officialTallyArray.length; j++) {
+				pw.println(helperString[j] + ": " + officialTallyArray[j]);
+			
+			}//END OUTER FOR 
 			pw.flush();
 			pw.close();
  		
