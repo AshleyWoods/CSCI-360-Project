@@ -287,10 +287,17 @@ public class Main extends Application {
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(tally);
+            
+
 
             // Give the controller access to the main app.
             TallyController controller = loader.getController();
             controller.setMain(this);
+            
+            //ADD CSS FILE
+            rootLayout.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
+            //END ADD CSS FILE
+          
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -406,10 +413,7 @@ public class Main extends Application {
 
             Stage confirmSubmit = new Stage();
             confirmSubmit.setTitle("Confirm Form Submission");
-         
             
-            
-
             ConfirmFormSubmissionController controller = loader.getController();
             controller.setMain(this);
 

@@ -11,10 +11,11 @@
 			prefWidth="600.0" 
 			xmlns:fx="http://javafx.com/fxml/1" 
 			xmlns="http://javafx.com/javafx/2.2" 
-			fx:controller="edu.cofc.Administration.Controller.Tally.TallyController">
+			fx:controller="edu.cofc.Administration.Controller.Tally.TallyController"
+			styleClass= "unofficial-section">
   <children>
-    <GridPane layoutX="14.0" 
-    		  layoutY="53.0" 
+    <GridPane layoutX="0.0" 
+    		  layoutY="70.0" 
     		  prefHeight="261.0" 
     		  prefWidth="572.0">
     		  
@@ -36,6 +37,18 @@
         	  text="Road Runner" 
         	  GridPane.columnIndex="0" 
         	  GridPane.rowIndex="2" />
+         
+         <Text strokeType="OUTSIDE" 
+        	  strokeWidth="0.0" 
+        	  text="Wile E. Cyotte" 
+        	  GridPane.columnIndex="0" 
+        	  GridPane.rowIndex="3" />
+        
+         <Text strokeType="OUTSIDE" 
+        	  strokeWidth="0.0" 
+        	  text="Peter Parker" 
+        	  GridPane.columnIndex="0" 
+        	  GridPane.rowIndex="4" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
@@ -55,64 +68,54 @@
         	  GridPane.columnIndex="0" 
         	  GridPane.rowIndex="7" />
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="Wile E. Cyotte" 
-        	  GridPane.columnIndex="0" 
-        	  GridPane.rowIndex="3" />
-        	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="Peter Parker" 
-        	  GridPane.columnIndex="0" 
-        	  GridPane.rowIndex="4" />
+      
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="0" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="1" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="2" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="3" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="4" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="5" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="6" />
         	  
         <Text strokeType="OUTSIDE" 
         	  strokeWidth="0.0" 
         	  text="#" 
-        	  GridPane.columnIndex="1" 
+        	  GridPane.columnIndex="2" 
         	  GridPane.rowIndex="7" />
         	  
       </children>
@@ -132,20 +135,20 @@
         <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Button layoutX="14.0" 
-    		layoutY="334.0" 
+    <Button layoutX="200.0" 
+    		layoutY="500.0" 
     		mnemonicParsing="false" 
     		onAction="#handleLogout" 
     		text="Logout" />
-    <Button layoutX="474.0" 
-    		layoutY="333.0" 
+    		
+    <Button layoutX="310.0" 
+    		layoutY="500.0" 
     		mnemonicParsing="false" 
     		onAction="#handleBack" 
     		text="Back" />
-    <Text layoutX="235.0" 
-    	  layoutY="44.0" 
-    	  strokeType="OUTSIDE" 
-    	  strokeWidth="0.0" 
+    
+    <Label layoutX="210.0" 
+    	  layoutY="10.0" 
     	  text="Vote Tally" />
   </children>
 </AnchorPane>
