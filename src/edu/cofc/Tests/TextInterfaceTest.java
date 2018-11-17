@@ -51,7 +51,7 @@ public class TextInterfaceTest {
     //tests the official tally method
     //NOT FINISHED
     public void testGetOfficialTally(){
-        int results = textInterface.getOfficialTally();
+        int[] results = textInterface.getOfficialTally();
     }
 
     @Test
