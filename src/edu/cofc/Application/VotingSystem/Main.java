@@ -6,6 +6,7 @@ import edu.cofc.Administration.Controller.NoElectionPopUpController;
 import edu.cofc.Administration.Controller.Tally.*;
 import edu.cofc.Administration.Controller.endElectionPopUpController;
 import edu.cofc.Administration.Controller.startElectionPopUpController;
+import edu.cofc.Administration.view.AdminTallyView;
 import edu.cofc.Application.Election;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
 import edu.cofc.Ballots.Controller.FinalBallotController;
@@ -35,6 +36,7 @@ public class Main extends Application {
     public static Election currentElection;
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private AdminTallyView adminTallyView;
     //this variable will be changed when an operator completes an official tally 
     public boolean officialTally = false;
     public static Voter activeVoter;
@@ -65,6 +67,8 @@ public class Main extends Application {
         primaryStage.show();
         currentElection = new Election();
 
+        adminTallyView = new AdminTallyView(rootLayout, this);
+
         showLogin();
     }
 
@@ -73,34 +77,7 @@ public class Main extends Application {
     }
 
     public void showRecount() {
-    	try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/recountPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Download Official Tally");
-     
-
-            recountPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            
-
-            popUp.showAndWait();
-    		
-    	}catch(IOException e) {
-    		e.printStackTrace();
-    	}
+    	adminTallyView.showRecount();
     }
 
 
@@ -122,34 +99,7 @@ public class Main extends Application {
     	}
     }
     public void showDownloadOfficialTally() {
-    	try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/downloadOfficialTallyPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Download Official Tally");
-       
-
-            downloadOfficialTallyPopUpController controller = loader.getController();
-            controller.setMain(this);
-
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-  
-            
-            popUp.showAndWait();
-    		
-    	}catch(IOException e) {
-    		e.printStackTrace();
-    	}
+    	adminTallyView.showDownloadOfficialTally();
     }
     public void showDriverLogin () {
         try {
@@ -254,54 +204,11 @@ public class Main extends Application {
     }
 
     public void showAdminMenu(){
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/AdminMenu.fxml"));
-            AnchorPane AdminMenu =  loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(AdminMenu);
-
-            // Give the controller access to the main app.
-            AdminMenuController controller = loader.getController();
-            controller.setMain(this, ElectionRunning);
-            
-            //ADD CSS FILE
-            AdminMenu.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-            
-          
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        adminTallyView.showAdminMenu();
     }
 
     public void showTally() {
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/Tally.fxml"));
-            AnchorPane tally =  loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(tally);
-            
-
-
-            // Give the controller access to the main app.
-            TallyController controller = loader.getController();
-            controller.setMain(this);
-            
-            //ADD CSS FILE
-            rootLayout.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-          
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       adminTallyView.showTally();
     }
     
 
@@ -345,63 +252,11 @@ public class Main extends Application {
     }
 
     public void showOfficialConfirmationPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/officialTallyPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage stage = new Stage();
-            stage.setTitle("Confirm Official Tally");
-     ;
-
-            officialTallyPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            stage.setScene(new Scene(layout));
-        
-            stage.showAndWait();
-
-           
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       adminTallyView.showOfficialConfirmationPopUp();
     }
 
     public void showUnofficialConfirmationPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/unofficialTallyPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage stage = new Stage();
-            stage.setTitle("Confirm Unofficial Tally");
-       
-
-            unofficialTallyPopUpController controller = loader.getController();
-            controller.setMain(this);
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            stage.setScene(new Scene(layout));
-        
-            stage.showAndWait();
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       adminTallyView.showUnofficialConfirmationPopUp();
     }
 
     public boolean showSubmissionConfirmationPopup () {
@@ -551,160 +406,23 @@ public class Main extends Application {
     }
 
     public void showNoOfficialTallyPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/noOfficialTallyPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Warning");
-            Scene confirmSaveScene = new Scene(page);
-            popUp.setScene(confirmSaveScene);
-
-            NoOfficialTallyPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-       
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        adminTallyView.showNoOfficialTallyPopUp();
     }
 
     public void showNoElectionPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-           
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/NoElectionPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-            Stage popUp = new Stage();
-            
-            popUp.setTitle("Warning");
-         
-            
-            NoElectionPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-
-           
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      adminTallyView.showNoElectionPopUp();
     }
 
     public void showElectionRunningPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/ElectionRunningPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Warning");
-      
-
-            ElectionRunningPopUpController controller = loader.getController();
-            controller.setMain(this);
-  
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-  
-            
-            popUp.showAndWait();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       adminTallyView.showElectionRunningPopUp();
     }
 
     public void endElectionPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/endElectionPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Warning");
-        
-            endElectionPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-
- 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        adminTallyView.endElectionPopUp();
     }
 
     public void showOfficialTallyNeededPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/officialTallyNeededPopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Warning");
-          
-
-            officialTallyNeededPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        adminTallyView.showOfficialTallyNeededPopUp();
     }
 
     public void showRegistrationStatusPositivePopUp() {
@@ -768,33 +486,7 @@ public class Main extends Application {
     }
 
     public void startElectionPopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/startElectionPopUp.fxml"));
-            AnchorPane page =  loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Warning");
-     
-
-            startElectionPopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        adminTallyView.startElectionPopUp();
     }
 
     public static void main(String[] args) {
