@@ -11,8 +11,11 @@ import edu.cofc.Application.Election;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
 import edu.cofc.Ballots.Controller.FinalBallotController;
 import edu.cofc.Ballots.Controller.SavePopUpController;
+import edu.cofc.Ballots.View.BallotView;
 import edu.cofc.Login.Controller.*;
+import edu.cofc.Login.View.LoginView;
 import edu.cofc.Registration.Controller.*;
+import edu.cofc.Registration.View.RegistrationView;
 import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Vote.Voter;
 import javafx.application.Application;
@@ -37,6 +40,9 @@ public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private AdminTallyView adminTallyView;
+    private BallotView ballotView;
+    private LoginView loginView;
+    private RegistrationView registrationView;
     //this variable will be changed when an operator completes an official tally 
     public boolean officialTally = false;
     public static Voter activeVoter;
@@ -68,6 +74,9 @@ public class Main extends Application {
         currentElection = new Election();
 
         adminTallyView = new AdminTallyView(rootLayout, this);
+        ballotView = new BallotView(rootLayout, this);
+        loginView = new LoginView(rootLayout, this);
+        registrationView = new RegistrationView(rootLayout, this);
 
         showLogin();
     }
@@ -82,125 +91,33 @@ public class Main extends Application {
 
 
     public void showRegistrationInvestigation() {
-    	try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/registrationInvestigation.fxml"));
-            AnchorPane page = loader.load();
-
-
-            rootLayout.setCenter(page);
-
-            registrationInvestigationController controller = loader.getController();
-            controller.setMain(this);
-
-    		
-    	}catch(IOException e) {
-    		e.printStackTrace();
-    	}
+        registrationView.showRegistrationInvestigation();
     }
+
     public void showDownloadOfficialTally() {
     	adminTallyView.showDownloadOfficialTally();
     }
+
     public void showDriverLogin () {
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Login/View/DriverLogin.fxml"));
-            AnchorPane DriverLogin = loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(DriverLogin);
-
-            DriverLoginController controller = loader.getController();
-            controller.setMain(this);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loginView.showDriverLogin();
     }
 
     public void showSSNLogin () {
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Login/View/SSNLogin.fxml"));
-            AnchorPane SSNLogin = loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(SSNLogin);
-
-            SSNLoginController controller = loader.getController();
-            controller.setMain(this);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loginView.showSSNLogin();
     }
 
     public void showVRNLogin () {
-       try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Login/View/VRNLogin.fxml"));
-            AnchorPane VRNLogin = loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(VRNLogin);
-
-            VRNLoginController controller = loader.getController();
-            controller.setMain(this);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+      loginView.showVRNLogin();
     }
 
     public void showAdminLogin () {
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Login/View/AdminLogin.fxml"));
-            AnchorPane AdminLogin = loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(AdminLogin);
-
-            AdminLoginController controller = loader.getController();
-            controller.setMain(this);
-            //ADD CSS FILE
-            AdminLogin.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loginView.showAdminLogin();
     }
 
    //Go to login screen
 
     public void showLogin(){
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Login/View/LoginScreen.fxml"));
-            AnchorPane LoginScreen =  loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(LoginScreen);
-            rootLayout.getStyleClass().add("root");
-
-            // Give the controller access to the main app.
-            LoginController controller = loader.getController();
-            controller.setMain(this, ElectionRunning);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       loginView.showLogin();
     }
 
     public void showAdminMenu(){
@@ -215,40 +132,7 @@ public class Main extends Application {
 
     //Go to the voter registration page when the 'Register to Vote' button is clicked
     public void showVoterRegistration(){
-        try{
-        if (ElectionRunning) {
-            FXMLLoader load = new FXMLLoader();
-            load.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/NoRegistrationPopUp.fxml"));
-            AnchorPane NoVoterRegistration = load.load();
-
-            Stage errorAlert = new Stage();
-            errorAlert.setTitle("Invalid Action");
-            Scene errorAlertScene = new Scene(NoVoterRegistration);
-            errorAlert.setScene(errorAlertScene);
-
-            NoRegistrationPopUpController controller = load.getController();
-            controller.setMain(this);
-
-            errorAlert.showAndWait();
-
-            return;
-        }
-
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/VoterRegistration.fxml"));
-            AnchorPane VoterRegistration =  loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(VoterRegistration);
-
-            // Give the controller access to the main app.
-            VoterRegistrationController controller = loader.getController();
-            controller.setMain(this);
-
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
+       registrationView.showVoterRegistration();
     }
 
     public void showOfficialConfirmationPopUp() {
@@ -260,149 +144,24 @@ public class Main extends Application {
     }
 
     public boolean showSubmissionConfirmationPopup () {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/ConfirmFormSubmission.fxml"));
-            AnchorPane page =  loader.load();
-
-
-            Stage confirmSubmit = new Stage();
-            confirmSubmit.setTitle("Confirm Form Submission");
-            
-            ConfirmFormSubmissionController controller = loader.getController();
-            controller.setMain(this);
-
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            confirmSubmit.setScene(new Scene(layout));
-
-            confirmSubmit.showAndWait();
-
-            return cancel;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
+       boolean val = registrationView.showSubmissionConfirmationPopup();
+       return val;
     }
 
     public void showBallot() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Ballots/View/Ballot1.fxml"));
-            AnchorPane page = loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(page);
-
-            // Give the controller access to the main app.
-            Ballot1Controller controller = loader.getController();
-            controller.setMain(this);
-            
-            //ADD CSS FILE
-            rootLayout.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       ballotView.showBallot();
     }
 
     public void showFinalBallot() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Ballots/View/FinalBallot.fxml"));
-            AnchorPane page = loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(page);
-
-            // Give the controller access to the main app.
-            FinalBallotController controller = loader.getController();
-            controller.setMain(this);
-            
-            rootLayout.getStylesheets().add
-            (Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
-            //END ADD CSS FILE
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ballotView.showFinalBallot();
     }
 
     public void showSavePopUp () {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Ballots/View/SavePopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage confirmSave = new Stage();
-            confirmSave.setTitle("Form Saved");
-            Scene confirmSaveScene = new Scene(page);
-            confirmSave.setScene(confirmSaveScene);
-
-            SavePopUpController controller = loader.getController();
-            controller.setMain(this);
-           
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            confirmSave.setScene(new Scene(layout));
-        
-
-            
-
-
-            confirmSave.showAndWait();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ballotView.showSavePopUp();
     }
 
     public void showSaveConfirmationPopUp () {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/ConfirmFormSave.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage confirmSave = new Stage();
-            confirmSave.setTitle("Form Saved");
-            Scene confirmSaveScene = new Scene(page);
-            confirmSave.setScene(confirmSaveScene);
-            
-           
-            ConfirmFormSaveController controller = loader.getController();
-            controller.setMain(this);
-           
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            confirmSave.setScene(new Scene(layout));
-        
-      
-            
-      
-
-
-            confirmSave.showAndWait();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        registrationView.showSaveConfirmationPopUp();
     }
 
     public void showNoOfficialTallyPopUp() {
@@ -426,63 +185,11 @@ public class Main extends Application {
     }
 
     public void showRegistrationStatusPositivePopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/registrationStatusPositivePopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Registration Status");
-
-
-            registrationStatusPositivePopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        registrationView.showRegistrationStatusPositivePopUp();
     }
 
     public void showRegistrationStatusNegativePopUp() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Registration/View/registrationStatusNegativePopUp.fxml"));
-            AnchorPane page = loader.load();
-
-
-            Stage popUp = new Stage();
-            popUp.setTitle("Registration Status");
-
-
-            registrationStatusNegativePopUpController controller = loader.getController();
-            controller.setMain(this);
-            
-            HBox layout = new HBox(400);
-            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
-            		+ "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
-            		+ "-fx-alignment: center;");
-
-            layout.getChildren().addAll(page);
-            popUp.setScene(new Scene(layout));
-        
-            popUp.showAndWait();
-            
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       registrationView.showRegistrationStatusNegativePopUp();
     }
 
     public void startElectionPopUp() {

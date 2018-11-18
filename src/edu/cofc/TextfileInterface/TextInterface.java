@@ -231,7 +231,8 @@ public class TextInterface {
     		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
 			FileWriter writer = new FileWriter(fileName, true);
 			//insert values into file
- 			writer.append(voter.getFirstName());
+ 			writer.append(NEWLINE);
+			writer.append(voter.getFirstName());
 			writer.append(COMMA);
 			writer.append(voter.getLastName());
 			writer.append(COMMA);
@@ -282,7 +283,6 @@ public class TextInterface {
 			writer.append(String.valueOf(voter.getvoterID()));
 			writer.append(COMMA);
 			writer.append("false");
-			//writer.append(NEWLINE);
 			writer.flush();
 			writer.close();
     		System.out.println("Written to file successfully, check in your file browser to find it");
