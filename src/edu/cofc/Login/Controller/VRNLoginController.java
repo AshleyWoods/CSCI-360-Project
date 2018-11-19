@@ -19,8 +19,6 @@ public class VRNLoginController {
   
     @FXML
     private TextField VRN;
-    @FXML
-    private TextField DLN;
 
     
     private Voter voter;
@@ -42,11 +40,12 @@ public class VRNLoginController {
 		String firstName = firstNameText.getText().toString();
 	    String lastName = lastNameText.getText().toString();
 	    String middleInitial = middleInitialText.getText().toString();
-	    String dlNumber = DLN.getText().toString();
+	    String vrnNumber = VRN.getText().toString();
 
-        boolean loginValid = TextInterface.getInstance().voterRegistered(dlNumber , loginType);
+        boolean loginValid = TextInterface.getInstance().voterRegistered(vrnNumber , loginType);
         if(!loginValid) {
             main.showRegistrationStatusNegativePopUp();
+            main.showLogin();
         }
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to first ballot

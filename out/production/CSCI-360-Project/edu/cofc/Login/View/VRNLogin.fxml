@@ -43,12 +43,6 @@
     		   layoutY="310.0" 
     		   prefWidth="200.0"
     		   promptText= "Enter Voter Registration Number"  />
-       
-     <TextField fx:id="DLN" 
-    		   layoutX="320.0" 
-    		   layoutY="380.0" 
-    		   prefWidth="200.0"
-    		   promptText= "Enter DL Number"  />
     
     <Label layoutX="100.0" 
     	  layoutY="90.0" 
@@ -61,10 +55,6 @@
     <Label layoutX="100.0" 
     	  layoutY="310.0"
     	  text="VR Number" />
-     
-	<Label layoutX="100.0" 
-    	  layoutY="385.0" 
-    	  text="DL Number" />
 
     		   
     <Label layoutX="100.0" 

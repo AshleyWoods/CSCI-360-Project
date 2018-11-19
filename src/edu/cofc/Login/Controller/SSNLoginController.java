@@ -37,6 +37,7 @@ public class SSNLoginController {
         boolean loginValid = TextInterface.getInstance().voterRegistered(ssn, loginType);
         if(!loginValid) {
         	main.showRegistrationStatusNegativePopUp();
+        	main.showLogin();
         }
         //if not, give the voter a pop up (interchangeable between all login screens) and don't continue this method
         //if it does work, continue to first ballot
