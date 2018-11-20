@@ -54,7 +54,7 @@ public class TextInterface {
     public String hash(String data, byte[] salty){
     	String hashed = "";
     	try {
-			MessageDigest hasher = MessageDigest.getInstance("SHA-256");
+			MessageDigest hasher = MessageDigest.getInstance("SHA-512");
 			hasher.update(salty);
 			byte[] dataBytes = hasher.digest(data.getBytes());
 			StringBuilder builder = new StringBuilder();
