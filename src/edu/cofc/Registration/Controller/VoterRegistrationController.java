@@ -56,7 +56,14 @@ public class VoterRegistrationController {// This is a CONTROLLER
         if (!(above18.isSelected() && citizen.isSelected())){
             return;
         }
-    	
+
+        if (ssnText.getText().toString().length() > 9 || middleInitialText.getText().toString().length() > 1 || dlNumberText.getText().toString().length() > 10 ||
+        homePhoneText.getText().toString().length() > 10 || workPhoneText.getText().toString().length() > 10 || birthdayDateText.getText().toString().length() > 2 ||
+        birthdayYearText.getText().toString().length() > 4) {
+            //SHOW INPUT INVALID
+            return;
+        }
+
     	//ASK IF THEY MEAN TO SUBMIT
         if (main.showSubmissionConfirmationPopup()) {
             //cancel if they did not

@@ -36,8 +36,14 @@ public class registrationInvestigationController {// This is a CONTROLLER
     @FXML
     private void handleRegistrationInvestigation() throws FileNotFoundException {
     	 String ssn = SSN.getText().toString();
+    	 String MI = middleInitialText.getText().toString();
         //Check the database to see if the login info is there
-       
+
+        if (ssn.length() > 9 || MI.length() > 1) {
+            //SHOW INPUT INVALID
+            return;
+        }
+
     	loginValid = TextInterface.getInstance().voterRegistered(ssn,loginType);
     	 
     	System.out.println(loginValid);

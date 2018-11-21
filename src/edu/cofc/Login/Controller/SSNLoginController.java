@@ -33,6 +33,10 @@ public class SSNLoginController {
     	    //String lastName = lastNameText.getText().toString();
     	    //String middleInitial = middleInitialText.getText().toString();
     	    String ssn = SSN.getText().toString();
+        if (ssn.length() > 9 || middleInitialText.getText().toString().length() > 1) {
+            //SHOW INPUT INVALID
+            return;
+        }
         //Check the database to see if the login info is valid
         boolean loginValid = TextInterface.getInstance().voterRegistered(ssn, loginType);
         if(!loginValid) {

@@ -34,6 +34,12 @@ public class DriverLoginController {
     	  String firstName = firstNameText.getText().toString();
     	  String lastName = lastNameText.getText().toString();
     	  String middleInitial = middleInitialText.getText().toString();
+
+        if (dlNumber.length() > 9 || middleInitial.length() > 1) {
+            //SHOW INPUT INVALID
+            return;
+        }
+
         boolean loginValid = TextInterface.getInstance().voterRegistered( dlNumber, loginType);
         if(!loginValid) {
         	 main.showRegistrationStatusNegativePopUp();

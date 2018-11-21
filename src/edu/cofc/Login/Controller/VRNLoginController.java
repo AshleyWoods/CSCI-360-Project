@@ -42,6 +42,11 @@ public class VRNLoginController {
 	    String middleInitial = middleInitialText.getText().toString();
 	    String vrnNumber = VRN.getText().toString();
 
+        if (vrnNumber.length() > 9 || middleInitial.length() > 1) {
+            //SHOW INPUT INVALID
+            return;
+        }
+
         boolean loginValid = TextInterface.getInstance().voterRegistered(vrnNumber , loginType);
         if(!loginValid) {
             main.showRegistrationStatusNegativePopUp();
