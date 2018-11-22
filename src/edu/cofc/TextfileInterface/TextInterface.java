@@ -505,6 +505,8 @@ public class TextInterface {
     				wileyCoyote+=1;
     			if(peterIndex ==1)
     				peterParker+=1;
+    			if(batIndex ==1)
+    				batMan +=1;
     			if(spiderIndex ==1)
     				spiderMan+=1;
     			if(bruceIndex ==1)
@@ -519,9 +521,9 @@ public class TextInterface {
     		e.printStackTrace();
     	}
         //AdminMenuController.officialTally = true;
- 	   	int[] officialTallyArray = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, spiderMan, bruceWayne};
+ 	   	int[] officialTallyArray = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, batMan, spiderMan, bruceWayne};
     	
-	   	int compareVal = buggsBunny + roadRunner + daffyDuck + wileyCoyote + peterParker + spiderMan + bruceWayne;
+	   	int compareVal = buggsBunny + roadRunner + daffyDuck + wileyCoyote + peterParker+ batMan + spiderMan + bruceWayne;
     	
 	   	if(compareVal != numVotes)
 	   		getRecount();
@@ -628,6 +630,8 @@ public class TextInterface {
     				wileyCoyote+=1;
     			if(peterIndex ==1)
     				peterParker+=1;
+    			if (batIndex ==1)
+    				batMan+=1;
     			if(spiderIndex ==1)
     				spiderMan+=1;
     			if(bruceIndex ==1)
@@ -643,9 +647,10 @@ public class TextInterface {
     	System.out.println("Daffy Duck = " + daffyDuck);
     	System.out.println("Wiley E Coyote = "+ wileyCoyote);
     	System.out.println("Peter Parker = " + peterParker);
+    	System.out.println("Batman = "+ batMan);
     	System.out.println("Spiderman = " + spiderMan);
     	System.out.println("Bruce Wayne = "+ bruceWayne);
-    	int unofficalTally[] = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, spiderMan, bruceWayne};
+    	int unofficalTally[] = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker,batMan, spiderMan, bruceWayne};
     	
     	return unofficalTally;
     }//END UNOFFICIAL TALLY 

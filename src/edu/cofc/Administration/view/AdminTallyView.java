@@ -3,11 +3,13 @@ package edu.cofc.Administration.view;
 import edu.cofc.Administration.Controller.*;
 import edu.cofc.Administration.Controller.Tally.*;
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.TextfileInterface.TextInterface;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -110,25 +112,32 @@ public class AdminTallyView { //This is a class to show any visuals pertaining t
     }
 
     public void showTally() {
-        try {
+        Text unofficialTally = new Text();
+        String buggsBunny;
+        String daffyDuck;
+        String roadRunner;
+        String wileyECoyote; 
+        String peterParker;
+        String spiderman;
+        String batman;
+        String bruceWayne;
+        TextInterface tInterface = new TextInterface();
+    	try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Administration/view/Tally/Tally.fxml"));
             AnchorPane tally =  loader.load();
-
+    	
             // Set person overview into the center of root layout.
-            rootLayout.setCenter(tally);
-
-
-
+            //rootLayout.setCenter(tally);
             // Give the controller access to the main app.
             TallyController controller = loader.getController();
             controller.setMain(main);
-
+       
             //ADD CSS FILE
             rootLayout.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
             //END ADD CSS FILE
-
+     
 
         } catch (IOException e) {
             e.printStackTrace();

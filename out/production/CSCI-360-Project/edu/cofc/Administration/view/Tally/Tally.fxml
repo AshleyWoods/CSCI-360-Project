@@ -13,7 +13,7 @@
 			xmlns="http://javafx.com/javafx/2.2" 
 			fx:controller="edu.cofc.Administration.Controller.Tally.TallyController"
 			styleClass= "unofficial-section">
-  <children>
+ <!--  <children>
     <GridPane layoutX="0.0" 
     		  layoutY="70.0" 
     		  prefHeight="261.0" 
@@ -150,5 +150,5 @@
     <Label layoutX="210.0" 
     	  layoutY="10.0" 
     	  text="Vote Tally" />
-  </children>
+  </children> -->
 </AnchorPane>
