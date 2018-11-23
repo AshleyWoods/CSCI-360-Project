@@ -128,7 +128,8 @@ public class TextInterface {
     	    			lineAsArray = splitTheLine(currLine);
 	    	
     	    			String index22 = lineAsArray[22];
-	    				if(index22.equals(searchNum)) {
+    	    			String hasVoted = lineAsArray[24];
+	    				if(index22.equals(searchNum)&& hasVoted.equals("false")) {
 	    					System.out.println("I am in the if statement- they match");
 
 	    					found = true;
@@ -145,7 +146,8 @@ public class TextInterface {
 
 	    	    			//check to see if vrn can be found
 	    	    			String index23 = lineAsArray[23];
-		    				if(index23.equals(searchNum)) {
+						    String hasVoted = lineAsArray[24];
+		    				if(index23.equals(searchNum) && hasVoted.equals("false")) {
 		    					System.out.println("I am in the if statement- they match");
 
 		    					found = true;
@@ -176,7 +178,8 @@ public class TextInterface {
 	    	    			
 	    	    			//check to see if social can be found
 	    	    			String index6 = lineAsArray[6];
-		    				if(index6.equals(searchNum)) {
+							String hasVoted = lineAsArray[24];
+		    				if(index6.equals(searchNum)&& hasVoted.equals("false")) {
 		    					System.out.println("I am in the if statement- they match");
 
 		    					found = true;

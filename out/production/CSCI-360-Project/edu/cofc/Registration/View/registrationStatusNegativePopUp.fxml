@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.cofc.Registration.Controller.registrationStatusNegativePopUpController"
-            prefHeight="400.0" prefWidth="600.0">
-    <children>
-        <Button fx:id="menuButton" layoutX="133.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleMenuButton" text="Return to Main Menu" />
-        <Text layoutX="81.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are a not registered voter." />
-    </children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Registration.Controller.registrationStatusNegativePopUpController">
+  <children>
+    <Button fx:id="menuButton" layoutX="133.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleMenuButton" text="Return to Main Menu" />
+    <Text layoutX="81.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are a not registered voter." />
+    <Text layoutX="32.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(If you are attemptin to log in to vote," />
+    <Text layoutX="32.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="it is also possible that you have already" />
+    <Text layoutX="118.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cast a vote for this election)" />
+  </children>
 </AnchorPane>
