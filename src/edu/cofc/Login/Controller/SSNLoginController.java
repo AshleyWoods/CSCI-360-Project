@@ -34,7 +34,7 @@ public class SSNLoginController {
     	    //String middleInitial = middleInitialText.getText().toString();
     	    String ssn = SSN.getText().toString();
         if (ssn.length() > 9 || middleInitialText.getText().toString().length() > 1) {
-            //SHOW INPUT INVALID
+            main.showInputInvalid();
             return;
         }
         //Check the database to see if the login info is valid

@@ -3,8 +3,11 @@ package edu.cofc.Login.View;
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.Login.Controller.*;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -15,6 +18,36 @@ public class LoginView {
     public LoginView(BorderPane boarderPane, Main m){
         rootLayout = boarderPane;
         main = m;
+    }
+
+    public void showInputInvalid(){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Login/View/invalidInput.fxml"));
+            AnchorPane page = loader.load();
+
+
+            Stage popUp = new Stage();
+            popUp.setTitle("Registration Status");
+
+
+            InvalidInputController controller = loader.getController();
+            controller.setMain(main);
+
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+                    + "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+                    + "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            popUp.setScene(new Scene(layout));
+
+            popUp.showAndWait();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void showDriverLogin () {

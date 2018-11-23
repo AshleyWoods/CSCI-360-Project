@@ -89,6 +89,9 @@ public class Main extends Application {
     	adminTallyView.showRecount();
     }
 
+    public void showInputInvalid() {
+        loginView.showInputInvalid();
+    }
 
     public void showRegistrationInvestigation() {
         registrationView.showRegistrationInvestigation();

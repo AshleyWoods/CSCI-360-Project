@@ -36,7 +36,7 @@ public class DriverLoginController {
     	  String middleInitial = middleInitialText.getText().toString();
 
         if (dlNumber.length() > 9 || middleInitial.length() > 1) {
-            //SHOW INPUT INVALID
+            main.showInputInvalid();
             return;
         }
 

@@ -40,7 +40,7 @@ public class registrationInvestigationController {// This is a CONTROLLER
         //Check the database to see if the login info is there
 
         if (ssn.length() > 9 || MI.length() > 1) {
-            //SHOW INPUT INVALID
+            main.showInputInvalid();
             return;
         }
 

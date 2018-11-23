@@ -43,7 +43,7 @@ public class VRNLoginController {
 	    String vrnNumber = VRN.getText().toString();
 
         if (vrnNumber.length() > 9 || middleInitial.length() > 1) {
-            //SHOW INPUT INVALID
+            main.showInputInvalid();
             return;
         }
 
