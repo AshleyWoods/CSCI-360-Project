@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Login/Controller/DriverLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Login/Controller/DriverLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Login/Controller/SSNLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Login/Controller/SSNLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Login/Controller/VRNLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Login/Controller/VRNLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Registration/Controller/registrationInvestigationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Registration/Controller/registrationInvestigationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Tests/TextInterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Tests/TextInterfaceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -95,12 +91,12 @@
         <counts>
           <entry key="dummy" value="39" />
           <entry key="fxml" value="820" />
-          <entry key="java" value="35253" />
+          <entry key="java" value="35347" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="35253" />
+          <entry key="JAVA" value="35347" />
           <entry key="PLAIN_TEXT" value="39" />
           <entry key="XML" value="820" />
         </counts>
@@ -110,7 +106,7 @@
           <entry key="csv" value="19" />
           <entry key="fxml" value="109" />
           <entry key="iml" value="1" />
-          <entry key="java" value="417" />
+          <entry key="java" value="419" />
           <entry key="xsl" value="2" />
         </counts>
       </usages-collector>
@@ -118,7 +114,7 @@
         <counts>
           <entry key="CSV" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="417" />
+          <entry key="JAVA" value="419" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="XML" value="111" />
         </counts>
@@ -133,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="401">
               <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
               <folding>
                 <element signature="e#3394#3395#0" expanded="true" />
@@ -172,11 +168,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="189" column="64" selection-start-line="189" selection-start-column="64" selection-end-line="189" selection-end-column="64" />
+            <state relative-caret-position="357">
+              <caret line="733" column="10" selection-start-line="733" selection-start-column="10" selection-end-line="733" selection-end-column="10" />
               <folding>
+                <element signature="method#hash#0;class#TextInterface#0" />
+                <element signature="method#saltString#0;class#TextInterface#0" />
                 <element signature="method#storeAdminSalt#0;class#TextInterface#0" />
                 <element signature="method#getInstance#0;class#TextInterface#0" />
+                <element signature="method#voterRegistered#0;class#TextInterface#0" />
                 <element signature="method#registerVoter#0;class#TextInterface#0" />
                 <element signature="method#registerAdmin#0;class#TextInterface#0" />
                 <element signature="method#adminLoginValid#0;class#TextInterface#0" />
@@ -195,27 +194,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="125" lean-forward="true" selection-start-line="3" selection-start-column="125" selection-end-line="3" selection-end-column="125" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/Controller/registrationInvestigationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Tests/TextInterfaceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -277,7 +255,6 @@
         <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java" />
-        <option value="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/Tally/TallyController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/FinalBallotController.java" />
@@ -303,6 +280,7 @@
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/VRNLoginController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Registration/Controller/registrationInvestigationController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Tests/TextInterfaceTest.java" />
+        <option value="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" />
       </list>
     </option>
@@ -341,6 +319,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="cofc" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cofc" type="462c0819:PsiDirectoryNode" />
+              <item name="Administration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSCI-360-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSCI-360-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cofc" type="462c0819:PsiDirectoryNode" />
+              <item name="Administration" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -362,7 +355,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542992816876" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542993725614" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SHAExample.java" />
     <property name="recentsLimit" value="5" />
@@ -611,7 +604,7 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15157612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15157612" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -619,7 +612,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26449788" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26449788" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -831,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/Election.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -876,13 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -964,43 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
-          <folding>
-            <element signature="e#3394#3395#0" expanded="true" />
-            <element signature="e#3418#3419#0" expanded="true" />
-            <element signature="e#3408#3409#0" expanded="true" />
-            <element signature="e#3472#3473#0" expanded="true" />
-            <element signature="e#3612#3613#0" expanded="true" />
-            <element signature="e#3655#3656#0" expanded="true" />
-            <element signature="e#3690#3691#0" expanded="true" />
-            <element signature="e#3730#3731#0" expanded="true" />
-            <element signature="e#3765#3766#0" expanded="true" />
-            <element signature="e#3803#3804#0" expanded="true" />
-            <element signature="e#3840#3841#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
-            <element signature="e#3937#3938#0" expanded="true" />
-            <element signature="e#3973#3974#0" expanded="true" />
-            <element signature="e#4259#4260#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
-            <element signature="e#4729#4730#0" expanded="true" />
-            <element signature="e#4767#4768#0" expanded="true" />
-            <element signature="e#4804#4805#0" expanded="true" />
-            <element signature="e#4848#4849#0" expanded="true" />
-            <element signature="e#4884#4885#0" expanded="true" />
-            <element signature="e#4926#4927#0" expanded="true" />
-            <element signature="e#4974#4975#0" expanded="true" />
-            <element signature="e#5034#5035#0" expanded="true" />
-            <element signature="e#5585#5586#0" expanded="true" />
-            <element signature="e#5655#5656#0" expanded="true" />
-            <element signature="e#5712#5713#0" expanded="true" />
-            <element signature="e#5781#5782#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Registration/Controller/registrationStatusNegativePopUpController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1058,13 +1000,70 @@
       </provider>
       <provider editor-type-id="csv-text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/Election.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
+          <folding>
+            <element signature="e#3394#3395#0" expanded="true" />
+            <element signature="e#3418#3419#0" expanded="true" />
+            <element signature="e#3408#3409#0" expanded="true" />
+            <element signature="e#3472#3473#0" expanded="true" />
+            <element signature="e#3612#3613#0" expanded="true" />
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
+            <element signature="e#3730#3731#0" expanded="true" />
+            <element signature="e#3765#3766#0" expanded="true" />
+            <element signature="e#3803#3804#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#3937#3938#0" expanded="true" />
+            <element signature="e#3973#3974#0" expanded="true" />
+            <element signature="e#4259#4260#0" expanded="true" />
+            <element signature="e#4314#4315#0" expanded="true" />
+            <element signature="e#4729#4730#0" expanded="true" />
+            <element signature="e#4767#4768#0" expanded="true" />
+            <element signature="e#4804#4805#0" expanded="true" />
+            <element signature="e#4848#4849#0" expanded="true" />
+            <element signature="e#4884#4885#0" expanded="true" />
+            <element signature="e#4926#4927#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
+            <element signature="e#5034#5035#0" expanded="true" />
+            <element signature="e#5585#5586#0" expanded="true" />
+            <element signature="e#5655#5656#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
+            <element signature="e#5781#5782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Administration/Controller/AdminMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="189" column="64" selection-start-line="189" selection-start-column="64" selection-end-line="189" selection-end-column="64" />
+        <state relative-caret-position="357">
+          <caret line="733" column="10" selection-start-line="733" selection-start-column="10" selection-end-line="733" selection-end-column="10" />
           <folding>
+            <element signature="method#hash#0;class#TextInterface#0" />
+            <element signature="method#saltString#0;class#TextInterface#0" />
             <element signature="method#storeAdminSalt#0;class#TextInterface#0" />
             <element signature="method#getInstance#0;class#TextInterface#0" />
+            <element signature="method#voterRegistered#0;class#TextInterface#0" />
             <element signature="method#registerVoter#0;class#TextInterface#0" />
             <element signature="method#registerAdmin#0;class#TextInterface#0" />
             <element signature="method#adminLoginValid#0;class#TextInterface#0" />

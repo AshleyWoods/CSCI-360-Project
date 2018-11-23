@@ -404,6 +404,7 @@ public class TextInterface {
         //then to each candidate individually
         //then marks the voter in the database as having voted along with saving the number of votes cast
       	//give the csv file a name
+		setHasVoted(voter);
     	try {
     		String fileName = "votes.csv";
     		File voteFile = new File(fileName);
@@ -735,7 +736,7 @@ public class TextInterface {
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
-	public void setHasVoted() {
+	public void setHasVoted(Voter voter) {
     	//Probably will need to have some sort of input so that it knows exactly what voter to set to true
 	}
 

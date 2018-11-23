@@ -112,6 +112,7 @@ public class AdminMenuController { // This is a CONTROLLER
         }
         main.ElectionRunning= true;
         this.ElectionRunning = true;
+        main.textInterface.beginElection();
     }
 
 }
