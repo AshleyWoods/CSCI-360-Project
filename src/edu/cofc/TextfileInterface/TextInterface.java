@@ -110,7 +110,7 @@ public class TextInterface {
     //3-SSN
     //4- check if the voter is registered (SSN)? isnt that 3? 
  
-    public boolean voterRegistered( String loginTypeIDNum, int loginType) throws FileNotFoundException {
+    public boolean voterRegistered(String firstName, String lastName, String MI, String loginTypeIDNum, int loginType) throws FileNotFoundException {
     	String file = "registration.csv";
     	boolean found = false;
     	
@@ -129,7 +129,10 @@ public class TextInterface {
 	    	
     	    			String index22 = lineAsArray[22];
     	    			String hasVoted = lineAsArray[24];
-	    				if(index22.equals(searchNum)&& hasVoted.equals("false")) {
+    	    			String first = lineAsArray[0];
+    	    			String last = lineAsArray[1];
+    	    			String MiddleInitial = lineAsArray[2];
+	    				if(first.equals(firstName)&& last.equals(lastName)&& MiddleInitial.equals(MI)&& index22.equals(searchNum)&& hasVoted.equals("false")) {
 	    					System.out.println("I am in the if statement- they match");
 
 	    					found = true;
@@ -147,7 +150,10 @@ public class TextInterface {
 	    	    			//check to see if vrn can be found
 	    	    			String index23 = lineAsArray[23];
 						    String hasVoted = lineAsArray[24];
-		    				if(index23.equals(searchNum) && hasVoted.equals("false")) {
+						  String first = lineAsArray[0];
+						  String last = lineAsArray[1];
+						  String MiddleInitial = lineAsArray[2];
+		    				if(first.equals(firstName)&& last.equals(lastName)&& MiddleInitial.equals(MI)&& index23.equals(searchNum) && hasVoted.equals("false")) {
 		    					System.out.println("I am in the if statement- they match");
 
 		    					found = true;
@@ -179,7 +185,10 @@ public class TextInterface {
 	    	    			//check to see if social can be found
 	    	    			String index6 = lineAsArray[6];
 							String hasVoted = lineAsArray[24];
-		    				if(index6.equals(searchNum)&& hasVoted.equals("false")) {
+							String first = lineAsArray[0];
+							String last = lineAsArray[1];
+							String MiddleInitial = lineAsArray[2];
+		    				if(first.equals(firstName)&& last.equals(lastName)&& MiddleInitial.equals(MI)&& index6.equals(searchNum)&& hasVoted.equals("false")) {
 		    					System.out.println("I am in the if statement- they match");
 
 		    					found = true;
@@ -720,6 +729,14 @@ public class TextInterface {
         
     }//END GET RECOUNT 
 
+	//SETS ALL VOTERS 'HAS VOTED' TO FALSE SO THAT THEY CAN VOTE IN THE NEWEST ELECTION
+	public void beginElection () {
 
+	}
+
+	//SETS A VOTER'S 'HAS VOTED' TO TRUE
+	public void setHasVoted() {
+    	//Probably will need to have some sort of input so that it knows exactly what voter to set to true
+	}
 
 }

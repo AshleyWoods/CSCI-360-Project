@@ -37,6 +37,8 @@ public class registrationInvestigationController {// This is a CONTROLLER
     private void handleRegistrationInvestigation() throws FileNotFoundException {
     	 String ssn = SSN.getText().toString();
     	 String MI = middleInitialText.getText().toString();
+    	 String firstName = firstNameText.getText().toString();
+    	 String lastName = lastNameText.getText().toString();
         //Check the database to see if the login info is there
 
         if (ssn.length() > 9 || MI.length() > 1) {
@@ -44,7 +46,7 @@ public class registrationInvestigationController {// This is a CONTROLLER
             return;
         }
 
-    	loginValid = TextInterface.getInstance().voterRegistered(ssn,loginType);
+    	loginValid = TextInterface.getInstance().voterRegistered(firstName, lastName, MI, ssn,loginType);
     	 
     	System.out.println(loginValid);
         if (loginValid) {

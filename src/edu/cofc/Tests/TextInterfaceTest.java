@@ -22,17 +22,17 @@ public class TextInterfaceTest {
     @Test
     //Tests the login method for voters
     public void testVoterRegistered() throws FileNotFoundException {
-        Boolean results = textInterface.voterRegistered("agaga", 1);
+        Boolean results = textInterface.voterRegistered("misae", "evans", "e","agaga", 1);
         assertEquals(true, results);
-        results = textInterface.voterRegistered("faketyFake", 1);
+        results = textInterface.voterRegistered("faketyFake", "fake", "fake", "fake",  1);
         assertEquals(false, results);
-        results = textInterface.voterRegistered("faketyFake", 2);
+        results = textInterface.voterRegistered("faketyFake","fake", "fake", "fake",  2);
         assertEquals(false, results);
-        results = textInterface.voterRegistered("faketyFake", 3);
+        results = textInterface.voterRegistered("faketyFake", "fake", "fake", "fake", 3);
         assertEquals(false, results);
-         results = textInterface.voterRegistered("86612", 2);
+         results = textInterface.voterRegistered("86612", "fake", "fake", "fake", 2);
         assertEquals(true, results);
-         results = textInterface.voterRegistered("social", 3);
+         results = textInterface.voterRegistered("social", "fake", "fake", "fake", 3);
         assertEquals(true, results);
     }
 

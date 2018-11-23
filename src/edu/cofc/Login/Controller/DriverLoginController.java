@@ -40,7 +40,7 @@ public class DriverLoginController {
             return;
         }
 
-        boolean loginValid = TextInterface.getInstance().voterRegistered( dlNumber, loginType);
+        boolean loginValid = TextInterface.getInstance().voterRegistered( firstName, lastName, middleInitial, dlNumber, loginType);
         if(!loginValid) {
         	 main.showRegistrationStatusNegativePopUp();
         	main.showLogin();

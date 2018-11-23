@@ -47,7 +47,7 @@ public class VRNLoginController {
             return;
         }
 
-        boolean loginValid = TextInterface.getInstance().voterRegistered(vrnNumber , loginType);
+        boolean loginValid = TextInterface.getInstance().voterRegistered(firstName, lastName, middleInitial, vrnNumber , loginType);
         if(!loginValid) {
             main.showRegistrationStatusNegativePopUp();
             main.showLogin();
