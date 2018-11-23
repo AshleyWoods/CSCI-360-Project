@@ -112,7 +112,7 @@ public class AdminTallyView { //This is a class to show any visuals pertaining t
     }
 
     public void showTally() {
-        Text unofficialTally = new Text();
+        //Text unofficialTally = new Text();
         String buggsBunny;
         String daffyDuck;
         String roadRunner;
