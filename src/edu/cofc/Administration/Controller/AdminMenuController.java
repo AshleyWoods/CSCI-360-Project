@@ -78,10 +78,6 @@ public class AdminMenuController { // This is a CONTROLLER
        TextInterface.getInstance().getUnofficialTally();
     
         //go to unofficial tally
-        
-       
-        
-        
         main.showTally();
 
     }

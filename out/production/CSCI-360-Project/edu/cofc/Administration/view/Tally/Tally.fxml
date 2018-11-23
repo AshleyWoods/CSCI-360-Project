@@ -13,7 +13,8 @@
 			xmlns="http://javafx.com/javafx/2.2" 
 			fx:controller="edu.cofc.Administration.Controller.Tally.TallyController"
 			styleClass= "unofficial-section">
- <!--  <children>
+
+ <children>
     <GridPane layoutX="0.0" 
     		  layoutY="70.0" 
     		  prefHeight="261.0" 
@@ -67,56 +68,46 @@
         	  text="Bruce Wayne" 
         	  GridPane.columnIndex="0" 
         	  GridPane.rowIndex="7" />
-        	  
-      
-        	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+
+        <Label fx:id="buggs" 
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="0" />
+        	  GridPane.rowIndex="0" ></Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id="daffy" 
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="1" />
+        	  GridPane.rowIndex="1"> </Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id="road" 
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="2" />
+        	  GridPane.rowIndex="2"> </Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id="wiley"
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="3" />
+        	  GridPane.rowIndex="3"> </Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id="peter"  
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="4" />
+        	  GridPane.rowIndex="4"></Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id= "spider" 
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="5" />
+        	  GridPane.rowIndex="5"></Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id="bat" 
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="6" />
+        	  GridPane.rowIndex="6"> </Label>
         	  
-        <Text strokeType="OUTSIDE" 
-        	  strokeWidth="0.0" 
-        	  text="#" 
+        <Label fx:id="bruce" 
+        	  text="" 
         	  GridPane.columnIndex="2" 
-        	  GridPane.rowIndex="7" />
+        	  GridPane.rowIndex="7"> </Label>
         	  
       </children>
       
@@ -150,5 +141,5 @@
     <Label layoutX="210.0" 
     	  layoutY="10.0" 
     	  text="Vote Tally" />
-  </children> -->
+  </children> 
 </AnchorPane>

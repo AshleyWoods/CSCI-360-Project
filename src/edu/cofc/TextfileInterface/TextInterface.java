@@ -642,14 +642,7 @@ public class TextInterface {
     		System.out.println("ERROR!! THE VOTES COULD NOT BE RETRIEVED TO PERFORM THE REQUESTED TASK");
     		e.printStackTrace();
     	}
-    	System.out.println("Buggs Bunny = "+ buggsBunny);
-    	System.out.println("Road Runner = " + roadRunner);
-    	System.out.println("Daffy Duck = " + daffyDuck);
-    	System.out.println("Wiley E Coyote = "+ wileyCoyote);
-    	System.out.println("Peter Parker = " + peterParker);
-    	System.out.println("Batman = "+ batMan);
-    	System.out.println("Spiderman = " + spiderMan);
-    	System.out.println("Bruce Wayne = "+ bruceWayne);
+    
     	int unofficalTally[] = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker,batMan, spiderMan, bruceWayne};
     	
     	return unofficalTally;

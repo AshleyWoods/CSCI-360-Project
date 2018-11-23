@@ -122,6 +122,17 @@ public class AdminTallyView { //This is a class to show any visuals pertaining t
         String batman;
         String bruceWayne;
         TextInterface tInterface = new TextInterface();
+        int[] unofficialVotes = tInterface.getUnofficialTally();
+        
+        buggsBunny = String.valueOf(unofficialVotes[0]);
+        roadRunner = String.valueOf(unofficialVotes[1]);
+        daffyDuck = String.valueOf(unofficialVotes[2]);
+        wileyECoyote = String.valueOf(unofficialVotes[3]);
+        peterParker = String.valueOf(unofficialVotes[4]);
+        batman = String.valueOf(unofficialVotes[5]);
+        spiderman = String.valueOf(unofficialVotes[6]);
+        bruceWayne = String.valueOf(unofficialVotes[7]);
+
     	try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -129,10 +140,18 @@ public class AdminTallyView { //This is a class to show any visuals pertaining t
             AnchorPane tally =  loader.load();
     	
             // Set person overview into the center of root layout.
-            //rootLayout.setCenter(tally);
+            rootLayout.setCenter(tally);
             // Give the controller access to the main app.
             TallyController controller = loader.getController();
             controller.setMain(main);
+            controller.setBuggs(buggsBunny);
+            controller.setRoad(roadRunner);
+            controller.setDaffy(daffyDuck);
+            controller.setWiley(wileyECoyote);
+            controller.setPeter(peterParker);
+            controller.setBatman(batman);
+            controller.setSpiderman(spiderman);
+            controller.setBruceWayne(bruceWayne);
        
             //ADD CSS FILE
             rootLayout.getStylesheets().add(Main.class.getClassLoader().getResource("edu/cofc/View/RootLayout/votingHomepage.css").toExternalForm());
