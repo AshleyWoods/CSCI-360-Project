@@ -5,6 +5,8 @@ import edu.cofc.Vote.Voter;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.image.AbstractMultiResolutionImage;
+
 import static org.junit.Assert.assertEquals;
 
 public class VoterTest {
@@ -23,6 +25,11 @@ public class VoterTest {
     @Test
     //make sure that constructor works  
     public void testConstructor() {
+		assertEquals("firstName", voterAbrev.getFirstName());
+		assertEquals("lastName", voterAbrev.getLastName());
+		assertEquals("MiddleI", voterAbrev.getMiddleInitial());
+		assertEquals("18889372", voterAbrev.getDLNumber());
+
     	assertEquals("firstName", voterFull.getFirstName());
     	assertEquals("lastName", voterFull.getLastName());
     	assertEquals("MiddleI", voterFull.getMiddleInitial());
