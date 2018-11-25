@@ -682,22 +682,28 @@ public class TextInterface {
     	try {
     		FileReader fileReader = new FileReader(file);
     		BufferedReader buffReader = new BufferedReader(fileReader);
+    		buffReader.readLine();
     		String currLine;
     		String[] lineAsArray;
     		//ITERATE THROUGH THE TEXT FILE BY LINE
     		while((currLine = buffReader.readLine()) != null) {
-    			//SPLIT THE LINE INTO AN ARRAY WITH SPLITHTELINE HELPER METHOD
+    			//SPLIT THE LINE INTO AN ARRAY WITH SPLITTHELINE HELPER METHOD
     			//A SINGLE LINE = 1 BALLOT
     			lineAsArray = splitTheLine(currLine);
+
+				//STRIP THE WHITE SPACE
+				for (int i = 0; i < lineAsArray.length; i++)
+					lineAsArray[i] = lineAsArray[i].trim();
+
     			//GRAB THE VALUE AT EACH INDEX OF THE ARRAY 
-    			int buggsIndex = Integer.parseInt(lineAsArray[0]);
-    			int roadIndex = Integer.parseInt(lineAsArray[1]);
-    			int daffyIndex = Integer.parseInt(lineAsArray[2]);
-    			int wileyIndex = Integer.parseInt(lineAsArray[3]);
-    			int peterIndex = Integer.parseInt(lineAsArray[4]);
-    			int batIndex = Integer.parseInt(lineAsArray[5]);
-    			int spiderIndex = Integer.parseInt(lineAsArray[6]);
-    			int bruceIndex = Integer.parseInt(lineAsArray[7]);
+				int buggsIndex = Integer.parseInt(lineAsArray[0]);
+				int roadIndex = Integer.parseInt(lineAsArray[1]);
+				int daffyIndex = Integer.parseInt(lineAsArray[2]);
+				int wileyIndex = Integer.parseInt(lineAsArray[3]);
+				int peterIndex = Integer.parseInt(lineAsArray[4]);
+				int batIndex = Integer.parseInt(lineAsArray[5]);
+				int spiderIndex = Integer.parseInt(lineAsArray[6]);
+				int bruceIndex = Integer.parseInt(lineAsArray[7]);
     			//GO THROUGH THE BALLOT AND LOOK FOR "1" 
     			//IF A 1 IS FOUND ADD IT TO THE TOTAL COUNT PER CANDIDATE
     			if(buggsIndex == 1)
@@ -710,15 +716,16 @@ public class TextInterface {
     				wileyCoyote+=1;
     			if(peterIndex ==1)
     				peterParker+=1;
+    			if (batIndex == 1)
+    				batMan+=1;
     			if(spiderIndex ==1)
     				spiderMan+=1;
     			if(bruceIndex ==1)
     				bruceWayne+=1;
     		}//END WHILE
-    	int[] recount = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, spiderMan, bruceWayne};
+    	int[] recount = {buggsBunny, roadRunner, daffyDuck, wileyCoyote, peterParker, batMan, spiderMan, bruceWayne};
     	int [] officialTally = getOfficialTally();
     	match = Arrays.equals(recount,officialTally);
-    	
  
     	}//END TRY
     	catch(Exception e) {

@@ -32,7 +32,7 @@ public class AdminTallyView { //This is a class to show any visuals pertaining t
 
 
             Stage popUp = new Stage();
-            popUp.setTitle("Download Official Tally");
+            popUp.setTitle("Confirmation");
 
 
             recountPopUpController controller = loader.getController();

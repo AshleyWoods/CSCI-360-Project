@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 
 import static org.junit.Assert.assertEquals;
 
+//Complete
 public class TextInterfaceTest {
     private TextInterface textInterface;
 
@@ -89,9 +90,10 @@ public class TextInterfaceTest {
     //tests the recount method
     //NOT FINISHED -- Recount is broken so we can't really test it until it's fixed
     public void testGetRecount() {
-        //boolean results = textInterface.getRecount();
+        boolean results = textInterface.getRecount();
         //READ ME -- This value is obtained though a visual inspection of the FILE and by counting votes on your own.
         // If the file is changed then THIS TEST WILL NOT WORK
-        //boolean expected = ;
+        boolean expected = true;
+        assertEquals(expected,results);
     }
 }
