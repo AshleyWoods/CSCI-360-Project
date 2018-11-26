@@ -46,7 +46,7 @@ public class Main extends Application {
     //this variable will be changed when an operator completes an official tally 
     public boolean officialTally = false;
     public static Voter activeVoter;
-    public TextInterface textInterface = new TextInterface();
+    public TextInterface textInterface;
   
     
    
@@ -57,7 +57,7 @@ public class Main extends Application {
 
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("SC Electronic Voting");
-        
+        textInterface = TextInterface.getInstance();
         this.ElectionRunning = false;
         //edu.cofc.Administration.Controller.AdminMenuController.officialTally = false;
 
@@ -79,6 +79,11 @@ public class Main extends Application {
         registrationView = new RegistrationView(rootLayout, this);
 
         showLogin();
+    }
+
+
+    public TextInterface getTextInterfaceInstance() {
+        return textInterface;
     }
 
     public static Election getCurrentElection() {

@@ -307,7 +307,7 @@ public class TextInterface {
     	}//end catch
 
     	}//end registerVoter
-    
+
 
     //Login Methods -- Information Expert
     //see if a voter's login is valid--use voterRegistered from the registration methods section
@@ -464,6 +464,31 @@ public class TextInterface {
             //compare with number of votes from each voter
             //initiate recount if it's not the same
             //display total if it is
+		try {
+			String fileName = "votes.csv";
+			File voteFile = new File(fileName);
+			//TRUE if Exists, FALSE if it doesn't
+			boolean exists = voteFile.exists();
+			System.out.println(exists);
+			//mark the voter as voted, but don't put their information in voter csv file, votes shouldnt be connected to voter right?
+			//hasVoted = true;
+
+			if (!exists) {
+				System.out.println("in the if");
+				FileOutputStream output = new FileOutputStream(fileName, true);
+				PrintWriter pw = new PrintWriter(output);
+				pw.println(VOTEHEADER);
+				pw.close();
+
+
+			}//END IF
+		}
+		catch(Exception e){
+			System.out.println("ERROR!! The CSV file did not write successfuly! ");
+			e.printStackTrace();
+		}//END CATCH
+
+
         this.officialTally = true;
         String file = "votes.csv";
       	int buggsBunny = 0; 
@@ -593,7 +618,34 @@ public class TextInterface {
     //I MADE THE METHOD VOID BECAUSE I NEED THE VALUE OF 8 INTS
     public int[] getUnofficialTally() {
         //takes the number of votes from each candidate in the database and displays it with not votes counted
-      	String file = "votes.csv";
+
+
+		try {
+			String fileName = "votes.csv";
+			File voteFile = new File(fileName);
+			//TRUE if Exists, FALSE if it doesn't
+			boolean exists = voteFile.exists();
+			System.out.println(exists);
+			//mark the voter as voted, but don't put their information in voter csv file, votes shouldnt be connected to voter right?
+			//hasVoted = true;
+
+			if (!exists) {
+				System.out.println("in the if");
+				FileOutputStream output = new FileOutputStream(fileName, true);
+				PrintWriter pw = new PrintWriter(output);
+				pw.println(VOTEHEADER);
+				pw.close();
+
+
+			}//END IF
+		}
+		catch(Exception e){
+			System.out.println("ERROR!! The CSV file did not write successfuly! ");
+			e.printStackTrace();
+		}//END CATCH
+
+
+		String file = "votes.csv";
       	int buggsBunny = 0; 
       	int daffyDuck = 0; 
       	int roadRunner = 0; 
@@ -738,8 +790,16 @@ public class TextInterface {
     }//END GET RECOUNT 
 
 	//SETS ALL VOTERS 'HAS VOTED' TO FALSE SO THAT THEY CAN VOTE IN THE NEWEST ELECTION
+	//ALSO RESETS THE VOTES.CSV FILE TO WIPE IT FOR THE NEW ELECTION
 	public void beginElection () {
-
+		String fileName = "votes.csv";
+		File voteFile = new File(fileName);
+		//TRUE if Exists, FALSE if it doesn't
+		boolean exists = voteFile.exists();
+		if (exists) {
+			boolean x = voteFile.delete();
+			System.out.print("x");
+		}
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
