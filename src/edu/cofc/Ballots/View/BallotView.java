@@ -1,7 +1,9 @@
 package edu.cofc.Ballots.View;
 
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.Ballots.Ballot;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
+import edu.cofc.Ballots.Controller.BallotVoteChoiceConfirmationPopUpController;
 import edu.cofc.Ballots.Controller.FinalBallotController;
 import edu.cofc.Ballots.Controller.SavePopUpController;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ public class BallotView {
 
     private BorderPane rootLayout;
     private Main main;
+    public static boolean confirm;
 
     public BallotView(BorderPane boarderPane, Main m){
         rootLayout = boarderPane;
@@ -102,5 +105,39 @@ public class BallotView {
         }
     }
 
+    public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Ballots/View/BallotVoteChoiceConfirmationPopUp.fxml"));
+            AnchorPane page = loader.load();
 
+
+            Stage confirmSave = new Stage();
+            confirmSave.setTitle("Confirm Choice");
+            Scene confirmSaveScene = new Scene(page);
+            confirmSave.setScene(confirmSaveScene);
+
+            BallotVoteChoiceConfirmationPopUpController controller = loader.getController();
+            controller.setMain(main);
+
+            HBox layout = new HBox(400);
+            layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
+                    + "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
+                    + "-fx-alignment: center;");
+
+            layout.getChildren().addAll(page);
+            confirmSave.setScene(new Scene(layout));
+
+
+
+
+
+            confirmSave.showAndWait();
+            return confirm;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

@@ -8,6 +8,7 @@ import edu.cofc.Administration.Controller.endElectionPopUpController;
 import edu.cofc.Administration.Controller.startElectionPopUpController;
 import edu.cofc.Administration.view.AdminTallyView;
 import edu.cofc.Application.Election;
+import edu.cofc.Ballots.Ballot;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
 import edu.cofc.Ballots.Controller.FinalBallotController;
 import edu.cofc.Ballots.Controller.SavePopUpController;
@@ -155,6 +156,8 @@ public class Main extends Application {
        boolean val = registrationView.showSubmissionConfirmationPopup();
        return val;
     }
+
+    public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) { return ballotView.showBallotVoteChoiceConfirmationPopUp(ballot);}
 
     public void showBallot() {
        ballotView.showBallot();

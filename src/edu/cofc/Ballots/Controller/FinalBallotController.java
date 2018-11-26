@@ -36,6 +36,10 @@ public class FinalBallotController {// This is a CONTROLLER
         Ballot ballot = new Ballot(main.getCurrentElection());
         ballot.addVote(new Vote(main.activeVoter,selected));
         ballot.addVote(new Vote(main.activeVoter,Ballot1Controller.selected));
+
+        boolean Continue = main.showBallotVoteChoiceConfirmationPopUp(ballot);
+        if (!Continue){return;}
+
         ballot.submitBallot();
         //save vote
         //make pop up window confirm save
