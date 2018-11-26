@@ -33,7 +33,10 @@ public class AdminMenuController { // This is a CONTROLLER
             return;
         }
         //get the recount tally
-        TextInterface.getInstance().getRecount();
+        boolean isSame = main.getTextInterfaceInstance().getRecount();
+        if (!isSame){
+            main.getTextInterfaceInstance().getOfficialTally();
+        }
         //save the recount tally as the new official tally
         main.showTally();
     }
@@ -62,7 +65,7 @@ public class AdminMenuController { // This is a CONTROLLER
             return;
         }
         //get the official tally
-        TextInterface.getInstance().getOfficialTally();
+        main.getTextInterfaceInstance().getOfficialTally();
         //save the official tally
         //go to official tally page
         //OFFICIAL AND UNOFFICIAL TALLY ARE THE SAME PAGE WITH THE TALLY VALUES ADDED IN DIFFERENT WAYS
@@ -75,7 +78,7 @@ public class AdminMenuController { // This is a CONTROLLER
         main.showUnofficialConfirmationPopUp();
         if (!confirm) {return;}
         //get the unofficial tally
-       TextInterface.getInstance().getUnofficialTally();
+       main.getTextInterfaceInstance().getUnofficialTally();
     
         //go to unofficial tally
         main.showTally();
