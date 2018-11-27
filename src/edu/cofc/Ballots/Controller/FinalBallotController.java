@@ -2,6 +2,7 @@ package edu.cofc.Ballots.Controller;
 
 import java.io.FileNotFoundException;
 
+
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.Ballots.Ballot;
 import edu.cofc.Vote.Vote;
@@ -22,7 +23,7 @@ public class FinalBallotController {// This is a CONTROLLER
     private RadioButton bruceWayne;
     @FXML
     private ToggleGroup buttonGroup;
-    private String selected;
+    public static String selected;
 
     public void setMain(Main main) {
         this.main = main;
@@ -34,10 +35,15 @@ public class FinalBallotController {// This is a CONTROLLER
         int index = selected.indexOf('\'');
         selected = selected.substring(index +1,selected.length()-1);
         Ballot ballot = new Ballot(main.getCurrentElection());
+        
         ballot.addVote(new Vote(main.activeVoter,selected));
         ballot.addVote(new Vote(main.activeVoter,Ballot1Controller.selected));
-
+        String vote1 = Ballot1Controller.selected;
+        String vote2 = selected;
+        //ballot.submitBallot();
         boolean Continue = main.showBallotVoteChoiceConfirmationPopUp(ballot);
+      
+        //save vote
         if (!Continue){return;}
 
         ballot.submitBallot();

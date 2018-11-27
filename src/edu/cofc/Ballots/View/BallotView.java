@@ -1,6 +1,7 @@
 package edu.cofc.Ballots.View;
 
 import edu.cofc.Application.VotingSystem.Main;
+
 import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Ballots.Ballot;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
@@ -15,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 
 public class BallotView {
 
@@ -107,12 +109,12 @@ public class BallotView {
     }
 
     public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) {
-        TextInterface tInterface = new TextInterface();
-    	String vote1;
-        String vote2;
-        String[] votes = tInterface.voteChoice;
-        vote1 = votes[0];
-        vote2 = votes[1];
+        //TextInterface tInterface = new TextInterface();
+    	String vote1 = Ballot1Controller.selected;
+    	System.out.print(vote1);
+
+    	String vote2 = FinalBallotController.selected;
+    	System.out.print(vote2);
         
     	try {
             FXMLLoader loader = new FXMLLoader();
@@ -127,7 +129,8 @@ public class BallotView {
 
             BallotVoteChoiceConfirmationPopUpController controller = loader.getController();
             controller.setMain(main);
-
+            controller.set1(vote1);
+            controller.set2(vote2);
             HBox layout = new HBox(400);
             layout.setStyle("-fx-background-color: aliceblue; -fx-padding: 10;"
                     + "-fx-font-family: TeX Gyre Adventor; -fx-font-size: 18px; -fx-font-weight:bold; "
@@ -135,11 +138,6 @@ public class BallotView {
 
             layout.getChildren().addAll(page);
             confirmSave.setScene(new Scene(layout));
-
-
-
-
-
             confirmSave.showAndWait();
             return confirm;
 

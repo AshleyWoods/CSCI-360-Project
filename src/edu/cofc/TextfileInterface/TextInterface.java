@@ -37,7 +37,7 @@ public class TextInterface {
     private static final String COMMA = ",";
     private static final String NEWLINE = "\n";
     public static TextInterface textInterfaceInstance;
-    public String [] voteChoice = new String[2];
+    
 
     //FILE HEADER -- ADDED SALT FOR SECURITY PURPOSES
     private static final String HEADER = "firstName,lastName,middleInitial,suffix,sex,race,ssn,"
@@ -437,32 +437,17 @@ public class TextInterface {
 			
 			for (int j =0; j < votesArray.length; j++) {
 				votesArray[j] = votesArray[j].trim();
-				System.out.print(votesArray[j]);
+				//System.out.print(votesArray[j]);
 				if(votesArray[j].equals("1")|| votesArray[j].equals(" 1") || votesArray[j].equals("1 ")) {
 					numVotes++;		
 				}//END IF 
 			}//END FOR
 			//first vote choices 
-			if(votesArray[0].equals("1"))
-				voteChoice[0] = "buggs";
-			if(votesArray[1].equals("1"))
-				voteChoice[0] ="road";
-			if(votesArray[2].equals("1"))
-				voteChoice[0] ="daffy";
-			if(votesArray[3].equals("1"))
-				voteChoice[0] ="wiley";
-			//second vote choices
-			if(votesArray[4].equals("1"))
-				voteChoice[1] ="peter";
-			if(votesArray[5].equals("1"))
-				voteChoice[1] ="batman";
-			if(votesArray[6].equals("1"))
-				voteChoice[1] ="spiderman";
-			if(votesArray[7].equals("1"))
-				voteChoice[1] ="bruce";
+		
 		
 			String voteCount = String.valueOf(numVotes);
-			System.out.println("vote count: "+ voteCount);
+			// System.out.println("vote count: "+ voteCount);
+	
 			writer.append(votesList);
 			writer.append(COMMA);
 			writer.append(voteCount);
