@@ -1,7 +1,0 @@
-Buggs Bunny: 3
-Road Runner: 0
-Daffy Duck: 1
-Wiley E Coyote: 0
-Peter Parker: 0
-Batman: 2
-Spiderman: 2
