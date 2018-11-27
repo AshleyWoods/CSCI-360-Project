@@ -1,6 +1,7 @@
 package edu.cofc.Administration.view;
 
 import edu.cofc.Administration.Controller.*;
+
 import edu.cofc.Administration.Controller.Tally.*;
 import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.TextfileInterface.TextInterface;

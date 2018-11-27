@@ -1,6 +1,7 @@
 package edu.cofc.Ballots.View;
 
 import edu.cofc.Application.VotingSystem.Main;
+import edu.cofc.TextfileInterface.TextInterface;
 import edu.cofc.Ballots.Ballot;
 import edu.cofc.Ballots.Controller.Ballot1Controller;
 import edu.cofc.Ballots.Controller.BallotVoteChoiceConfirmationPopUpController;
@@ -106,7 +107,14 @@ public class BallotView {
     }
 
     public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) {
-        try {
+        TextInterface tInterface = new TextInterface();
+    	String vote1;
+        String vote2;
+        String[] votes = tInterface.voteChoice;
+        vote1 = votes[0];
+        vote2 = votes[1];
+        
+    	try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getClassLoader().getResource("edu/cofc/Ballots/View/BallotVoteChoiceConfirmationPopUp.fxml"));
             AnchorPane page = loader.load();

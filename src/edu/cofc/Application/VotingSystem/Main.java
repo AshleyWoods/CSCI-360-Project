@@ -157,7 +157,9 @@ public class Main extends Application {
        return val;
     }
 
-    public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) { return ballotView.showBallotVoteChoiceConfirmationPopUp(ballot);}
+    public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) { 
+    	
+    	return ballotView.showBallotVoteChoiceConfirmationPopUp(ballot);}
 
     public void showBallot() {
        ballotView.showBallot();

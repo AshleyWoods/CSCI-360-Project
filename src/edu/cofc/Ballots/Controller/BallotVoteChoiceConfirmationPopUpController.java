@@ -1,6 +1,7 @@
 package edu.cofc.Ballots.Controller;
 
 import edu.cofc.Application.VotingSystem.Main;
+
 import edu.cofc.Ballots.Ballot;
 import edu.cofc.Ballots.View.BallotView;
 import javafx.fxml.FXML;
@@ -10,22 +11,11 @@ import javafx.stage.Stage;
 
 public class BallotVoteChoiceConfirmationPopUpController {
     private Main main;
+    
     @FXML
-    Label buggs;
+    Label voteChoice1;
     @FXML
-    Label daffy;
-    @FXML
-    Label road;
-    @FXML
-    Label wiley;
-    @FXML
-    Label peter;
-    @FXML
-    Label bat;
-    @FXML
-    Label spider;
-    @FXML
-    Label bruce;
+    Label voteChoice2;
     @FXML
     Button confirm;
     @FXML
@@ -34,6 +24,12 @@ public class BallotVoteChoiceConfirmationPopUpController {
 
     public void setMain(Main main) {
         this.main = main;
+    }
+    public void set1(String vote1) {
+    	voteChoice1.setText(vote1);
+    }
+    public void set2(String vote2) {
+    	voteChoice2.setText(vote2);
     }
 
     @FXML

@@ -37,6 +37,7 @@ public class TextInterface {
     private static final String COMMA = ",";
     private static final String NEWLINE = "\n";
     public static TextInterface textInterfaceInstance;
+    public String [] voteChoice = new String[2];
 
     //FILE HEADER -- ADDED SALT FOR SECURITY PURPOSES
     private static final String HEADER = "firstName,lastName,middleInitial,suffix,sex,race,ssn,"
@@ -405,6 +406,7 @@ public class TextInterface {
         //then marks the voter in the database as having voted along with saving the number of votes cast
       	//give the csv file a name
 		setHasVoted(voter);
+	
     	try {
     		String fileName = "votes.csv";
     		File voteFile = new File(fileName);
@@ -428,16 +430,37 @@ public class TextInterface {
 			String votesList = votes.toString().replace("[", "").replace("]", "");
 			String[] votesArray = splitTheLine(votesList);
 
+			
+			
+
 			int numVotes = 0; 
 			
 			for (int j =0; j < votesArray.length; j++) {
 				votesArray[j] = votesArray[j].trim();
-				
-				if(votesArray[j].equals("1")|| votesArray[j].equals("[1") || votesArray[j].equals("1]")) {
+				System.out.print(votesArray[j]);
+				if(votesArray[j].equals("1")|| votesArray[j].equals(" 1") || votesArray[j].equals("1 ")) {
 					numVotes++;		
 				}//END IF 
 			}//END FOR
-			
+			//first vote choices 
+			if(votesArray[0].equals("1"))
+				voteChoice[0] = "buggs";
+			if(votesArray[1].equals("1"))
+				voteChoice[0] ="road";
+			if(votesArray[2].equals("1"))
+				voteChoice[0] ="daffy";
+			if(votesArray[3].equals("1"))
+				voteChoice[0] ="wiley";
+			//second vote choices
+			if(votesArray[4].equals("1"))
+				voteChoice[1] ="peter";
+			if(votesArray[5].equals("1"))
+				voteChoice[1] ="batman";
+			if(votesArray[6].equals("1"))
+				voteChoice[1] ="spiderman";
+			if(votesArray[7].equals("1"))
+				voteChoice[1] ="bruce";
+		
 			String voteCount = String.valueOf(numVotes);
 			System.out.println("vote count: "+ voteCount);
 			writer.append(votesList);
@@ -452,7 +475,7 @@ public class TextInterface {
     		System.out.println("ERROR!! The CSV file did not write successfuly! ");
     		e.printStackTrace();
     	}//END CATCH
-    	
+    
     }//END SAVE VOTE()
 
     //Admin Methods
