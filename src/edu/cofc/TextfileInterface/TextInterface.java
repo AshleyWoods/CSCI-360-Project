@@ -52,43 +52,6 @@ public class TextInterface {
         this.officialTally = false;
     }
 
-    public String hash(String data, byte[] salty){
-    	String hashed = "";
-    	try {
-			MessageDigest hasher = MessageDigest.getInstance("SHA-512");
-			hasher.update(salty);
-			byte[] dataBytes = hasher.digest(data.getBytes());
-			StringBuilder builder = new StringBuilder();
-			for (int i = 0;i < dataBytes.length ;i++){
-				builder.append(Integer.toString((dataBytes[i] & 0xff) + 0x100, 16).substring(1));
-			}
-			hashed = builder.toString();
-		}
-		catch(NoSuchAlgorithmException e) {
-    		e.printStackTrace();
-		}
-    	return hashed;
-	}
-
-	public String saltString(byte[] salty) {
-		//Making the salt string to be stored and to encrypt storage/help voters log in later
-		String salt = "";
-		for (int i = 0; i<salty.length; i++){
-			salt = salt + salty[i];
-		}
-		return salt;
-	}
-
-	public byte[] saltByte() {
-		byte[] bytes = new byte[10];
-		rand.nextBytes(bytes);
-		return bytes;
-	}
-
-	public void storeAdminSalt(String Username, String Salty){
-
-	};
-
     public boolean getOfficialTallyBoolean() {
         return this.officialTally;
     }
@@ -405,7 +368,12 @@ public class TextInterface {
         //then to each candidate individually
         //then marks the voter in the database as having voted along with saving the number of votes cast
       	//give the csv file a name
-		setHasVoted(voter);
+    	String first = voter.getFirstName();
+    	String last = voter.getLastName();
+    	String middle = voter.getMiddleInitial();
+    	String social = voter.getSSN();
+    	System.out.println("first= " + first+ "last="+ last+ "middle="+ middle + "social=" + social);
+    	//setHasVoted(voter.getFirstName(), voter.getLastName(), voter.getMiddleInitial(), voter.getSSN());
 	
     	try {
     		String fileName = "votes.csv";
@@ -429,9 +397,6 @@ public class TextInterface {
 			FileWriter writer = new FileWriter(fileName, true);
 			String votesList = votes.toString().replace("[", "").replace("]", "");
 			String[] votesArray = splitTheLine(votesList);
-
-			
-			
 
 			int numVotes = 0; 
 			
@@ -811,8 +776,38 @@ public class TextInterface {
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
-	public void setHasVoted(Voter voter) {
-    	//Probably will need to have some sort of input so that it knows exactly what voter to set to true
-	}
+	public void setHasVoted(String firstname, String lastname, String middleInitial, String ssn) {
+	   	String file = "registration.csv";
+    	boolean found = false;
+    	String searchNum = ssn;
+    	
+    	try {
+    		FileReader fileReader = new FileReader(file);
+    		BufferedReader buffReader = new BufferedReader(fileReader);
+    		String currLine;
+    		String[] lineAsArray;
+    	
+			//**NOTE**: I found the condition in the while loop from stack overflow.
+    		while((currLine = buffReader.readLine()) != null) {
+    			lineAsArray = splitTheLine(currLine);
+    			//check to see if social can be found
+    			String index6 = lineAsArray[6];
+				String hasVoted = lineAsArray[24];
+				String first = lineAsArray[0];
+				String last = lineAsArray[1];
+				String MiddleInitial = lineAsArray[2];
+				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)&& index6.equals(searchNum)&& hasVoted.equals("false")) {
+					System.out.println("I am in the if statement- they match");
+					found = true;
+					if(found)
+						hasVoted = "true";
+				}
+    		}//END WHILE
 
+		}//END TRY
+		catch(Exception e) {
+			System.out.println("The file did not update successfully");
+			e.printStackTrace();
+		}//END CATCH 
+	}//END SET HAS VOTED 
 }
