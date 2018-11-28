@@ -771,6 +771,7 @@ public class TextInterface {
 	//SETS ALL VOTERS 'HAS VOTED' TO FALSE SO THAT THEY CAN VOTE IN THE NEWEST ELECTION
 	//ALSO RESETS THE VOTES.CSV FILE TO WIPE IT FOR THE NEW ELECTION
 	public void beginElection () {
+    	//Reset Votes.csv
 		String fileName = "votes.csv";
 		File voteFile = new File(fileName);
 		//TRUE if Exists, FALSE if it doesn't
@@ -779,6 +780,9 @@ public class TextInterface {
 			boolean x = voteFile.delete();
 			System.out.print("x");
 		}
+
+		//Set all 'hasVoted' to false for the new election
+
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
