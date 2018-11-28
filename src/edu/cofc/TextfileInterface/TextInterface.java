@@ -6,6 +6,7 @@ import edu.cofc.TextfileInterface.src.org.mindrot.jbcrypt.BCrypt;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.awt.*;
 import java.util.Base64;
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
@@ -69,9 +70,10 @@ public class TextInterface {
 		return textInterfaceInstance;
 	}
 
-	public String encrypt(byte[] key, String item){
+	public String encrypt(String item){
 		String encrypt = "";
 		try {
+			byte[] key = "Ab9xZ&l".getBytes("UTF-8");
 			SecretKeySpec secKey = prepKey(key);
 			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
 			cipher.init(Cipher.ENCRYPT_MODE, secKey);
@@ -96,9 +98,10 @@ public class TextInterface {
 		return secKey;
 	}
 
-	public String decrypt(byte[] key, String item){
+	public String decrypt(String item){
 		String decrypt = "";
 		try{
+			byte[] key = "Ab9xZ&l".getBytes("UTF-8");
 			SecretKeySpec secKey = prepKey(key);
 			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
 			cipher.init(Cipher.DECRYPT_MODE, secKey);
@@ -128,8 +131,6 @@ public class TextInterface {
 
     	
     	try {
-
-			byte[] secKeyBytes = "Ab9xZ&l".getBytes("UTF-8");
     		FileReader fileReader = new FileReader(file);
     		BufferedReader buffReader = new BufferedReader(fileReader);
     		String currLine;
@@ -142,11 +143,11 @@ public class TextInterface {
     				while((currLine = buffReader.readLine()) != null) {
     	    			lineAsArray = splitTheLine(currLine);
 	    	
-    	    			String index22 = lineAsArray[22];
+    	    			String index22 = decrypt(lineAsArray[22]);
     	    			String hasVoted = lineAsArray[24];
-    	    			String first = lineAsArray[0];
-    	    			String last = lineAsArray[1];
-    	    			String MiddleInitial = lineAsArray[2];
+    	    			String first = decrypt(lineAsArray[0]);
+    	    			String last = decrypt(lineAsArray[1]);
+    	    			String MiddleInitial = decrypt(lineAsArray[2]);
 	    				if(first.equals(firstName)&& last.equals(lastName)&& MiddleInitial.equals(MI)&& index22.equals(searchNum)&& hasVoted.equals("false")) {
 	    					System.out.println("I am in the if statement- they match");
 
@@ -163,11 +164,11 @@ public class TextInterface {
 		    				
 
 	    	    			//check to see if vrn can be found
-	    	    			String index23 = lineAsArray[23];
+	    	    			String index23 = decrypt(lineAsArray[23]);
 						    String hasVoted = lineAsArray[24];
-						  String first = lineAsArray[0];
-						  String last = lineAsArray[1];
-						  String MiddleInitial = lineAsArray[2];
+						  String first = decrypt(lineAsArray[0]);
+						  String last = decrypt(lineAsArray[1]);
+						  String MiddleInitial = decrypt(lineAsArray[2]);
 		    				if(first.equals(firstName)&& last.equals(lastName)&& MiddleInitial.equals(MI)&& index23.equals(searchNum) && hasVoted.equals("false")) {
 		    					System.out.println("I am in the if statement- they match");
 
@@ -198,11 +199,11 @@ public class TextInterface {
 		    				*/
 	    	    			
 	    	    			//check to see if social can be found
-	    	    			String index6 = lineAsArray[6];
+	    	    			String index6 = decrypt(lineAsArray[6]);
 							String hasVoted = lineAsArray[24];
-							String first = lineAsArray[0];
-							String last = lineAsArray[1];
-							String MiddleInitial = lineAsArray[2];
+							String first = decrypt(lineAsArray[0]);
+							String last = decrypt(lineAsArray[1]);
+							String MiddleInitial = decrypt(lineAsArray[2]);
 		    				if(first.equals(firstName)&& last.equals(lastName)&& MiddleInitial.equals(MI)&& index6.equals(searchNum)&& hasVoted.equals("false")) {
 		    					System.out.println("I am in the if statement- they match");
 
@@ -236,7 +237,6 @@ public class TextInterface {
     //register a voter -- Information Expert
     public void registerVoter(Voter voter) throws FileNotFoundException {
     	try {
-			byte[] secKeyBytes = "Ab9xZ&l".getBytes("UTF-8");
          	//give the csv file a name
         	String fileName = "registration.csv";
         	File registrationFile = new File(fileName);
@@ -258,60 +258,61 @@ public class TextInterface {
     		FileOutputStream fileOUT = new FileOutputStream(fileName, true);
 			FileWriter writer = new FileWriter(fileName, true);
 			//insert values into file
-			writer.append(voter.getFirstName());
+			writer.append(encrypt(voter.getFirstName()));
 			writer.append(COMMA);
-			writer.append(voter.getLastName());
+			writer.append(encrypt(voter.getLastName()));
 			writer.append(COMMA);
-			writer.append(voter.getMiddleInitial());
+			writer.append(encrypt(voter.getMiddleInitial()));
 			writer.append(COMMA);
 			if(voter.getSuffix()!= null) {
-				writer.append(voter.getSuffix());
+				writer.append(encrypt(voter.getSuffix()));
 				writer.append(COMMA);
 			}
-			writer.append(voter.getSex());
+			writer.append(encrypt(voter.getSex()));
 			writer.append(COMMA);
-			writer.append(voter.getRace());
+			writer.append(encrypt(voter.getRace()));
 			writer.append(COMMA);
-			writer.append(voter.getSSN());
+			writer.append(encrypt(voter.getSSN()));
 			writer.append(COMMA);
-			writer.append(voter.getStreetResidential());
+			writer.append(encrypt(voter.getStreetResidential()));
 			writer.append(COMMA);
-			writer.append(voter.getCityResidential());
+			writer.append(encrypt(voter.getCityResidential()));
 			writer.append(COMMA);
-			writer.append(voter.getStateResidental());
+			writer.append(encrypt(voter.getStateResidental()));
 			writer.append(COMMA);
-			writer.append(voter.getZipResidential());
+			writer.append(encrypt(voter.getZipResidential()));
 			writer.append(COMMA);
-			writer.append(voter.getAptResidential());
+			writer.append(encrypt(voter.getAptResidential()));
 			writer.append(COMMA);
-			writer.append(voter.getCityLimits());
+			writer.append(encrypt(voter.getCityLimits()));
 			writer.append(COMMA);
-			writer.append(voter.getStreetMailing());
+			writer.append(encrypt(voter.getStreetMailing()));
 			writer.append(COMMA);
-			writer.append(voter.getCityMailing());
+			writer.append(encrypt(voter.getCityMailing()));
 			writer.append(COMMA);
-			writer.append(voter.getStateMailing());
+			writer.append(encrypt(voter.getStateMailing()));
 			writer.append(COMMA);
-			writer.append(voter.getZipMailing());
+			writer.append(encrypt(voter.getZipMailing()));
 			writer.append(COMMA);
-			writer.append(voter.getBirthdayDate());
+			writer.append(encrypt(voter.getBirthdayDate()));
 			writer.append(COMMA);
-			writer.append(voter.getBirthdayMonth());
+			writer.append(encrypt(voter.getBirthdayMonth()));
 			writer.append(COMMA);
-			writer.append(voter.getBirthdayYear());
+			writer.append(encrypt(voter.getBirthdayYear()));
 			writer.append(COMMA);
-			writer.append(voter.getHomePhone());
+			writer.append(encrypt(voter.getHomePhone()));
 			writer.append(COMMA);
-			writer.append(voter.getWorkPhone());
+			writer.append(encrypt(voter.getWorkPhone()));
 			writer.append(COMMA);
-			writer.append(voter.getDLNumber());
+			writer.append(encrypt(voter.getDLNumber()));
 			writer.append(COMMA);
-			writer.append(String.valueOf(voter.getvoterID()));
+			writer.append(encrypt(String.valueOf(voter.getvoterID())));
 			writer.append(COMMA);
 			writer.append("false");
 			writer.append(NEWLINE);
 			writer.flush();
 			writer.close();
+			System.out.println(String.valueOf(voter.getvoterID()));
     		System.out.println("Written to file successfully, check in your file browser to find it");
     	 
     	}//end try 
@@ -895,9 +896,9 @@ public class TextInterface {
 	    	    	  System.out.println(line);
 	    	    	  lineAsArray = splitTheLine(line);
 	    	  
-	    	    		String first = lineAsArray[0];
-	    				String last = lineAsArray[1];
-	    				String MiddleInitial = lineAsArray[2];
+	    	    		String first = decrypt(lineAsArray[0]);
+	    				String last = decrypt(lineAsArray[1]);
+	    				String MiddleInitial = decrypt(lineAsArray[2]);
 	    				String hasVoted = lineAsArray[24];
 	    				
 	    				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)) {
