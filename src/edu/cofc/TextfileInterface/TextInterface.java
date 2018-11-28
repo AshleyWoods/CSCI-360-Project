@@ -785,6 +785,7 @@ public class TextInterface {
     	try {
     		FileReader fileReader = new FileReader(file);
     		BufferedReader buffReader = new BufferedReader(fileReader);
+    		buffReader.readLine();
     		String currLine;
     		String[] lineAsArray;
     	
@@ -792,7 +793,7 @@ public class TextInterface {
     		while((currLine = buffReader.readLine()) != null) {
     			lineAsArray = splitTheLine(currLine);
     			//check to see if social can be found
-    			String index6 = lineAsArray[6];
+    			//String index6 = lineAsArray[6];
 				String hasVoted = lineAsArray[24];
 				String newIndex24 = lineAsArray[24];
 				String first = lineAsArray[0];
