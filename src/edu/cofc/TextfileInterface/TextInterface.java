@@ -806,7 +806,7 @@ public class TextInterface {
 					if(found) {
 						FileOutputStream fileOUT = new FileOutputStream(file, true);
 						FileWriter writer = new FileWriter(file, true);
-						newIndex24 = hasVoted.replaceAll("true", "false");
+						newIndex24 = hasVoted.replaceAll("false", "true");
 						writer.write(newIndex24);
 						writer.close();
 					}
