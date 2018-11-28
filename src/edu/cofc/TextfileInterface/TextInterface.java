@@ -1,6 +1,7 @@
 package edu.cofc.TextfileInterface;
 
 import edu.cofc.Administration.Admin;
+
 import edu.cofc.TextfileInterface.src.org.mindrot.jbcrypt.BCrypt;
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
@@ -202,7 +203,7 @@ public class TextInterface {
     			System.out.println("in the if");
     			FileOutputStream output = new FileOutputStream(fileName, true);
     			PrintWriter pw = new PrintWriter(output);
-    			pw.println(HEADER);
+    			pw.print(HEADER);
     			//pw.println(NEWLINE);
     			pw.close();
     			
@@ -781,48 +782,70 @@ public class TextInterface {
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
-	public void setHasVoted(String firstname, String lastname, String middleInitial) {
-	   	String file = "registration.csv";
-    	boolean found = false;
-    	//String searchNum = ssn;
-    	
-    	try {
-    		FileReader fileReader = new FileReader(file);
-    		BufferedReader buffReader = new BufferedReader(fileReader);
-    		buffReader.readLine();
-    		String currLine;
-    		String[] lineAsArray;
-    	
-			//**NOTE**: I found the condition in the while loop from stack overflow.
-    		while((currLine = buffReader.readLine()) != null) {
-    			lineAsArray = splitTheLine(currLine);
-    			System.out.print(lineAsArray[23]);
-    			//check to see if social can be found
-    			//String index6 = lineAsArray[6];
-				String hasVoted = lineAsArray[24];
-				String newIndex24 = lineAsArray[24];
-				String first = lineAsArray[0];
-				String last = lineAsArray[1];
-				String MiddleInitial = lineAsArray[2];
-				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)) {
-					System.out.println("I am in the if statement- they match");
-					found = true;
-					
-				
-					if(found) {
-						FileOutputStream fileOUT = new FileOutputStream(file, true);
-						FileWriter writer = new FileWriter(file, true);
-						newIndex24 = hasVoted.replaceAll("false", "true");
-						writer.write(newIndex24);
-						writer.close();
-					}
-				}
-    		}//END WHILE
+		public void setHasVoted(String firstname, String lastname, String middleInitial) {
+		   	String file = "registration.csv";
+	    	boolean found = false;
+	    	//String searchNum = ssn;
+	    	
+	    	try {
+	    		FileReader fileReader = new FileReader(file);
+	    		BufferedReader buffReader = new BufferedReader(fileReader);
+	    		buffReader.readLine();
+	    		String currLine;
+	    		String[] lineAsArray;
+	    		StringBuffer inputBuffer = new StringBuffer();
+	    	
+				//**NOTE**: I found the condition in the while loop from stack overflow.
+	    		while((currLine = buffReader.readLine()) != null) {
+	    			lineAsArray = splitTheLine(currLine);
+	    			System.out.print(lineAsArray[23]);
+	    			//grab the entire file 
+	    			inputBuffer.append(currLine);
+			        inputBuffer.append('\n');
+	    		}
+	    		System.out.println("I am out of the first while loop");
+	    		String inputStr = inputBuffer.toString();
+	    		buffReader.close();
+	    		System.out.println(inputStr);
+	    		String[] lines = inputStr.split("\\r?\\n");
+	    		System.out.println("array: " );
+	    	      for (String line : lines) {
+	    	    	  System.out.println(line);
+	    	    	  lineAsArray = splitTheLine(line);
+	    	  
+	    	    		String first = lineAsArray[0];
+	    				String last = lineAsArray[1];
+	    				String MiddleInitial = lineAsArray[2];
+	    				String hasVoted = lineAsArray[24];
+	    				
+	    				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)) {
+	    					System.out.println("I am in the if statement- the voter has been found");
+	    					found = true;
+	    					System.out.println("line to be replaced: " + line);
+	    					String newString = line.replaceAll("false", "true");
+	    					  inputStr = inputStr.replace(line, newString);
+	    					
+	    					System.out.println("newString: " + newString);
+	    					continue;
+	    			        
+	    	      }//END OUTER IF
+	    	      }//END FOR 
+	    		
 
-		}//END TRY
-		catch(Exception e) {
-			System.out.println("The file did not update successfully");
-			e.printStackTrace();
-		}//END CATCH 
-	}//END SET HAS VOTED 
+	    	      System.out.println("----------------------------------\n"  + inputStr);
+	    	      FileOutputStream fileOut = new FileOutputStream("registration.csv");
+			      fileOut.write(inputStr.getBytes());
+			      fileOut.close();
+	    	
+	   
+	 
+	    	
+
+	      
+			}//END TRY
+			catch(Exception e) {
+				System.out.println("The file did not update successfully");
+				e.printStackTrace();
+			}//END CATCH 
+		}//END SET HAS VOTED 
 }

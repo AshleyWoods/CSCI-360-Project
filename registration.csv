@@ -1,4 +1,3 @@
-firstName,lastName,middleInitial,suffix,sex,race,ssn,streetResidential,cityResidential,stateResidential,zipResidential,aptResidential,inCityLimits,streetMAiling,cityMailing,stateMailing,zipMailing,birthdayDate,birthdayMonth,birthdayYear,homePhone,workPhone,dlNumber,voterID,hasVoted
-misae,evans,e,,Female,White,social,street,city,stae,zip,apt,Yes,street,city,aklfjaf,afaog,1,April,year,ahga,agaga,agaga,86612,false
+misae,evans,e,,Female,White,social,street,city,stae,zip,apt,Yes,street,city,aklfjaf,afaog,1,April,year,ahga,agaga,agaga,86612,true
 Ashley,Woods,E,,Female,White,social,street,city,state,zip,apt,Yes,street,city,state,zip,13,March,year,homePhone,workPhone,DLN,59834,false
 test,test,t,test,Male,Hispanic,test,test,test,test,test,test,Yes,test,test,test,test,t,August,test,test,test,test,75063,false

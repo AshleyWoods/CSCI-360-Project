@@ -14,6 +14,7 @@
 
 package org.mindrot.jbcrypt;
 
+
 import edu.cofc.TextfileInterface.src.org.mindrot.jbcrypt.BCrypt;
 import junit.framework.TestCase;
 
