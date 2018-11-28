@@ -70,31 +70,41 @@ public class TextInterface {
 	}
 
 	public String encrypt(byte[] key, String item){
-    	String encrypt = "";
-    	try {
-			SecretKeySpec secKey = new SecretKeySpec(key, "AES");
-			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+		String encrypt = "";
+		try {
+			SecretKeySpec secKey = prepKey(key);
+			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
 			cipher.init(Cipher.ENCRYPT_MODE, secKey);
-			byte[] encrypted = cipher.doFinal(item.getBytes());
-			System.out.println(encrypted);
+			byte[] encrypted = cipher.doFinal(item.getBytes("UTF-8"));
 			encrypt = Base64.getEncoder().encodeToString(encrypted);
-			System.out.println(encrypt);
 			return encrypt;
 		}
 		catch (Exception e) {
 		}
-    	return encrypt;
+		return encrypt;
+	}
+
+	private SecretKeySpec prepKey (byte [] key) {
+		byte [] k = new byte[16];
+		try{
+			MessageDigest sha = MessageDigest.getInstance("SHA-1");
+			k = sha.digest(key);
+			k = Arrays.copyOf(k,16);
+		}
+		catch(Exception e){}
+		SecretKeySpec secKey = new SecretKeySpec(k, "AES");
+		return secKey;
 	}
 
 	public String decrypt(byte[] key, String item){
-    	String decrypt = "";
-    	try{
-			SecretKeySpec secKey = new SecretKeySpec(key, "AES");
-			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+		String decrypt = "";
+		try{
+			SecretKeySpec secKey = prepKey(key);
+			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
 			cipher.init(Cipher.DECRYPT_MODE, secKey);
 			return new String(cipher.doFinal(Base64.getDecoder().decode(item)));
 		}catch(Exception e) {}
-    	return decrypt;
+		return decrypt;
 	}
 
 	private String hash(String password) {
