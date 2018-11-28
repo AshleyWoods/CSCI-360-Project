@@ -111,10 +111,10 @@ public class BallotView {
     public boolean showBallotVoteChoiceConfirmationPopUp (Ballot ballot) {
         //TextInterface tInterface = new TextInterface();
     	String vote1 = Ballot1Controller.selected;
-    	System.out.print(vote1);
+    	//System.out.print(vote1);
 
     	String vote2 = FinalBallotController.selected;
-    	System.out.print(vote2);
+    	//System.out.print(vote2);
         
     	try {
             FXMLLoader loader = new FXMLLoader();

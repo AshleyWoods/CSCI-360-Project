@@ -372,8 +372,9 @@ public class TextInterface {
     	String last = voter.getLastName();
     	String middle = voter.getMiddleInitial();
     	String social = voter.getSSN();
-    	System.out.println("first= " + first+ "last="+ last+ "middle="+ middle + "social=" + social);
-    	//setHasVoted(voter.getFirstName(), voter.getLastName(), voter.getMiddleInitial(), voter.getSSN());
+    	System.out.println(social);
+    	System.out.println("first= " + first+ " last= "+ last+ " middle="+ middle + " social= " + social);
+    	setHasVoted(voter.getFirstName(), voter.getLastName(), voter.getMiddleInitial());
 	
     	try {
     		String fileName = "votes.csv";
@@ -776,10 +777,10 @@ public class TextInterface {
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
-	public void setHasVoted(String firstname, String lastname, String middleInitial, String ssn) {
+	public void setHasVoted(String firstname, String lastname, String middleInitial) {
 	   	String file = "registration.csv";
     	boolean found = false;
-    	String searchNum = ssn;
+    	//String searchNum = ssn;
     	
     	try {
     		FileReader fileReader = new FileReader(file);
@@ -793,14 +794,22 @@ public class TextInterface {
     			//check to see if social can be found
     			String index6 = lineAsArray[6];
 				String hasVoted = lineAsArray[24];
+				String newIndex24 = lineAsArray[24];
 				String first = lineAsArray[0];
 				String last = lineAsArray[1];
 				String MiddleInitial = lineAsArray[2];
-				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)&& index6.equals(searchNum)&& hasVoted.equals("false")) {
+				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)&& hasVoted.equals("false")) {
 					System.out.println("I am in the if statement- they match");
 					found = true;
-					if(found)
-						hasVoted = "true";
+					
+				
+					if(found) {
+						FileOutputStream fileOUT = new FileOutputStream(file, true);
+						FileWriter writer = new FileWriter(file, true);
+						newIndex24 = hasVoted.replaceAll("true", "false");
+						writer.write(newIndex24);
+						writer.close();
+					}
 				}
     		}//END WHILE
 
