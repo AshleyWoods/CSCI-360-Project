@@ -78,6 +78,7 @@ public class Main extends Application {
         ballotView = new BallotView(rootLayout, this);
         loginView = new LoginView(rootLayout, this);
         registrationView = new RegistrationView(rootLayout, this);
+        //textInterface.registerAdmin();
 
         showLogin();
     }

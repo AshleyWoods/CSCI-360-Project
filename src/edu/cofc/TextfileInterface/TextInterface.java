@@ -1,11 +1,10 @@
 package edu.cofc.TextfileInterface;
 
 import edu.cofc.Administration.Admin;
-
+import edu.cofc.TextfileInterface.src.org.mindrot.jbcrypt.BCrypt;
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
 import javafx.scene.text.Text;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -62,6 +61,11 @@ public class TextInterface {
 			textInterfaceInstance = new TextInterface();
 		}
 		return textInterfaceInstance;
+	}
+
+	public String hash(String password) {
+    	String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
+    	return hashed;
 	}
 
     //Registration Methods -- Information Expert
@@ -299,18 +303,18 @@ public class TextInterface {
 			FileWriter writer = new FileWriter(fileName, true);
 			//insert values into file
  			//MISAE LOGIN INFORMATION
-			writer.append("bubbles");
+			writer.append(hash("bubbles"));
 			writer.append(COMMA);
 			writer.append("misae");
 			//ASHLEY LOGIN INFORMATION
 			writer.append(NEWLINE);
-			writer.append("blossom");
+			writer.append(hash("blossom") + ",");
 			writer.append("ashley");
 			writer.append(NEWLINE);
 			//DR.X LOGIN INFORMATION
 			//password
 			//username
-			writer.append("xmen");
+			writer.append(hash("xmen") + ",");
 			writer.append("drX");
 			writer.flush();
 			writer.close();
@@ -332,6 +336,7 @@ public class TextInterface {
     	try {
     		FileReader fileReader = new FileReader(file);
     		BufferedReader buffReader = new BufferedReader(fileReader);
+    		buffReader.readLine();
     		String currLine;
     		String[] lineAsArray;
     		String password = operator.getPassword();
@@ -345,8 +350,7 @@ public class TextInterface {
 	    			String index0 = lineAsArray[0];
 	    			String index1 = lineAsArray[1];
 	    			
-	
-  				if(index0.equals(password)) {
+  				if(BCrypt.checkpw(password, index0)) {
   					System.out.println("I am in the if statement- the password matches");
   					if(index1.equals(username)) {
   						found = true;
