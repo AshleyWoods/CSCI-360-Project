@@ -806,7 +806,7 @@ public class TextInterface {
 
 	//SETS ALL VOTERS 'HAS VOTED' TO FALSE SO THAT THEY CAN VOTE IN THE NEWEST ELECTION
 	//ALSO RESETS THE VOTES.CSV FILE TO WIPE IT FOR THE NEW ELECTION
-	public void beginElection () {
+	public void beginElection () throws FileNotFoundException {
     	//Reset Votes.csv
 		String fileName = "votes.csv";
 		File voteFile = new File(fileName);
@@ -816,9 +816,41 @@ public class TextInterface {
 			boolean x = voteFile.delete();
 			System.out.print("x");
 		}
-
+		try {
 		//Set all 'hasVoted' to false for the new election
+		String file = "registration.csv";
+		String currLine;
+		String[] lineAsArray;
+		StringBuffer inputBuffer = new StringBuffer();
+		FileReader fileReader = new FileReader(file);
+		BufferedReader buffReader = new BufferedReader(fileReader);
+	
+		//**NOTE**: I found the condition in the while loop from stack overflow.
+		while((currLine = buffReader.readLine()) != null) {
+			lineAsArray = splitTheLine(currLine);
+		
+			inputBuffer.append(currLine);
+	        inputBuffer.append('\n');
+		}
 
+		String inputStr = inputBuffer.toString();
+		buffReader.close();
+		System.out.println(inputStr);
+		String[] lines = inputStr.split("\\r?\\n");
+
+	      for (String line : lines) {
+	    	  System.out.println(line);
+	    	  lineAsArray = splitTheLine(line);
+	    	  String newString = line.replaceAll("true", "false");
+			  inputStr = inputStr.replace(line, newString);
+	      }//END FOR 
+	      FileOutputStream fileOut = new FileOutputStream("registration.csv");
+	      fileOut.write(inputStr.getBytes());
+	      fileOut.close();
+	}//END TRY
+	catch(Exception e) {
+		e.printStackTrace();
+	}//END CATCH
 	}
 
 	//SETS A VOTER'S 'HAS VOTED' TO TRUE
@@ -862,9 +894,9 @@ public class TextInterface {
 	    					//System.out.println("I am in the if statement- the voter has been found");
 	    					found = true;
 	    					//System.out.println("line to be replaced: " + line);
+	    				
 	    					String newString = line.replaceAll("false", "true");
 	    					 inputStr = inputStr.replace(line, newString);
-	    					
 	    					//System.out.println("newString: " + newString);
 	    					continue;
 	    			        
