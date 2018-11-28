@@ -790,7 +790,7 @@ public class TextInterface {
 	    	try {
 	    		FileReader fileReader = new FileReader(file);
 	    		BufferedReader buffReader = new BufferedReader(fileReader);
-	    		buffReader.readLine();
+	    		
 	    		String currLine;
 	    		String[] lineAsArray;
 	    		StringBuffer inputBuffer = new StringBuffer();
@@ -798,17 +798,17 @@ public class TextInterface {
 				//**NOTE**: I found the condition in the while loop from stack overflow.
 	    		while((currLine = buffReader.readLine()) != null) {
 	    			lineAsArray = splitTheLine(currLine);
-	    			System.out.print(lineAsArray[23]);
+	    			//System.out.print(lineAsArray[23]);
 	    			//grab the entire file 
 	    			inputBuffer.append(currLine);
 			        inputBuffer.append('\n');
 	    		}
-	    		System.out.println("I am out of the first while loop");
+	    		//System.out.println("I am out of the first while loop");
 	    		String inputStr = inputBuffer.toString();
 	    		buffReader.close();
 	    		System.out.println(inputStr);
 	    		String[] lines = inputStr.split("\\r?\\n");
-	    		System.out.println("array: " );
+	    		//System.out.println("array: " );
 	    	      for (String line : lines) {
 	    	    	  System.out.println(line);
 	    	    	  lineAsArray = splitTheLine(line);
@@ -819,20 +819,20 @@ public class TextInterface {
 	    				String hasVoted = lineAsArray[24];
 	    				
 	    				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)) {
-	    					System.out.println("I am in the if statement- the voter has been found");
+	    					//System.out.println("I am in the if statement- the voter has been found");
 	    					found = true;
-	    					System.out.println("line to be replaced: " + line);
+	    					//System.out.println("line to be replaced: " + line);
 	    					String newString = line.replaceAll("false", "true");
-	    					  inputStr = inputStr.replace(line, newString);
+	    					 inputStr = inputStr.replace(line, newString);
 	    					
-	    					System.out.println("newString: " + newString);
+	    					//System.out.println("newString: " + newString);
 	    					continue;
 	    			        
 	    	      }//END OUTER IF
 	    	      }//END FOR 
 	    		
 
-	    	      System.out.println("----------------------------------\n"  + inputStr);
+	    	      //System.out.println("----------------------------------\n"  + inputStr);
 	    	      FileOutputStream fileOut = new FileOutputStream("registration.csv");
 			      fileOut.write(inputStr.getBytes());
 			      fileOut.close();
