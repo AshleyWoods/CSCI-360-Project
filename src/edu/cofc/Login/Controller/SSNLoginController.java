@@ -6,6 +6,7 @@ import edu.cofc.Application.VotingSystem.Main;
 
 
 import edu.cofc.TextfileInterface.TextInterface;
+import edu.cofc.Vote.Voter;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -51,7 +52,7 @@ public class SSNLoginController {
         //if it does work, continue to first ballot
         else {
         	 main.showBallot();
-        	//main.activeVoter = new Voter(lastName.getText(),firstName.getText(),middleInitial.getText(),Integer.parseInt(SSN.getText()));
+            main.activeVoter = new Voter(firstName,lastName, middleInitial,ssn, 1);;
         }
         
         
