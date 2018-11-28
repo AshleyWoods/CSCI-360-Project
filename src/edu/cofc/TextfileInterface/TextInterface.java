@@ -792,6 +792,7 @@ public class TextInterface {
 			//**NOTE**: I found the condition in the while loop from stack overflow.
     		while((currLine = buffReader.readLine()) != null) {
     			lineAsArray = splitTheLine(currLine);
+    			System.out.print(lineAsArray[23]);
     			//check to see if social can be found
     			//String index6 = lineAsArray[6];
 				String hasVoted = lineAsArray[24];
@@ -799,7 +800,7 @@ public class TextInterface {
 				String first = lineAsArray[0];
 				String last = lineAsArray[1];
 				String MiddleInitial = lineAsArray[2];
-				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)&& hasVoted.equals("false")) {
+				if(first.equals(firstname)&& last.equals(lastname)&& MiddleInitial.equals(middleInitial)) {
 					System.out.println("I am in the if statement- they match");
 					found = true;
 					
