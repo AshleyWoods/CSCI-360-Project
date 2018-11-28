@@ -1,4 +1,4 @@
 firstName,lastName,middleInitial,suffix,sex,race,ssn,streetResidential,cityResidential,stateResidential,zipResidential,aptResidential,inCityLimits,streetMAiling,cityMailing,stateMailing,zipMailing,birthdayDate,birthdayMonth,birthdayYear,homePhone,workPhone,dlNumber,voterID,hasVoted
-test,test,t,t,Male,White,test,t,t,t,t,t,Yes,t,t,t,t,t,January,t,t,t,t,74105,true
-Ashley,Woods,E,,Female,White,social,street,city,state,zip,,Yes,street,city,state,zip,da,March,year,home,work,DLN,51932,true
-test,test,t,test,Male,Hispanic,test,test,test,test,test,test,Yes,test,test,test,test,te,January,test,test,test,test,61718,false
+test,test,t,t,Male,White,test,t,t,t,t,t,Yes,t,t,t,t,t,January,t,t,t,t,74105,false
+Ashley,Woods,E,,Female,White,social,street,city,state,zip,,Yes,street,city,state,zip,da,March,year,home,work,DLN,51932,false
+,test,t,test,Male,Asian,test,test,test,test,test,test,Yes,test,test,test,test,te,January,test,test,test,test,17791,false

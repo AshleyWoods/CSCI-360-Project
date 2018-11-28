@@ -1,12 +1,13 @@
 package edu.cofc.Vote;
 import java.util.Random;
 
+import edu.cofc.Application.VotingSystem.Main;
 import edu.cofc.Registration.Controller.VoterRegistrationController;
+import edu.cofc.TextfileInterface.TextInterface;
 
 public class Voter {
 	//Creates the voter object as the information expert and reaches to the textInterface as it is the expert on anything to do with stored information
 		private Random rand = new Random();
-
 
 		private VoterRegistrationController voterRegCtrller; 
 

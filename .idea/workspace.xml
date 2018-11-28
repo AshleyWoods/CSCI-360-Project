@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration.csv" beforeDir="false" afterPath="$PROJECT_DIR$/registration.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/votes.csv" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,16 +92,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="csv" value="26" />
+          <entry key="csv" value="37" />
           <entry key="dummy" value="39" />
           <entry key="fxml" value="837" />
-          <entry key="java" value="38073" />
+          <entry key="java" value="39385" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="38073" />
-          <entry key="PLAIN_TEXT" value="65" />
+          <entry key="JAVA" value="39385" />
+          <entry key="PLAIN_TEXT" value="76" />
           <entry key="XML" value="837" />
         </counts>
       </usages-collector>
@@ -141,45 +143,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="269" column="9" lean-forward="true" selection-start-line="269" selection-start-column="9" selection-end-line="269" selection-end-column="9" />
+            <state relative-caret-position="3077">
+              <caret line="250" selection-start-line="250" selection-end-line="250" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2085#2086#0" expanded="true" />
                 <element signature="e#2127#2128#0" expanded="true" />
                 <element signature="e#2175#2176#0" expanded="true" />
                 <element signature="e#2216#2217#0" expanded="true" />
-                <element signature="method#voterRegistered#0;class#TextInterface#0" />
-                <element signature="e#6954#6955#0" expanded="true" />
-                <element signature="e#6993#6994#0" expanded="true" />
+                <element signature="e#7392#7393#0" expanded="true" />
+                <element signature="e#7431#7432#0" expanded="true" />
                 <element signature="method#registerAdmin#0;class#TextInterface#0" />
                 <element signature="method#adminLoginValid#0;class#TextInterface#0" />
                 <element signature="method#saveVote#0;class#TextInterface#0" />
                 <element signature="method#getOfficialTally#0;class#TextInterface#0" />
                 <element signature="method#downloadOfficialTally#0;class#TextInterface#0" />
                 <element signature="method#getUnofficialTally#0;class#TextInterface#0" />
+                <element signature="method#getRecount#0;class#TextInterface#0" />
+                <element signature="method#beginElection#0;class#TextInterface#0" />
+                <element signature="method#setHasVoted#0;class#TextInterface#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/registration.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="124" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -235,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/edu/cofc/Administration/Admin.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Ballot.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Vote/Vote.java" />
-        <option value="$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Administration/Controller/Tally/TallyController.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Ballots/Controller/Ballot1Controller.java" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Login/Controller/LoginController.java" />
@@ -267,16 +261,17 @@
         <option value="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/test/org/mindrot/jbcrypt/TestBCrypt.java" />
         <option value="$PROJECT_DIR$/adminLogin.csv" />
         <option value="$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java" />
-        <option value="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" />
+        <option value="$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java" />
         <option value="$PROJECT_DIR$/registration.csv" />
+        <option value="$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="932" />
-    <option name="y" value="910" />
-    <option name="width" value="2430" />
+    <option name="x" value="-15" />
+    <option name="y" value="-15" />
+    <option name="width" value="2168" />
     <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -609,7 +604,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26449788" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26714286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -956,13 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/Tests/ElectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -981,16 +969,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/test/org/mindrot/jbcrypt/TestBCrypt.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
-          <folding>
-            <element signature="e#4776#4925#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/src/org/mindrot/jbcrypt/BCrypt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -1005,36 +983,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Application/VotingSystem/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
+          <folding>
+            <element signature="e#4776#4925#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/cofc/Vote/Voter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/cofc/TextfileInterface/TextInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="269" column="9" lean-forward="true" selection-start-line="269" selection-start-column="9" selection-end-line="269" selection-end-column="9" />
+        <state relative-caret-position="3077">
+          <caret line="250" selection-start-line="250" selection-end-line="250" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2085#2086#0" expanded="true" />
             <element signature="e#2127#2128#0" expanded="true" />
             <element signature="e#2175#2176#0" expanded="true" />
             <element signature="e#2216#2217#0" expanded="true" />
-            <element signature="method#voterRegistered#0;class#TextInterface#0" />
-            <element signature="e#6954#6955#0" expanded="true" />
-            <element signature="e#6993#6994#0" expanded="true" />
+            <element signature="e#7392#7393#0" expanded="true" />
+            <element signature="e#7431#7432#0" expanded="true" />
             <element signature="method#registerAdmin#0;class#TextInterface#0" />
             <element signature="method#adminLoginValid#0;class#TextInterface#0" />
             <element signature="method#saveVote#0;class#TextInterface#0" />
             <element signature="method#getOfficialTally#0;class#TextInterface#0" />
             <element signature="method#downloadOfficialTally#0;class#TextInterface#0" />
             <element signature="method#getUnofficialTally#0;class#TextInterface#0" />
+            <element signature="method#getRecount#0;class#TextInterface#0" />
+            <element signature="method#beginElection#0;class#TextInterface#0" />
+            <element signature="method#setHasVoted#0;class#TextInterface#0" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="124" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

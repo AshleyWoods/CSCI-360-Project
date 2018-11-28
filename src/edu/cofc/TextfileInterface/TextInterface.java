@@ -3,6 +3,10 @@ package edu.cofc.TextfileInterface;
 import edu.cofc.Administration.Admin;
 
 import edu.cofc.TextfileInterface.src.org.mindrot.jbcrypt.BCrypt;
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Base64;
 import edu.cofc.Administration.Controller.AdminMenuController;
 import edu.cofc.Vote.Voter;
 import javafx.scene.text.Text;
@@ -16,6 +20,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
@@ -64,7 +69,35 @@ public class TextInterface {
 		return textInterfaceInstance;
 	}
 
-	public String hash(String password) {
+	public String encrypt(byte[] key, String item){
+    	String encrypt = "";
+    	try {
+			SecretKeySpec secKey = new SecretKeySpec(key, "AES");
+			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+			cipher.init(Cipher.ENCRYPT_MODE, secKey);
+			byte[] encrypted = cipher.doFinal(item.getBytes());
+			System.out.println(encrypted);
+			encrypt = Base64.getEncoder().encodeToString(encrypted);
+			System.out.println(encrypt);
+			return encrypt;
+		}
+		catch (Exception e) {
+		}
+    	return encrypt;
+	}
+
+	public String decrypt(byte[] key, String item){
+    	String decrypt = "";
+    	try{
+			SecretKeySpec secKey = new SecretKeySpec(key, "AES");
+			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+			cipher.init(Cipher.DECRYPT_MODE, secKey);
+			return new String(cipher.doFinal(Base64.getDecoder().decode(item)));
+		}catch(Exception e) {}
+    	return decrypt;
+	}
+
+	private String hash(String password) {
     	String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
     	return hashed;
 	}
@@ -82,8 +115,11 @@ public class TextInterface {
     public boolean voterRegistered(String firstName, String lastName, String MI, String loginTypeIDNum, int loginType) throws FileNotFoundException {
     	String file = "registration.csv";
     	boolean found = false;
+
     	
     	try {
+
+			byte[] secKeyBytes = "Ab9xZ&l".getBytes("UTF-8");
     		FileReader fileReader = new FileReader(file);
     		BufferedReader buffReader = new BufferedReader(fileReader);
     		String currLine;
@@ -189,8 +225,8 @@ public class TextInterface {
 
     //register a voter -- Information Expert
     public void registerVoter(Voter voter) throws FileNotFoundException {
-
     	try {
+			byte[] secKeyBytes = "Ab9xZ&l".getBytes("UTF-8");
          	//give the csv file a name
         	String fileName = "registration.csv";
         	File registrationFile = new File(fileName);
