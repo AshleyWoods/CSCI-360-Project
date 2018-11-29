@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Login.Controller.InvalidInputController">
+  <children>
+    <Text layoutX="21.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="One or more of your inputs has an invalid " />
+    <Button fx:id="closeButton" layoutX="230.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCloseButton" text="Okay" />
+    <Text layoutX="43.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="length. Please check the length of your" />
+    <Text layoutX="174.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="input and try again" />
+  </children>
+</AnchorPane>
