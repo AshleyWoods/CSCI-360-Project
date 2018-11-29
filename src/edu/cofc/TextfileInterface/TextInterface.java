@@ -346,7 +346,7 @@ public class TextInterface {
     			//pw.println(NEWLINE);
     			pw.close();
     		
-    		}//END IF
+
          	FileOutputStream fileOUT = new FileOutputStream(fileName, true);
 			FileWriter writer = new FileWriter(fileName, true);
 			//insert values into file
@@ -367,7 +367,7 @@ public class TextInterface {
 			writer.flush();
 			writer.close();
     		System.out.println("Written to file successfully, check in your file browser to find it");
-		
+			}//END IF
     	}//END TRY
     	catch(Exception e) {
     		System.out.println("ERROR!! ADMIN INFORMATION DID NOT STORE TO FILE!!");
