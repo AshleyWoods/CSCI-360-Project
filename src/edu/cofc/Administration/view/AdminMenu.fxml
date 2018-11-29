@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" 
+			xmlns:fx="http://javafx.com/fxml/1" 
+			xmlns="http://javafx.com/javafx/2.2" 
+			fx:controller="edu.cofc.Administration.Controller.AdminMenuController"
+			styleClass = "admin-menu">
+  <children>
+    <Button layoutX="160.0" 
+    		layoutY="50.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleOfficialTally" 
+    		text="Official Tally" />
+    		
+    <Button layoutX="160.0" 
+    		layoutY="100.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleUnofficialTally" 
+    		text="Unofficial Tally" />
+    		
+     <Button layoutX="160.0" 
+     		 layoutY="150.0" 
+     		 mnemonicParsing="false" 
+     		 onAction="#handleDownloadOfficialTally" 
+     		 text="Download Official Tally" />
+    		
+    <Button layoutX="160.0" 
+    		layoutY="200.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleEndElection" 
+    		text="End Current Election" />
+    		
+    <Button layoutX="160.0" 
+    		layoutY="250.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleStartElection" 
+    		text="Start Election" />
+    		
+    <Button layoutX="160.0" 
+    		layoutY="300.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleRecount" 
+    		text="Issue Recount" />
+    		
+     		 
+    <Button layoutX="160.0" 
+    		layoutY="500.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleLogout" 
+    		text="Logout" />
+    
+  </children>
+</AnchorPane>

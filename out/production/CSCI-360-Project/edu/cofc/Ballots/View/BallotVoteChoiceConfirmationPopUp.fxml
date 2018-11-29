@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" 
+			prefWidth="600.0" 
+			xmlns:fx="http://javafx.com/fxml/1" 
+			xmlns="http://javafx.com/javafx/2.2" 
+			fx:controller="edu.cofc.Ballots.Controller.BallotVoteChoiceConfirmationPopUpController">
+<children>
+    <GridPane layoutX="0.0" 
+    		  layoutY="70.0" 
+    		  prefHeight="261.0" 
+    		  prefWidth="572.0">
+    		  
+      <children>
+        <Text strokeType="OUTSIDE" 
+        	  strokeWidth="0.0" 
+        	  text="Vote Choice 1: " 
+        	  GridPane.columnIndex="0" 
+        	  GridPane.rowIndex="0" />
+        	  
+        <Text strokeType="OUTSIDE" 
+        	  strokeWidth="0.0" 
+        	  text="Vote Choice 2: " 
+        	  GridPane.columnIndex="0" 
+        	  GridPane.rowIndex="1" />
+        	  
+
+        <Label fx:id="voteChoice1" 
+               text="" 
+               GridPane.columnIndex="2" 
+               GridPane.rowIndex="0"> </Label>
+        
+        <Label fx:id="voteChoice2" 
+        	   text="" 
+        	   GridPane.columnIndex="2" 
+        	   GridPane.rowIndex="1"> </Label>
+       </children>
+        	   
+       <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      
+      <rowConstraints>
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+	 </rowConstraints>
+    
+    </GridPane>
+
+    <Button fx:id="confirm" 
+    	    layoutX="200.0" 
+    	    layoutY="500.0" 
+    	    mnemonicParsing="false" 
+    	    onAction="#handleConfirmClick" 
+    	    text="Continue" />
+    <Button fx:id="deny" 
+    		layoutX="310.0" 
+    		layoutY="500.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleDenyClick" 
+    		text="Cancel" />
+    <Label layoutX="121.0" layoutY="14.0" text="Please Review Your Choice:" />
+  </children>
+</AnchorPane>

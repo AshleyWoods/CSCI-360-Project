@@ -1,0 +1,170 @@
+.root {
+     -fx-background-color: "AliceBlue";
+	-fx-background-image: url("https://blueraven-main-b3gdm8dk.netdna-ssl.com/wp-content/uploads/2018/01/Blue-Raven-Solar-Logo-South-Carolina.png"); 
+	-fx-background-size: 710 ;
+	-fx-background-repeat: no-repeat no-repeat;
+	-fx-background-position: center;
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-text-fill: white;
+    
+}
+.unofficial-section{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+}
+.unofficial-section .button{
+	-fx-text-fill: white;
+    -fx-font-family: "TeX Gyre Adventor";
+    -fx-font-weight: bold;
+    -fx-pref-width: 100px;
+    -fx-background-color: midnightblue;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );	
+}
+.unofficial-section .button:hover{
+    -fx-background-color: aliceblue;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.unofficial-section Label{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 30px;
+	-fx-text-align: center;
+	-fx-font-weight: bold;
+	-fx-text-fill: midnightblue;
+	
+}
+.unofficial-section Text{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-font-weight: 600;
+	-fx-text-align: center;
+	-fx-fill: red;
+	-fx-font-weight: bold;
+}
+.admin-menu .button{
+	 -fx-text-fill: white;
+    -fx-font-family: "TeX Gyre Adventor";
+    -fx-font-weight: bold;
+    -fx-pref-width: 300px;
+    -fx-background-color: midnightblue;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	
+}
+.admin-menu .button:hover{
+    -fx-background-color: aliceblue;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.admin-menu{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+} 
+.login-section Label{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 30px;
+	-fx-text-align: center;
+	-fx-font-weight: 400;
+	-fx-text-fill: midnightblue;
+}
+.login-section{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;	
+}
+.header-section{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+	
+
+}
+.header-section Text{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 80px;
+	-fx-font-weight: 600;
+	-fx-text-align: center;
+	-fx-fill: midnightblue;
+}
+.header-section Label{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 30px;
+	-fx-text-align: center;
+	-fx-font-weight: 400;
+	-fx-text-fill: white;
+	
+}
+.ballot-section{ 
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+}
+.ballot-section .button{
+	-fx-text-fill: white;
+    -fx-font-family: "TeX Gyre Adventor";
+    -fx-font-weight: bold;
+    -fx-pref-width: 200px;
+    -fx-background-color: midnightblue;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	
+}
+.ballot-section .button:hover{
+    -fx-background-color: aliceblue;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.ballot-section Text{
+	-fx-font-family: "TeX Gyre Adventor";
+	-fx-font-size: 30px;
+	-fx-font-weight: 600;
+	-fx-text-align: center;
+	-fx-font-weight: bold;
+	-fx-fill: midnightblue;
+}
+.radio-button{
+
+	-fx-text-fill: midnightblue;
+   	-fx-border-width:1px;
+   	-fx-border-color: transparent;
+   	-fx-font-weight: bold;
+   	-fx-border-radius:1px;
+    -fx-background-color: transparent;
+    -fx-background-image: null;
+    -fx-background-insets: 0;
+
+    -fx-padding:15px;
+}
+.radio-button .dot {
+    -fx-background-radius: 15px;
+    -fx-padding: 8px;
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "TeX Gyre Adventor";
+    -fx-font-weight: bold;
+    -fx-pref-width: 200px;
+    -fx-background-color: midnightblue;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.button:hover{
+    -fx-background-color: aliceblue;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}

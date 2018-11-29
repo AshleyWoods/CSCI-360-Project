@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-1.0" minWidth="928.2138671875" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="edu.cofc.Registration.Controller.ConfirmFormSubmissionController">
+  <children>
+    <Button fx:id="CancelButton" 
+    		layoutX="510.0" 
+    		layoutY="100.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleCancelButton" 
+    		text="Cancel" />
+    <Button fx:id="SubmitButton" 
+    		layoutX="300.0" 
+    		layoutY="100.0" 
+    		mnemonicParsing="false" 
+    		onAction="#handleSubmitButton" 
+    		text="Confirm" />
+    		
+    <Text layoutX="200.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are about to submit the voter registration form, " />
+    <Text layoutX="200.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please confirm the submission" />
+  </children>
+</AnchorPane>
